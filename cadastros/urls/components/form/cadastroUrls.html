@@ -1,0 +1,63 @@
+<h4>Cadastro de Urls</h4>
+
+<form class="row g-3" id="form_cadastro_urls">
+
+    <div class="col-md-7">
+        <label for="url_questionario" class="form-label">Questionário</label>
+        <select id="url_questionario" class="form-select">
+        </select>
+    </div>
+
+    <div class="col-md-5">
+        <label for="url_check_list" class="form-label">Check-list</label>
+        <select id="url_check_list" class="form-select">
+        </select>
+    </div>
+
+    <div class="col-md-7">
+        <label for="url_website" class="form-label">Url</label>
+        <input type="text" class="form-control" id="url_website">
+    </div>
+
+    <div class="col-md-5">
+        <label for="url_categoria" class="form-label">Categoria</label>
+        <select id="url_categoria" class="form-select">
+        </select>
+    </div>
+
+    <div class="col-md-7">
+        <label for="url_descricao" class="form-label">Descrição</label>
+        <textarea class="form-control" placeholder="Leave a comment here" id="url_descricao"
+            style="height: 100px"></textarea>
+    </div>
+
+    <div class="col-md-5">
+        <label for="url_publico_alvo" class="form-label">Publico alvo</label>
+        <select id="url_publico_alvo" class="form-select">
+        </select>
+    </div>
+
+    <div class="col-md-6">
+        <label for="url_tipo_website" class="form-label">Tipo do site</label>
+        <input type="text" class="form-control" id="url_tipo_website">
+    </div>
+
+    <div class="form-check col-md-2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="url_ativo" checked>
+        <label class="form-check-label" for="url_ativo">
+            Ativo
+        </label>
+    </div>
+    <div class="form-check col-md-2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="url_inativo" >
+        <label class="form-check-label" for="url_inativo">
+            Inativo
+        </label>
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary me-md-2" type="button"><i class="bi bi-trash"></i></button>
+        <button class="btn btn-primary me-md-2" type="button">Salvar</button>
+        <button class="btn btn-dark" type="button">Cancelar</button>
+    </div>
+</form>

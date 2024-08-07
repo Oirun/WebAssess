@@ -1,0 +1,111 @@
+:root {
+    --margin-padrao: 3rem 20rem 3rem 20rem;
+}
+
+/* ------------------ div boas vindas ---------------------- */
+.boas__vindas {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    box-sizing: border-box;
+    margin: var(--margin-padrao);
+}
+
+.boas__vindas__texto p {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.boas__vindas__img {
+    background: #A9ACF9;
+    border-radius: 30px;
+    padding: 2rem;
+    height: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boas__vindas__img img {
+    height: 90%;
+}
+
+.boas__vindas__aviso {
+    display: flex;
+    align-items: center;
+}
+
+/* ------------------------ complemento ----------------------- */
+.complemento {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: 5rem;
+    margin: 3rem 15rem 3rem 15rem;
+}
+
+/* ---------------------- acesso rapido -------------------- */
+.acesso__rapido {
+    width: 50%;
+}
+
+.btn__acesso__rapido {
+    display: flex;
+    gap: 1.8rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.btn__acesso__rapido button {
+    border-radius: 100px;
+    margin-top: 1.5rem;
+}
+
+.btn__acesso__rapido button i {
+    font-size: 1.5rem;
+}
+
+.div-btn-acesso-rapido {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-btn-acesso-rapido label {
+    margin: 0 auto;
+}
+
+/* --------------------- notificacoes__usuarios -------------------- */
+.notificacoes__usuarios {
+    width: 50%;
+}
+
+.notificacoes__usuarios__lista{
+    height: 30vh;
+    overflow: auto;
+}
+
+.div-lista ul{
+    border-radius: 0px;
+}
+
+.div-lista ul li{
+    border: none;
+    border-bottom: 1px solid grey;
+    border-radius: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div-lista ul li .btn-group{
+    display: flex;
+    justify-content: end;
+    
+}
+
+.form-check-input{
+    border: 1px solid rgb(180, 180, 180)!important;
+    width: 1.2rem!important;
+    height: 1.2rem!important;
+}

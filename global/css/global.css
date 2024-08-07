@@ -1,0 +1,139 @@
+:root{
+    --altura-header: 70px;
+    --largura-menu-lateral: 90px;
+    --margin-lateral: 4rem;
+}
+
+body{
+    display: flex;
+    margin: 0;
+    background: rbg(248,249,250);
+}
+
+form{
+    margin: 0 !important;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.div_tabela{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.principal {
+    width: calc(100% - var(--largura-menu-lateral)) !important;
+    height: calc(100vh - var(--altura-header));
+    margin-top: var(--altura-header);
+    margin-left: var(--margin-lateral);
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.formularios{
+    margin-top: 2rem;
+    /* padding-right: var(--margin-lateral);; */
+}
+
+.formularios_modal{
+    margin-top: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.indicadores_carousel{
+    background-color: #A9ACF9 !important;
+    height: 1rem !important;
+    width: 1rem !important;
+    border-radius: 50%;
+}
+
+.carousel-indicators{
+    top: 0!important;
+    justify-content: end!important;
+    margin-right: 0px !important;
+    height: 1.5rem !important;
+
+}
+
+#form_cadastro_urls .form-check{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tituloModal i{
+    font-size: 2.5rem;
+    color: #7f83f5;
+}
+
+.tituloModal{
+    align-items: center;
+}
+
+/* .tituloModal h1{
+    font-size: 3.5rem;
+} */
+
+/* --------------------- header -------------------- */
+.header-top nav{
+    width: calc(100% - var(--largura-menu-lateral))!important;
+    height: var(--altura-header);
+    left:  var(--largura-menu-lateral);
+}
+
+.barra-separacao{
+    width: 70%;
+    border-bottom: 1px solid black;
+    margin: 0 auto;
+}
+
+.conjunto__header__um{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 50rem;
+    box-sizing: border-box;
+}
+
+.conjunto__header__um a{
+    font-size: 1.5rem;
+}
+
+.btn-sair{
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    border: none!important;
+}
+
+.btn-sair i{
+    font-size: 1.2rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    /* box-shadow: inset 0 0 2px grey;  */
+    border-radius: 5px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #7f83f5; 
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7f83f5; 
+  }

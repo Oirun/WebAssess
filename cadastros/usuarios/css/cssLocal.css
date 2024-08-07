@@ -1,0 +1,33 @@
+.formularios_consulta, .div_tabela{
+    margin: 0 2rem 0 2rem;
+}
+
+.formularios{
+    padding-left: 0px!important;
+}
+
+.principal{
+    display: grid;
+    grid-template-columns: 65% 30%;
+    padding-right: 80px;
+    gap: 2.8rem;
+}
+
+.lista{
+    margin-top: 2rem;
+    background: #A9ACF9;
+    padding: 1.5rem;
+    height: 75vh;
+    border-radius: 15px;
+    overflow-y: auto;
+}
+
+.lista .list-group li{
+    background: transparent !important;
+}
+
+.div_tabela{
+    margin-top: 2rem;
+    padding: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
