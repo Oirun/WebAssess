@@ -2,6 +2,9 @@ function urlsFront(pasta) {
     let urls_base = "http://localhost/WebAssess/"
 
     switch (pasta) {
+        case "public":
+            let url_public = urls_base + "public/"
+            return url_public
         case "global":
             let url_global = urls_base + "global/"
             return url_global
@@ -16,9 +19,37 @@ function urlsFront(pasta) {
     }
 }
 
+function urlsBack(pasta) {
+    // http://localhost:8080/tcc/api/v1/users
+    let urls_base = "http://localhost:8080/tcc/api/v1/"
+
+    switch (pasta) {
+        case "users":
+            let url_users = urls_base + "users/"
+            return urluserspublic
+        case "escolaridade":
+            let url_escolaridade = urls_base + "escolaridade/"
+            return url_escolaridade
+        case "cadastros":
+            let url_profissao = urls_base + "profissao/"
+            return url_profissao
+        default:
+            break;
+    }
+}
+
+function url_inicio() {
+    const url_base = urlsFront("public")
+    const url_inicio = url_base + "pages/principal.html"
+    console.log(url_inicio)
+    window.location.href = url_inicio
+    return url_inicio
+}
+
 function url_cadastro_usuarios() {
     const url_base = urlsFront("cadastros")
     const url_cadastro_usuarios = url_base+"usuarios/pages/index.html"
+    console.log(url_cadastro_usuarios)
     window.location.href = url_cadastro_usuarios
     return url_cadastro_usuarios
 }

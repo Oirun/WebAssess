@@ -1,6 +1,35 @@
 function fazerLogin() {
-    
-    window.location.replace("pages/principal.html")
+    let user = document.getElementById("username").value
+    let pass = document.getElementById("senha_user").value
 
+    let json = {
+        "login": user,
+        "senha": pass
+    }
 
+    console.log(JSON.stringify(json))
+
+    fetch("http://localhost:8080/tcc/api/v1/users/auth", {
+        method: "POST",
+        header: { "Content-Type": "application/json" },
+        body: JSON.stringify(json)
+    })
+        .then(function (responseData) {
+            return responseData.json();
+        })
+        .then(function (jsonData) {
+            console.log(jsonData)
+            if (jsonData.error) {
+
+            } else {
+                sessionStorage.setItem("token", jsonData.token)
+                sessionStorage.setItem("user", jsonData.nome_usuario)
+                sessionStorage.setItem("user_t", jsonData.permissao)
+
+                window.location.replace("http://localhost/WebAssess/public/pages/principal.html")
+            }
+        })
+        .catch(function (e) {
+            console.log(e)
+        })
 }

@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-        
+
 
 
         <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
@@ -70,6 +70,13 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-success" type="submit">Search</button>
                     </form>
+
+                    <!-- Questionários -->
+                    <li class="nav-item">
+                        <a class="nav-link active" onclick="url_inicio()" aria-current="page">
+                            <i class="bi bi-house"></i>Inicio</a>
+                    </li>
+
                     <!-- CADASTROS -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -78,15 +85,15 @@
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" onclick="url_cadastro_usuarios()">Usuários</a></li>
                             <li><a class="dropdown-item" data-bs-toggle="modal"
-                                data-bs-target="#modal_gerenciar_urls">Urls</a></li>
+                                    data-bs-target="#modal_gerenciar_urls">Urls</a></li>
                             <li><a class="dropdown-item" onclick="url_cadastro_parametros()">Profissões</a></li>
                         </ul>
                     </li>
 
                     <!-- Questionários -->
                     <li class="nav-item">
-                        <a class="nav-link active"onclick="url_questionario()" aria-current="page"><i
-                                class="bi bi-journal-text" ></i>Questionário</a>
+                        <a class="nav-link active" onclick="url_questionario()" aria-current="page"><i
+                                class="bi bi-journal-text"></i>Questionário</a>
                     </li>
 
                     <!-- CHECK LIST -->
@@ -120,7 +127,7 @@
             </div>
             <div class="offcanvas-footer">
                 <div>
-                    <img src="../../global/util/usuarios/anya.jpg" class="rounded-circle" alt=""> 
+                    <img src="../../global/util/usuarios/anya.jpg" class="rounded-circle" alt="">
                 </div>
                 <!-- -->
                 <a class="nav-link" href="#">Manuela Macena</a>
@@ -131,7 +138,7 @@
     <div id="div_gerenciar_urls">
         <script>
             $(document).ready(function () {
-                $("#div_gerenciar_urls").load(urlsFront("cadastros")+"urls/components/modal/modalUrls.html");
+                $("#div_gerenciar_urls").load(urlsFront("cadastros") + "urls/components/modal/modalUrls.html");
             });
         </script>
     </div>

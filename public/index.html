@@ -19,7 +19,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="../global/js/urls/"></script>
+    <script src="../global/js/urls/urls.js"></script>
     <style>
         .headerPrincipal {
             margin-bottom: 15rem !important;
@@ -57,7 +57,11 @@
 
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column navContainerPrincipal">
         <div id="headerIndex">
-            <script> $(function () { $("#headerIndex").load(urlsFront("public")+"components/header/headerIndex.html") });</script>
+            <script>
+                $(document).ready(function () {
+                    $("#headerIndex").load(urlsFront("public")+"components/header/headerIndex.html");
+                });
+            </script>
         </div>
 
         <main class="px-3">
@@ -85,10 +89,9 @@
         <script> $(function () { $("#modalLogin").load("components/modal/login.html") });</script>
     </div>
 
-
-    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+    <!-- <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
 
     <script src="../../WebAssess/public/js/requisicoes/login.js"></script>
 </body>
