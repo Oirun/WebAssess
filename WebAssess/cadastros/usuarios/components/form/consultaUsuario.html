@@ -1,0 +1,58 @@
+<h4>Consulta de Usuários</h4>
+
+<form class="row g-3" id="form_consulta_usuarios">
+    <div class="col-md-7">
+        <label for="c_nome_usuario" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="c_nome_usuario" placeholder="Ex: Manuela">
+    </div>
+    <div class="col-md-5">
+        <label for="c_nome_user" class="form-label">Nome de usuário</label>
+        <input type="text" class="form-control" id="c_nome_user" placeholder="Ex: manu.macena">
+    </div>
+
+    <div class="col-md-4">
+        <label for="c_estado_usuario" class="form-label">Estado</label>
+        <select id="c_estado_usuario" class="form-select">
+            <option selected>Todos</option>
+            <option>AC</option>
+            <option>AL</option>
+            <option>AP</option>
+            <option>AM</option>
+            <option>BA</option>
+            <option>CE</option>
+            <option>DF</option>
+            <option>ES</option>
+            <option>GO</option>
+            <option>MA</option>
+            <option>MT</option>
+            <option>MS</option>
+            <option>MG</option>
+            <option>PA</option>
+            <option>PB</option>
+            <option>PR</option>
+            <option>PE</option>
+            <option>PI</option>
+            <option>RJ</option>
+            <option>RN</option>
+            <option>RS</option>
+            <option>RO</option>
+            <option>RR</option>
+            <option>SC</option>
+            <option>SP</option>
+            <option>SE</option>
+            <option>TO</option>
+        </select>
+    </div>
+
+    <div class="col-md-4">
+        <label for="c_cidade_usuario" class="form-label">Cidade</label>
+        <select id="c_cidade_usuario" class="form-select">
+            <option selected></option>
+        </select>
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary me-md-2" type="button">Limpar</button>
+        <button class="btn btn-primary" id="btnConsultarUsuario" type="button">Consultar</button>
+    </div>
+</form>

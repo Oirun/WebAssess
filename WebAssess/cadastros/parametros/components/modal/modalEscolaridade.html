@@ -1,0 +1,61 @@
+<div class="modal fade" id="modal_escolaridade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex gap-2 tituloModal">
+                    <i class="bi bi-pencil"></i>
+                    <h3 class="modal-title" id="exampleModalLabel">Gerenciar Escolaridade</h3>
+                  </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div id="carousel_escolaridade" class="carousel slide">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carousel_escolaridade" data-bs-slide-to="0"
+                        class="indicadores_carousel active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carousel_escolaridade" data-bs-slide-to="1" aria-label="Slide 2"
+                        class="indicadores_carousel"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <!-- CONSULTA DE ESCOLARIDADE -->
+                        <div class="formularios_modal mb-3" id="div_consulta_escolaridade">
+                            <script>
+                              $(document).ready(function () {
+                                $("#div_consulta_escolaridade").load(urlsFront("cadastros") + "parametros/components/form/consultaEscolaridade.html");
+                              });
+                            </script>
+                          </div>
+          
+                        <div class="div_tabela" id="div_table_consulta_escolaridade">
+                          <script>
+                            $(document).ready(function () {
+                              $("#div_table_consulta_escolaridade").load(urlsFront("cadastros") + "parametros/components/table/tableEscolaridade.html");
+                            });
+                          </script>
+                        </div>
+                      </div>
+          
+                      <div class="carousel-item">
+                        <div class="formularios_modal" id="div_cadastro_escolaridade">
+                            <script>
+                              $(document).ready(function () {
+                                $("#div_cadastro_escolaridade").load(urlsFront("cadastros") + "parametros/components/form/cadastroEscolaridade.html");
+                              });
+                            </script>
+                          </div>
+
+
+                      </div>
+          
+                    </div>
+                  </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+.principal{
+    padding-right: 4rem;
+}
+
+.cards_cadastros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cards_cadastros .card{
+    background: #A9ACF9;
+    color: #ffffff;
+}
+
+.cards_cadastros .card:hover img{
+    width: 13rem;
+    height: 13rem;
+    transition: 0.4s;
+}
+
+.cards_cadastros img{
+    width: 10rem;
+    height: 10rem;
+    margin: 0 auto;
+    
+}
+
+.cards_cadastros .card-body{
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,31 @@
+<h4>Cadastro de Escolaridade</h4>
+
+<form class="row g-3" id="form_cadastro_escolaridades">
+
+    <div class="col-md-12">
+        <label for="nome_escolaridade" class="form-label">Escolaridade</label>
+        <input type="text" class="form-control" id="nome_escolaridade">
+    </div>
+    
+    <!-- <div class="col-md-6"></div> -->
+
+    <div class="form-check col-md-2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="escolaridade_ativo" checked>
+        <label class="form-check-label" for="escolaridade_ativo">
+            Ativo
+        </label>
+    </div>
+
+    <div class="form-check col-md-2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="escolaridade_inativo" >
+        <label class="form-check-label" for="escolaridade_inativo">
+            Inativo
+        </label>
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary me-md-2" type="button"><i class="bi bi-trash"></i></button>
+        <button class="btn btn-primary me-md-2" type="button">Salvar</button>
+        <button class="btn btn-dark" type="button">Cancelar</button>
+    </div>
+</form>

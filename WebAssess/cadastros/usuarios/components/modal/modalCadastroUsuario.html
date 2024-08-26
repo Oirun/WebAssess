@@ -1,0 +1,33 @@
+<div class="modal fade" id="modal_cadastro_usuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="d-flex gap-2 tituloModal">
+            <i class="bi bi-search"></i>
+            <h3 class="modal-title" id="exampleModalLabel">Consulta</h3>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="formularios_consulta" id="form_consulta_usuario">
+                <script>
+                    $(document).ready(function () {
+                        $("#form_consulta_usuario").load(urlsFront("cadastros")+"usuarios/components/form/consultaUsuario.html");
+                    });
+                </script>
+            </div>
+    
+            <div class="div_tabela" id="table_consulta_usuario">
+                <!-- <script>
+                    $(document).ready(function () {
+                        $("#table_consulta_usuario").load(urlsFront("cadastros")+"usuarios/components/table/tableUsuario.html");
+                    });
+                </script> -->
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
