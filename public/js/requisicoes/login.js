@@ -9,7 +9,7 @@ function fazerLogin() {
 
     console.log(JSON.stringify(json))
 
-    fetch("http://localhost:8080/tcc/api/v1/users/auth", {
+    fetch(urlsBack("users")+"auth", {
         method: "POST",
         header: { "Content-Type": "application/json" },
         body: JSON.stringify(json)
@@ -26,7 +26,7 @@ function fazerLogin() {
                 sessionStorage.setItem("user", jsonData.nome_usuario)
                 sessionStorage.setItem("user_t", jsonData.permissao)
 
-                window.location.replace("http://localhost/WebAssess/public/pages/principal.html")
+                window.location.replace(urlsFront("public")+"pages/principal.html")
             }
         })
         .catch(function (e) {

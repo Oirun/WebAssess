@@ -24,6 +24,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <script src="../../../global/js/urls/urls.js"></script>
     <script defer src="../js/index.js"></script>
@@ -44,35 +46,14 @@
 
     <main class="principal">
         
-        <div class="formularios" id="div_cadastro_usuario">
-            <script>
-                $(document).ready(function () {
-                    $("#div_cadastro_usuario").load(urlsFront("cadastros")+"usuarios/components/form/cadastroUsuario.html");
-                });
-            </script>
+        <div class="formularios mb-5" id="div_cadastro_usuario">
         </div>
         
         <div class="lista" id="div_lista_usuario">
             <h5>Lista de Usuários</h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
-                <li class="list-group-item">And a fifth one</li>
-                <li class="list-group-item">And a fifth one</li>
-                <li class="list-group-item">And a fifth one</li>
-                <li class="list-group-item">And a fifth one</li>
-                <li class="list-group-item">And a fifth one</li>
-                <li class="list-group-item">And a fifth one</li>
-                <li class="list-group-item">And a fifth one</li>
-                <li class="list-group-item">And a fifth one</li>
-                <li class="list-group-item">And a fifth one</li>
-                <li class="list-group-item">And a fifth one</li>
-                <li class="list-group-item">And a fifth one</li>
-                <li class="list-group-item">And a fifth one</li>
-              </ul>
+            <ul class="list-group list-group-flush" id="ul_usuarios">
+               
+            </ul>
         </div>
         
     </main>
@@ -85,11 +66,9 @@
         </script>
     </div>
 
-    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+    <!-- <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-
-    <script src="../../WebAssess/public/js/requisicoes/login.js"></script>
+        crossorigin="anonymous"></script> -->
 
     <div id="imports"></div>
 </body>

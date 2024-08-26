@@ -1,5 +1,5 @@
 function urlsFront(pasta) {
-    let urls_base = "http://localhost/WebAssess/"
+    let urls_base = "http://127.0.0.1:5500/"
 
     switch (pasta) {
         case "public":
@@ -21,18 +21,12 @@ function urlsFront(pasta) {
 
 function urlsBack(pasta) {
     // http://localhost:8080/tcc/api/v1/users
-    let urls_base = "http://localhost:8080/tcc/api/v1/"
+    let urls_base = "http://localhost/tcc/api/v1/"
 
     switch (pasta) {
         case "users":
             let url_users = urls_base + "users/"
-            return urluserspublic
-        case "escolaridade":
-            let url_escolaridade = urls_base + "escolaridade/"
-            return url_escolaridade
-        case "cadastros":
-            let url_profissao = urls_base + "profissao/"
-            return url_profissao
+            return url_users
         default:
             break;
     }

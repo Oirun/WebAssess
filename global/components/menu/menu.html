@@ -127,7 +127,7 @@
             </div>
             <div class="offcanvas-footer">
                 <div>
-                    <img src="../../global/util/usuarios/anya.jpg" class="rounded-circle" alt="">
+                    <img id="img_user" class="rounded-circle" alt="">
                 </div>
                 <!-- -->
                 <a class="nav-link" href="#">Manuela Macena</a>
@@ -143,3 +143,7 @@
         </script>
     </div>
 </nav>
+
+<script>
+    document.getElementById("img_user").src = urlsFront("global")+"util/usuarios/anya.jpg"
+</script>
