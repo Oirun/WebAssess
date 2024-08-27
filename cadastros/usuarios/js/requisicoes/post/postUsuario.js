@@ -1,7 +1,5 @@
 function validateUsuario(e) {
     e.preventDefault()
-
-
 }
 
 async function postUsuarios() {

@@ -72,44 +72,44 @@
                     </form>
 
                     <!-- Questionários -->
-                    <li class="nav-item">
+                    <li class="nav-item" id="li_inicio">
                         <a class="nav-link active" onclick="url_inicio()" aria-current="page">
                             <i class="bi bi-house"></i>Inicio</a>
                     </li>
 
                     <!-- CADASTROS -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" id="li_cadastro">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false"><i class="bi bi-person-plus"></i>Cadastros
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" onclick="url_cadastro_usuarios()">Usuários</a></li>
-                            <li><a class="dropdown-item" data-bs-toggle="modal"
+                            <li id="li_cadastro_usuario"><a class="dropdown-item" onclick="url_cadastro_usuarios()" >Usuários</a></li>
+                            <li id="li_cadastro_url"><a class="dropdown-item" data-bs-toggle="modal"
                                     data-bs-target="#modal_gerenciar_urls">Urls</a></li>
-                            <li><a class="dropdown-item" onclick="url_cadastro_parametros()">Profissões</a></li>
+                            <li id="li_cadastro_profissoes"><a class="dropdown-item" onclick="url_cadastro_parametros()">Profissões</a></li>
                         </ul>
                     </li>
 
                     <!-- Questionários -->
-                    <li class="nav-item">
+                    <li class="nav-item" id="li_questionario">
                         <a class="nav-link active" onclick="url_questionario()" aria-current="page"><i
                                 class="bi bi-journal-text"></i>Questionário</a>
                     </li>
 
                     <!-- CHECK LIST -->
-                    <li class="nav-item">
+                    <li class="nav-item" id="li_checklist">
                         <a class="nav-link" href="#"><i class="bi bi-ui-checks"></i>Check-List</a>
                     </li>
 
                     <!-- RELATÓRIOS -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" id="li_relatorios">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false"><i class="bi bi-clipboard"></i>Relatórios
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="#">Questionário e Check List</a></li>
-                            <li><a class="dropdown-item" href="#">Avaliadores e Coordenadores</a></li>
-                            <li><a class="dropdown-item" href="#">Urls</a></li>
+                            <li id="li_relatorio_questionario_checlist"><a class="dropdown-item" href="#">Questionário e Check List</a></li>
+                            <li id="li_relatorio_avaliadores"><a class="dropdown-item" href="#">Avaliadores e Coordenadores</a></li>
+                            <li id="li_relatorio_urls"><a class="dropdown-item" href="#">Urls</a></li>
                         </ul>
                     </li>
 

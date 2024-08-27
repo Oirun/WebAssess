@@ -21,20 +21,12 @@
     /* height: 25rem; */
 }
 
-.form{
-    width: 55%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #fff;
-    padding: 3rem;
-}
-
 .form-header{
-    margin-bottom: 3rem;
+    margin-top: 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
+    align-items: center;
+    gap: .5rem;
 }
 
 .login-button{
@@ -85,34 +77,30 @@
     /* margin-right: 5px; */
 }
 
-.input-box input{
-    margin: 0.6rem 0;
-    padding: 0.4rem 0.8rem;
-    border: none;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: rgba(33, 37, 41, 5);
-    margin-right: 15px;
-    color: #fff;
+input{
+    border: 1px solid #656399 !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+    background-color: rgba(33, 37, 41, 5)!important;
+    color: #fff!important;
 }
 
-.input-box input:-webkit-autofill,
-.input-box input:-webkit-autofill:active{
+input:-webkit-autofill,
+input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 300px rgba(33, 37, 41, 5) inset !important;
     -webkit-text-fill-color: #fff !important;
 }
 
-.input-box input:hover{
+input:hover{
     background-color: rgba(33, 37, 41, .5);
     outline: 2px solid #6c63ff;
 }
 
-.input-box input:focus-visible{
+input:focus-visible{
     background-color: rgba(33, 37, 41, 1);
     outline: 2px solid #6c63ff;
 }
 
-.input-box input::-webkit-input-placeholder {
+input::-webkit-input-placeholder {
     color: #fff;
  }
 
@@ -205,4 +193,46 @@
 
 .tagAPointer{
     cursor: pointer;
+}
+
+/* senha */
+.div-senha{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.lista-senha{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    background-color: rgb(51, 55, 58);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+    border-radius: 16px;
+    width: 100%;
+    padding: 1rem;
+    font-size: .9rem;
+    font-weight: 600;
+    color: #c5c4d1;
+}
+
+.lista-senha i{
+    font-size: 1.1rem;
+}
+
+.errado{
+    color: rgb(180, 47, 47);
+}
+
+.certo{
+    color: rgb(4, 177, 76);
+}
+
+/* FORM */
+form label{
+    display: flex;
+    justify-content: start;
 }

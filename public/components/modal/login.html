@@ -1,4 +1,4 @@
-<div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="login-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <!-- <div class="modal-header">
@@ -12,26 +12,22 @@
                     <img src="../../../../global/util/image/undraw_experience_design_re_dmqq.svg" alt="IMG LOGIN">
                 </div>
                 <div class="form bg-dark">
-                    <form class="row g-3">
-                        <div class="form-header">
-                            <div class="title">
-                                <h1>Acessar o sistema</h1>
-                            </div>
+                    <div class="form-header px-5">
+                        <div class="title">
+                            <h1>Acessar o sistema</h1>
+                        </div>
+                    </div>
+
+                    <form class="row g-3 p-5 needs-validation" id="form_login" novalidate>
+                        <div class="col-md-12 col-lg-6">
+                            <label for="username" class="form-label">Usuário</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <label for="senha_user" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="senha_user" required>
                         </div>
 
-                        <div class="input-group col-6">
-
-                            <div class="input-box col-12" >
-                                <label for="username">Usuário</label>
-                                <input type="text" id="username" placeholder="Usuário do login">
-                            </div>
-
-                            <div class="input-box col-12">
-                                <label for="senha_user">Senha</label>
-                                <input type="password" id="senha_user" placeholder="Senha">
-                            </div>
-
-                        </div>
                         <div class="continue-button">
                             <button type="button" onclick="fazerLogin()"><a >Entrar</a></button>
                         </div>

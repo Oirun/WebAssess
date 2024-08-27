@@ -21,7 +21,7 @@ function urlsFront(pasta) {
 
 function urlsBack(pasta) {
     // http://localhost:8080/tcc/api/v1/users
-    let urls_base = "http://localhost/tcc/api/v1/"
+    let urls_base = "http://localhost:8080/tcc/api/v1/"
 
     switch (pasta) {
         case "users":

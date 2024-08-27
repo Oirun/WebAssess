@@ -76,7 +76,7 @@
 }
 
 /* --------------------- notificacoes__usuarios -------------------- */
-.notificacoes__usuarios {
+ .notificacoes__usuarios {
     width: 50%;
 }
 
@@ -85,11 +85,11 @@
     overflow: auto;
 }
 
-.div-lista ul{
+.div-lista-notificacoes ul{
     border-radius: 0px;
 }
 
-.div-lista ul li{
+.div-lista-notificacoes ul li{
     border: none;
     border-bottom: 1px solid grey;
     border-radius: none;
@@ -98,7 +98,7 @@
     align-items: center;
 }
 
-.div-lista ul li .btn-group{
+.div-lista-notificacoes ul li .btn-group{
     display: flex;
     justify-content: end;
     
@@ -108,4 +108,14 @@
     border: 1px solid rgb(180, 180, 180)!important;
     width: 1.2rem!important;
     height: 1.2rem!important;
+}
+
+@media screen and (max-width : 1700px){
+    .notificacoes__usuarios {
+        width: 60%;
+    }
+
+    .notificacoes__usuarios__lista{
+        height: 40vh;
+    }
 }
