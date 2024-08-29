@@ -1,13 +1,24 @@
+@import url("reset.css");
+@import url("menu.css");
+/* Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); 
+
 :root{
-    --altura-header: 70px;
+    --altura-header: 60px;
     --largura-menu-lateral: 90px;
     --margin-lateral: 4rem;
+    --font-family : "Inter", sans-serif;
+    --background-primary-light : rgb(248,249,250);
+    --background-secundary : #9d98ff;
+    --color-text: #171D1F;
+    --branco: #FFFFFF;
 }
 
 body{
     display: flex;
     margin: 0;
-    background: rbg(248,249,250);
+    background: var(--background-primary-light);
+    font-family: var(--font-family);
 }
 
 form{
@@ -25,16 +36,12 @@ form{
 
 .principal {
     width: calc(100% - var(--largura-menu-lateral)) !important;
-    height: calc(100vh - var(--altura-header));
-    margin-top: var(--altura-header);
-    margin-left: var(--margin-lateral);
     box-sizing: border-box;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .formularios{
     margin-top: 2rem;
-    /* padding-right: var(--margin-lateral);; */
 }
 
 .formularios_modal{
@@ -74,47 +81,65 @@ form{
     align-items: center;
 }
 
-/* .tituloModal h1{
-    font-size: 3.5rem;
-} */
-
 /* --------------------- header -------------------- */
 .header-top nav{
-    width: calc(100% - var(--largura-menu-lateral))!important;
+    width: 100%;
     height: var(--altura-header);
-    left:  var(--largura-menu-lateral);
+    left: var(--largura-menu-lateral);
+}
+
+.container-header-top{
+    padding: 0 1rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.conjunto__header__dois{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20% 0 15%;
+}
+
+.conjunto__header__dois a{
+    font-size: 1.5rem;
 }
 
 .barra-separacao{
-    width: 70%;
+    width: 80%;
     border-bottom: 1px solid black;
     margin: 0 auto;
 }
 
-.conjunto__header__um{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    gap: 50rem;
-    box-sizing: border-box;
-}
-
-.conjunto__header__um a{
-    font-size: 1.5rem;
-}
-
 .btn-sair{
-    display: flex!important;
-    align-items: center;
-    justify-content: center;
-    gap: 0.3rem;
-    border: none!important;
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-text);
+    cursor: pointer;
 }
 
-.btn-sair i{
-    font-size: 1.2rem;
+.button-menu{
+    background-color: transparent;
+    padding: .1rem .8rem;
+    border-radius: 6px;
+    border: 1px solid var(--color-text);
+    font-size: 24px;
+    transition: .4s all ease;
+    cursor: pointer;
 }
+
+.button-menu:hover{
+    color: var(--branco);
+    background-color: var(--color-text);
+    transition: .4s all ease;
+}
+
+/* ------------------ */
 
 /* width */
 ::-webkit-scrollbar {
