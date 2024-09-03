@@ -124,3 +124,15 @@
         height: 40vh;
     }
 }
+
+@media screen and (max-width : 1200px){
+    .boas__vindas {
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        gap: 3rem;
+        box-sizing: border-box;
+        padding: 3% 5% 0 5%;
+    }
+}
+
