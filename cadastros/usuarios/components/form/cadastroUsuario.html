@@ -1,6 +1,11 @@
-<h2>Cadastro de Usuários</h2>
+<h2 id="modulo_titulo_cadastro_usuario">Cadastro de Usuários</h2>
 
 <form class="row g-3 needs-validation" id="form_cadastro_usuarios" novalidate>
+
+    <div class="col-md-6">
+        <label for="codigo_usuario" class="form-label">Código</label>
+        <input type="text" class="form-control" id="codigo_usuario" required disabled>
+    </div>
 
     <div class="col-md-6">
         <label for="nome_usuario" class="form-label">Nome *</label>
@@ -154,10 +159,10 @@
 
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2">
-        <button class="btn btn-warning me-md-2" type="button" data-bs-toggle="modal"
+        <button class="btn btn-dark me-md-2" type="button" data-bs-toggle="modal"
             data-bs-target="#modal_cadastro_usuario">Consultar</button>
         <button class="btn btn-primary me-md-2" type="button"><i class="bi bi-trash"></i></button>
         <button class="btn btn-primary me-md-2" id="btnCadastrar" type="submit">Cadastrar</button>
-        <button class="btn btn-outline-danger" type="button">Cancelar</button>
+        <button class="btn btn-outline-dark" onclick="cancelar()" type="button">Cancelar</button>
     </div>
 </form>

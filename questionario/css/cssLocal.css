@@ -2,15 +2,15 @@
     display: flex;
     justify-content: space-evenly;
     gap: 5%;
-    padding: 3%;
+    padding: 2% 3%;
 }
 
 .formulario{
     width: 60%;
-    padding: 1rem 1rem;
+    padding: 0 1rem;
     /* background-color: #dce7f8; */
     /* color: #6c6c8f; */
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
 
 .lista{
@@ -54,4 +54,25 @@
 
 #listar-questionarios-cadastrados label{
     border: 1px solid var(--background-secundary);
+}
+
+.informacoes_questionario_das_perguntas{
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--background-secundary);
+    border-color: var(--background-secundary);
+    border-left: 5px solid #a8a8fc;
+    color: #57577a;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.informacoes_questionario_das_perguntas i {
+    font-size: 1.5rem !important;
+}
+
+#lista_questionario{
+    height: 100vh;
 }

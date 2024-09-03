@@ -30,8 +30,6 @@ function rowTable(usuario) {
 
     btnEditar.appendChild(ico)
     divAcao.appendChild(btnEditar)
-
-    console.log(usuario.id_usuario)
     
     tdCodigo.innerHTML = usuario.id_usuario
     tdNome.innerHTML = usuario.nome_usuario
@@ -41,6 +39,10 @@ function rowTable(usuario) {
         tdPermissao.innerHTML = "Ativo"
     } else {
         tdPermissao.innerHTML = "Inativo"
+    }
+
+    btnEditar.onclick = function () {
+        preencherCamposParaEdicaoDeUsuario(usuario)
     }
 
     row.appendChild(tdCodigo)

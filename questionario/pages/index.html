@@ -20,7 +20,6 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <link rel="stylesheet" href="../../global/css/menu.css">
@@ -49,11 +48,24 @@
       <section id="formulario_questionario_cadastro" class="formulario"></section>
       <div class="separador"></div>
       <section id="lista_questionario" class="lista">
+        <h4 id="titulo_lista_questionario">Lista de Questionário</h4>
         <div class="list-group list-group-checkable d-grid gap-2 border-0" id="listar-questionarios-cadastrados">
+          <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios"
+            id="listGroupCheckableRadios1" value="" checked="">
+          <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios1">
+            Sem resultado
+            <span class="d-block small opacity-50">Nenhum questionário cadastrado.</span>
+            <div class="d-flex justify-content-md-end">
+              <button class="btn btn-outline-purple me-md-2" type="button" data-bs-toggle="modal"
+              data-bs-target="#modal_perguntas_questionario"><i class="bi bi-search"></i></button>
+            </div>
+          </label>
         </div>
       </section>
     </section>
   </main>
+
+  <div id="div-modal-perguntas-questionario"></div>
 
   <div id="imports"></div>
 </body>

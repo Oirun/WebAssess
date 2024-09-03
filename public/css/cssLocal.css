@@ -159,6 +159,49 @@ input::-webkit-input-placeholder {
     font-weight: 500;
     color: #fff;
 }
+/* ------------ section principal */
+.navContainerPrincipal{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navContainerPrincipal main{
+    height: 50%;
+}
+
+/* ------------ header pricipal ------------ */
+#headerIndex{
+ width: 100%;
+}
+
+.headerPrincipal{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.headerPrincipal .img-logo{
+    width: 10%;
+}
+
+.navContainerPrincipal nav a {
+    text-decoration: none;
+    color: #fff;
+} 
+
+.navContainerPrincipal nav a:hover {
+    color: #9c97fff1;
+} 
+
+.buttonsLogin a {
+    text-decoration: none;
+    color: #fff;
+}
 
 @media screen and (max-width: 1330px) {
     .form-image{
