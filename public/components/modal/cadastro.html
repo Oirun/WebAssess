@@ -38,12 +38,12 @@
 
                             <div class="col-md-12 col-lg-6">
                                 <label for="senha" class="form-label">Senha</label>
-                                <input type="password" class="form-control" id="senha" oninput="validandoSenha(this)" required>
+                                <input type="password" class="form-control" id="senha" oninput="validandoSenha(this, 'confirmarSenha', 'form_proprio_usuario')" required>
                             </div>
 
                             <div class="col-md-12 col-lg-6">
                                 <label for="confirmarSenha" class="form-label">Confirmar Senha</label>
-                                <input type="password" class="form-control" id="confirmarSenha" onblur="validandoSenhaConfirmar(this)" required>
+                                <input type="password" class="form-control" id="confirmarSenha" onblur="validandoSenhaConfirmar(this, null, 'senha', 'form_proprio_usuario')" required>
                                 <div class="invalid-feedback senhaInvalida">
                                     As senhas não estão iguais.
                                 </div>

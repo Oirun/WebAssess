@@ -8,8 +8,10 @@
     --largura-menu-lateral: 90px;
     --margin-lateral: 4rem;
     --font-family : "Inter", sans-serif;
-    --background-primary-light : rgb(248,249,250);
-    --background-secundary : #9d98ff;
+    --background-primary-light : #f4efeb;
+    --background-secundary : #b8b8d2;
+    --detalhes-roxo : #9d98ff;
+    --secondary-color-text : #090c38;
     --color-text: #171D1F;
     --branco: #FFFFFF;
 }
@@ -36,6 +38,7 @@ form{
 
 .principal {
     width: calc(100% - var(--largura-menu-lateral)) !important;
+    height: 100vh;
     box-sizing: border-box;
     overflow-y: auto;
 }
@@ -162,3 +165,53 @@ form{
   ::-webkit-scrollbar-thumb:hover {
     background: #7f83f5; 
   }
+
+  /* ---------- SENHA ----------- */
+.div-senha{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.lista-senha{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    background-color: rgb(51, 55, 58);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+    border-radius: 16px;
+    width: 100%;
+    padding: 1rem;
+    font-size: .9rem;
+    font-weight: 600;
+    color: #c5c4d1;
+}
+
+.lista-senha i{
+    font-size: 1.1rem;
+}
+
+.errado{
+    color: rgb(180, 47, 47);
+}
+
+.certo{
+    color: rgb(4, 177, 76);
+}
+
+/* ---------- form ---------- */
+
+.form-control:disabled {
+    background-color: #d2d2e6;
+    opacity: 1;
+}
+
+/* ------------- CHECKBOX ------------ */
+
+.form-check-input:checked {
+    background-color: var(--detalhes-roxo);
+    border-color: var(--detalhes-roxo);
+}

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .formularios_consulta, .div_tabela{
     margin: 0 2rem 0 2rem;
 }
@@ -6,20 +7,44 @@
     padding-left: 0px!important;
 }
 
-.principal{
-    display: grid;
-    grid-template-columns: 65% 30%;
-    padding-right: 80px;
-    gap: 2.8rem;
+.formulario-cadastro{
+    width: 70%;
+}
+
+.index_cadastro_usuarios{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2%;
+    padding: 2% 5%;
+}
+
+.index_cadastro_usuarios .lista{
+    width: 30%;
 }
 
 .lista{
     margin-top: 2rem;
-    background: #A9ACF9;
+    background: #bfc1fd;
     padding: 1.5rem;
     height: 75vh;
-    border-radius: 15px;
+    border-radius: 10px;
+    border-left: 4px solid var(--background-secundary);
     overflow-y: auto;
+}
+
+.lista h5{
+    color: #6c6c8f;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.lista li{
+    color: #6c6c8f;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 .lista .list-group li{
@@ -30,4 +55,18 @@
     margin-top: 2rem;
     padding: 1.5rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.container_radios{
+    display: flex;
+    gap: 10rem;
+    align-items: center;
+    padding: 2rem 0;
+    /* justify-content: center; */
+}
+
+.container__radios__inputs{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 4rem;
 }
