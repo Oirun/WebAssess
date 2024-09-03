@@ -5,13 +5,22 @@ function validateForm(event) {
     let form = document.getElementById("form_cadastro_usuarios")
 
     if (form.checkValidity()) {
-        postUsuarios()
+        let metodo 
+        let url 
+        if (document.getElementById("codigo_usuario").value.trim() != "" || document.getElementById("codigo_usuario").value.trim() != null) {
+            metodo = "PATCH"
+            url = urlsBack("users")+"admin/cadastraUser/"+document.getElementById("codigo_usuario").value.trim()
+        } else {
+            metodo = "POST"
+            url = urlsBack("users")+"admin/cadastraUser"
+        }
+        postUsuarios(url, metodo)
     }
 
     form.classList.add('was-validated')
 }
 
-async function postUsuarios() {
+async function postUsuarios(url, metodo) {
 
     if (document.getElementById("senha").value != document.getElementById("confirmarSenha")) {
         Swal.fire({
@@ -62,9 +71,6 @@ async function postUsuarios() {
             "permissao": permissao
         }
 
-        let url = urlsBack("users")+"admin/cadastraUser"
-        let metodo = "POST"
-
         console.log(jsonUsuario)
         const resultado = await request(url, metodo, jsonUsuario)
         console.log(resultado)
@@ -76,6 +82,10 @@ async function postUsuarios() {
                 icon: "error"
             });
         } else {
+            document.getElementById("form_cadastro_usuarios").classList.remove("was-validated")
+            document.getElementById("form_cadastro_usuarios").reset()
+            document.getElementById("div-senha").classList.add("d-none")
+
             Swal.fire({
                 title: "Sucesso!",
                 text: "Usuário cadastrado com sucesso!",

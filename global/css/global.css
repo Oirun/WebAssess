@@ -4,16 +4,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); 
 
 :root{
-    --altura-header: 60px;
+    --altura-header: 75px;
     --largura-menu-lateral: 90px;
     --margin-lateral: 4rem;
     --font-family : "Inter", sans-serif;
-    --background-primary-light : #f4efeb;
-    --background-secundary : #b8b8d2;
+    --background-primary-light : #f0f2f5;
+    --background-secundary : #cdcdfc;
     --detalhes-roxo : #9d98ff;
     --secondary-color-text : #090c38;
     --color-text: #171D1F;
     --branco: #FFFFFF;
+    --bs-btn-bg: #171D1F;
+    --bg-dark-leve : #292929;
+    /* --btn-background-dark :  */
 }
 
 body{
@@ -110,6 +113,10 @@ form{
 
 .conjunto__header__dois a{
     font-size: 1.5rem;
+}
+
+.conjunto__header__dois img{
+    width: 14%;
 }
 
 .barra-separacao{
@@ -215,9 +222,25 @@ form{
     background-color: var(--detalhes-roxo);
     border-color: var(--detalhes-roxo);
 }
+/* --------------- BTNS --------------- */
 
- /* --------------- resolucoes -------------- */
-  @media (max-width: 1024px) {
+.btn-outline-purple{
+    background-color: transparent;
+    border: 1px solid var(--bg-dark-leve);
+}
+.btn-outline-purple:hover{
+    background-color: var(--bg-dark-leve);
+    color: #FFF;
+}
+
+/* --------------- resolucoes -------------- */
+ @media (max-width: 1350px) {
+    .conjunto__header__dois img{
+        width: 20%;
+    }
+  }
+
+ @media (max-width: 1024px) {
     .conjunto__header__dois img{
         width: 25%;
     }

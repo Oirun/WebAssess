@@ -84,8 +84,15 @@ async function enviaQuestionario(url, metodo) {
     if (resultado.error) {
         alert(resultado.error)
     }else{
-        document.getElementById("form_cadastro_questionario").classList.remove("was-validated")
-        document.getElementById("form_cadastro_questionario").reset()
+        if (metodo == "PATCH") {
+              document.getElementById("form_cadastro_questionario").classList.remove("was-validated")
+              document.getElementById("principio").selectedIndex = 0
+              document.getElementById("pergunta").value = ""
+              document.getElementById("justificativa").value = ""
+        }else{
+            document.getElementById("form_cadastro_questionario").reset()
+        }
+      
         getQuestionario()
         Swal.fire({
             title: "Sucesso!",

@@ -21,53 +21,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../global/js/urls/urls.js"></script>
-    <style>
-        .headerPrincipal {
-            margin-bottom: 15rem !important;
-        }
-
-        .navContainerPrincipal {
-            text-align: center;
-            align-items: center;
-        }
-
-        .navContainerPrincipal h3 {
-            margin-right: 35rem;
-        }
-
-        .navContainerPrincipal nav a {
-            text-decoration: none;
-            color: #fff;
-        }
-
-        .buttonsLogin a {
-            text-decoration: none;
-            color: #fff;
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-        }
-    </style>
-
-
 </head>
 
 <body class="d-flex h-100 text-center text-bg-dark">
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column navContainerPrincipal">
+    <div class="cover-container navContainerPrincipal">
         <div id="headerIndex">
             <script>
                 $(document).ready(function () {
-                    $("#headerIndex").load(urlsFront("public")+"components/header/headerIndex.html");
+                    $("#headerIndex").load(urlsFront("public") + "components/header/headerIndex.html");
                 });
             </script>
         </div>
 
-        <main class="px-3">
+        <main>
             <h1>Bem vindo ao WebAssess.</h1>
-            <p class="lead">WebAssess é uma ferramenta de avaliação de usabilidade dos WebsSites.</p>
+            <p class="lead">WebAssess é uma ferramenta de avaliação de usabilidade dos Webs Sites.</p>
             <p class="lead d-grid gap-2 col-4 mx-auto buttonsLogin">
                 <button href="#" class="btn btn-lg btn-light fw-bold border-white bg-white" data-bs-toggle="modal"
                     data-bs-target="#login-modal">Login</button>
@@ -75,11 +44,14 @@
             </p>
         </main>
 
-        <footer class="mt-auto text-white-50">
-            <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
-                    href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
-            <p>Desenvolvimento feito por Manuela Macena e Marcos Henrique.</p>
-        </footer>
+        <div>
+            <footer class="text-white-50">
+                <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
+                        href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+                <p>Desenvolvimento feito por Manuela Macena e Marcos Henrique.</p>
+            </footer>
+        </div>
+
     </div>
 
     <div id="modalCadastro">

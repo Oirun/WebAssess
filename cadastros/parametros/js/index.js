@@ -6,11 +6,11 @@ document.onreadystatechange = function () {
                     $("#div_modal_principio").load(urlsFront("cadastros") + "parametros/components/modal/modalPrincipio.html", function () {
                         $("#div_cards").load(urlsFront("cadastros") + "parametros/components/card/cardsCadastros.html", function () {
                             $("#imports").load(urlsFront("cadastros") + "parametros/pages/imports.html", function () {
-                                verificandoUsuario()
-                                console.log(urlsFront("global") + "util/image/profissao.svg")
                                 document.getElementById("card_profissao").src = urlsFront("global") + "util/image/profissao.svg"
                                 document.getElementById("card_escolaridade").src = urlsFront("global") + "util/image/escolaridade.svg"
                                 document.getElementById("card_principio").src = urlsFront("global") + "util/image/principio.svg"
+                                verificandoUsuario()
+                                console.log(urlsFront("global") + "util/image/profissao.svg")
                             })
                         })
                     })
