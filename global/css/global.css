@@ -215,3 +215,15 @@ form{
     background-color: var(--detalhes-roxo);
     border-color: var(--detalhes-roxo);
 }
+
+ /* --------------- resolucoes -------------- */
+  @media (max-width: 1024px) {
+    .conjunto__header__dois img{
+        width: 25%;
+    }
+  }
+  @media (max-width: 750px) {
+    .conjunto__header__dois img{
+        width: 35%;
+    }
+  }
