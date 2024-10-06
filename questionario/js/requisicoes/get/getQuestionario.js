@@ -1,5 +1,7 @@
 async function getQuestionario() {
-    const resultado = await request(urlsBack("questionario") + "doUsuario", "GET")
+    console.log("OI")
+    const resultado = await request(urlsBack("questionario") + "doUsuario?tipo=Q", "GET")
+    console.log(resultado)
     document.getElementById("listar-questionarios-cadastrados").innerHTML = ""
     if (resultado.error) {
         alert(resultado.error)
@@ -42,7 +44,7 @@ function criandoLi(questionario) {
     span.innerHTML = `${questionario.descricao} <br> ${padrao}`
 
     label.appendChild(span)
-
+    label.appendChild(div)
     input.onclick = function () {
         preencheCamposAPartirDaPesquisa(questionario)
         document.getElementById("adicionarPergunta").classList.add("d-none")
@@ -51,11 +53,10 @@ function criandoLi(questionario) {
     button.onclick = function () {
         document.getElementById("span_id_questionario").innerHTML = questionario.id_questionario
         document.getElementById("span_nome_questionario").innerHTML = questionario.titulo
-        
-        
+        getQuestionarioPerguntas(questionario.id_questionario,input)
     }
 
     document.getElementById("listar-questionarios-cadastrados").appendChild(input)
     document.getElementById("listar-questionarios-cadastrados").appendChild(label)
-    document.getElementById("listar-questionarios-cadastrados").appendChild(div)
+    //document.getElementById("listar-questionarios-cadastrados").appendChild(div)
 }

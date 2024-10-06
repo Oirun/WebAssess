@@ -187,14 +187,14 @@ form{
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    background-color: rgb(51, 55, 58);
+    background-color: var(--background-secundary);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
     border-radius: 16px;
     width: 100%;
     padding: 1rem;
     font-size: .9rem;
     font-weight: 600;
-    color: #c5c4d1;
+    color: var(--color-text);
 }
 
 .lista-senha i{

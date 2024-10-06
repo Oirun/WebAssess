@@ -9,9 +9,10 @@ function preencheCamposAPartirDaPesquisaDasPerguntas(perguntas) {
     //     }
     // }
     
-    document.getElementById("pergunta").value = perguntas.descricao
+    document.getElementById("pergunta").value = perguntas.pergunta
     document.getElementById("pergunta").setAttribute("data-id-pergunta", perguntas.id_pergunta)
-    // document.getElementById("justificativa").disabled = perguntas.justificativa
+    document.getElementById("justificativa").value = perguntas.justificativa
 
     document.getElementById("liberarCamposPerguntas").disabled = false 
+    document.getElementById("liberarCamposPerguntas").checked = true 
 }

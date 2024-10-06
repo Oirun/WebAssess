@@ -5,10 +5,12 @@ function validandoPerguntas(e) {
     if (form.checkValidity()) {
         let metodo 
         let url
-        if (document.getElementById("pergunta").dataset.idPergunta != null || document.getElementById("pergunta").dataset.idPergunta.trim() != "") {
+        console.log(document.getElementById("pergunta").dataset.idPergunta)
+        if (document.getElementById("pergunta").dataset.idPergunta != null && document.getElementById("pergunta").dataset.idPergunta != "") {
            metodo = "PATCH"
-           url = urlsBack("questionario")+"pergunta/"+document.getElementById("pergunta").dataset.idPergunta
+           url = urlsBack("questionario")+"pergunta/"
         }else{
+            
             metodo = "POST"
             url = urlsBack("questionario")+"pergunta" 
         }
@@ -24,15 +26,24 @@ async function adicionarNovaPerguntaAoQuestionarioSelecionado(url, metodo) {
     let principio = combo_principio.options[combo_principio.selectedIndex].dataset.idPrincipio;
     let pergunta = document.getElementById("pergunta").value 
     let justificativa = document.getElementById("justificativa").value
-
-    let json = {
-        "pergunta": pergunta,
-        "justificativa": justificativa,
-        "id_questionario": parseInt(codigo),
-        "principio": parseInt(principio)
-    }	
-
-    const resultado = await request(url, metodo, json)
+    let resultado
+    if (metodo == "PATCH") {
+        let json = {
+            "pergunta": pergunta,
+            "justificativa": justificativa,
+            "id_pergunta": parseInt(document.getElementById("pergunta").dataset.idPergunta),
+            "principio": parseInt(principio)
+        }	
+         resultado = await request(url, metodo, json)
+    } else {
+        let json = {
+            "pergunta": pergunta,
+            "justificativa": justificativa,
+            "id_questionario": parseInt(codigo),
+            "principio": parseInt(principio)
+        }
+         resultado = await request(url, metodo, json)
+    }
 
     if (resultado.error) {
         alert(resultado.error)
@@ -41,11 +52,19 @@ async function adicionarNovaPerguntaAoQuestionarioSelecionado(url, metodo) {
         document.getElementById("pergunta").value = ""
         document.getElementById("justificativa").value = ""
         document.getElementById("form_cadastro_questionario").classList.remove("was-validated")
+        if (metodo == "PATCH") {
+            Swal.fire({
+                title: "Sucesso!",
+                text: "Pergunta alterada!",
+                icon: "success"
+            });
+        } else {
+            Swal.fire({
+                title: "Sucesso!",
+                text: "Pergunta adicionada ao questionário!",
+                icon: "success"
+            });
+        }
 
-        Swal.fire({
-            title: "Sucesso!",
-            text: "Pergunta adicionada ao questionário!",
-            icon: "success"
-        });
     }
 }

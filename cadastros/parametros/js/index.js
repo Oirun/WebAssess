@@ -11,6 +11,13 @@ document.onreadystatechange = function () {
                                 document.getElementById("card_principio").src = urlsFront("global") + "util/image/principio.svg"
                                 verificandoUsuario()
                                 console.log(urlsFront("global") + "util/image/profissao.svg")
+
+                                document.getElementById("btnConsultaProfissao").onclick = function () {
+                                    getParametros("profissao")
+                                }
+                                document.getElementById("btnConsultaEscolaridade").onclick = function () {
+                                    getParametros("escolaridade")
+                                }
                             })
                         })
                     })

@@ -243,3 +243,43 @@ form label{
     display: flex;
     justify-content: start;
 }
+
+/* ---------- SENHA ----------- */
+.div-senha{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.lista-senha{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    background-color: var(--background-secundary);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+    border-radius: 16px;
+    width: 100%;
+    padding: 1rem;
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.lista-senha i{
+    font-size: 1.1rem;
+}
+
+.errado{
+    color: rgb(180, 47, 47);
+}
+
+.certo{
+    color: rgb(4, 177, 76);
+}
+
+.dropdown-menu{
+    width: 370px;
+}

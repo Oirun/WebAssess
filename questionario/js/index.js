@@ -4,9 +4,9 @@ document.onreadystatechange = function () {
             $("#formulario_questionario_cadastro").load(urlsFront("questionario") + "components/form/criarQuestionario.html", function () {
                 $("#div-modal-perguntas-questionario").load(urlsFront("questionario") + "components/modal/modalPerguntas.html", function () {
                     $("#imports").load(urlsFront("questionario") + "pages/imports.html", function () {
-                   
-                        verificandoUsuario()
+                        console.log("index")
                         getQuestionario()
+                        verificandoUsuario()
 
                         document.getElementById("btnCadastrarQuestionario").onclick = function (e) {
                             validateForm(e)

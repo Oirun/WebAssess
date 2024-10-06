@@ -9,7 +9,8 @@ function validateForm(event) {
         let url 
         if (document.getElementById("codigo_usuario").value.trim() != "" || document.getElementById("codigo_usuario").value.trim() != null) {
             metodo = "PATCH"
-            url = urlsBack("users")+"admin/cadastraUser/"+document.getElementById("codigo_usuario").value.trim()
+            url = urlsBack("users")+"update/"+document.getElementById("codigo_usuario").value.trim()
+            console.log(url)
         } else {
             metodo = "POST"
             url = urlsBack("users")+"admin/cadastraUser"
@@ -22,7 +23,7 @@ function validateForm(event) {
 
 async function postUsuarios(url, metodo) {
 
-    if (document.getElementById("senha").value != document.getElementById("confirmarSenha")) {
+    if (document.getElementById("senha").value != document.getElementById("confirmarSenha") && metodo != "PATCH") {
         Swal.fire({
             title: "Erro!",
             text: "A senhas estão diferentes, por favor verifique novamente se as senhas são iguais.",

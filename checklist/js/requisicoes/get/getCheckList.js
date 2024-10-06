@@ -1,5 +1,5 @@
 async function getCheckList() {
-    const resultado = await request(urlsBack("questionario") + "checklist/doUsuario", "GET")
+    const resultado = await request(urlsBack("questionario") + "doUsuario?tipo=C", "GET")
     document.getElementById("listar-checklist-cadastrados").innerHTML = ""
     if (resultado.error) {
         document.getElementById("listar-checklist-cadastrados").innerHTML = `<input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios1" value="" checked="">
