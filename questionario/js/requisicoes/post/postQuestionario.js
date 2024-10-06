@@ -19,7 +19,7 @@ function validateForm(event) {
 }
 
 async function enviaQuestionario(url, metodo) {
-
+    console.log("post")
     let nome_questionario = document.getElementById("nome_questionario").value
     let descricao_questionario = document.getElementById("descricao_questionario").value
 
@@ -45,7 +45,7 @@ async function enviaQuestionario(url, metodo) {
         let pergunta = document.getElementById("pergunta").value
         let justificativa = document.getElementById("justificativa").value
         let combo_principio = document.getElementById("principio")
-        let principio = combo_principio.options[combo_principio.selectedIndex].dataset.idprincipio;
+        let principio = combo_principio.options[combo_principio.selectedIndex].dataset.idPrincipio;
         
         if (pergunta.trim() == null || pergunta.trim() == "") {
             Swal.fire({
@@ -85,18 +85,18 @@ async function enviaQuestionario(url, metodo) {
         alert(resultado.error)
     }else{
         if (metodo == "PATCH") {
-              document.getElementById("form_cadastro_questionario").classList.remove("was-validated")
+              
               document.getElementById("principio").selectedIndex = 0
               document.getElementById("pergunta").value = ""
               document.getElementById("justificativa").value = ""
         }else{
             document.getElementById("form_cadastro_questionario").reset()
         }
-      
+        document.getElementById("form_cadastro_questionario").classList.remove("was-validated")
         getQuestionario()
         Swal.fire({
             title: "Sucesso!",
-            text: "Usuário cadastrado com sucesso!",
+            text: "Questionário cadastrado com sucesso!",
             icon: "success"
         });
     }

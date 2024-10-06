@@ -29,14 +29,16 @@ function preencherCamposParaEdicaoDeUsuario(usuario) {
         }
     }
 
-    document.getElementById("confirmarSenha").disable = true
-
+    
     usuario.status_usuario == true ? document.getElementById("radio_ativo").checked = true : document.getElementById("radio_inativo").checked = true
     usuario.permissao == "C" ? document.getElementById("radio_coordenador").checked = true : 0
     usuario.permissao == "A" ? document.getElementById("radio_avaliador").checked = true : 0
-
+    
     document.getElementById("modulo_titulo_cadastro_usuario").innerHTML = "Edição de cadastro de usuário"
-
+    document.getElementById("confirmar_senha").disabled = true
+    document.getElementById("senha").disabled = true
+    
+    document.getElementById("fecharModalCadastroUsuario").click()
     id_usuario.onclick = function () {
         id_usuario.disabled = true
     }

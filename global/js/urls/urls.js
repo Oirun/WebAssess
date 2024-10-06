@@ -24,7 +24,7 @@ function urlsFront(pasta) {
 
 function urlsBack(pasta) {
     // http://localhost:8080/tcc/api/v1/users
-    let urls_base = "http://localhost:8080/tcc/api/v1/"
+    let urls_base = "https://d95b-200-199-220-74.ngrok-free.app/tcc/api/v1/"
 
     switch (pasta) {
         case "users":

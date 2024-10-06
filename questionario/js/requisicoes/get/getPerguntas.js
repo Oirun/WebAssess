@@ -1,17 +1,21 @@
-async function getQuestionario() {
-    const resultado = await request(urlsBack("questionario") + "doUsuario", "GET")
+async function getQuestionarioPerguntas(id_questionario, input) {
+    const resultado = await request(urlsBack("questionario") + "perguntas/"+id_questionario+"?tipo=Q", "GET")
+    
     document.getElementById("body_consulta_perguntas_questionario").innerHTML = ""
     if (resultado.error) {
         alert(resultado.error)
     } else {
-        resultado.forEach(pergunta => {
-            let li = criandoLi(pergunta)
+        resultado.perguntas.forEach(pergunta => {
+            
+            let li = criandoLiPerguntas(pergunta, input)
+            console.log(li)
             document.getElementById("body_consulta_perguntas_questionario").appendChild(li)
         });
     }
 }
 
-function criandoLi(pergunta) {
+function criandoLiPerguntas(pergunta, input) {
+    console.log(pergunta.pergunta)
     let row = document.createElement("tr")
     let tdId = document.createElement("td")
     let tdPergunta = document.createElement("td")
@@ -23,14 +27,14 @@ function criandoLi(pergunta) {
     let icoDeletar = document.createElement("i")
 
     tdId.innerHTML = pergunta.id_pergunta
-    tdPergunta.innerHTML = pergunta.descricao
+    tdPergunta.innerHTML = pergunta.pergunta
 
     div.classList = "d-flex gap-2"
     buttonEditar.classList = "btn btn-outline-dark"
     buttonDeletar.classList = "btn btn-outline-dark"
 
     icoEditar.classList = "bi bi-pencil"
-    icoDeletar.classList = "bi bi-pencil"
+    icoDeletar.classList = "bi bi-trash"
 
     buttonEditar.appendChild(icoEditar)
     buttonDeletar.appendChild(icoDeletar)
@@ -43,8 +47,10 @@ function criandoLi(pergunta) {
     row.appendChild(tdAcoes)
 
     buttonEditar.onclick = function () {
+        input.click()
         preencheCamposAPartirDaPesquisaDasPerguntas(pergunta)
-        document.getElementById("adicionarPergunta").classList.add("d-none")
+        document.getElementById("adicionarPergunta").classList.remove("d-none")
+        document.getElementById("fecharModalPerguntas").click()
     }
 
     return row
