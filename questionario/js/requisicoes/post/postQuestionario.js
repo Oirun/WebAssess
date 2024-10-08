@@ -5,9 +5,13 @@ function validateForm(event) {
 
     if (form.checkValidity()) {
         if (document.getElementById("codigo_questionario").value !== null && document.getElementById("codigo_questionario").value.trim() !== "") {
-            let url = urlsBack("questionario") + "update/" + document.getElementById("codigo_questionario").value
-            let metodo = "PATCH"
-            enviaQuestionario(url, metodo)
+            if (sessionStorage.getItem("user_t") == "C") {
+                questionarioCoordenador()
+            }else{
+                let url = urlsBack("questionario") + "update/" + document.getElementById("codigo_questionario").value
+                let metodo = "PATCH"
+                enviaQuestionario(url, metodo)
+            }
         } else {
             let url = urlsBack("questionario")
             let metodo = "POST"
@@ -100,4 +104,8 @@ async function enviaQuestionario(url, metodo) {
             icon: "success"
         });
     }
+}
+
+async function questionarioCoordenador() {
+    
 }

@@ -19,7 +19,7 @@ function verificandoUsuario() {
         }
     }else{
         document.getElementById("titulo_inicio") ? document.getElementById("titulo_inicio").innerHTML = document.getElementById("titulo_inicio").innerHTML + " Administrador!" : 0
-        document.getElementById("li_questionario_responder").style.display = "none"
-        document.getElementById("li_checklist_responder").style.display = "none"
+        // document.getElementById("li_questionario_responder").style.display = "none"
+        // document.getElementById("li_checklist_responder").style.display = "none"
     }
 }
