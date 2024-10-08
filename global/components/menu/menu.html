@@ -85,8 +85,7 @@
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li id="li_cadastro_usuario"><a class="dropdown-item"
                                     onclick="url_cadastro_usuarios()">Usuários</a></li>
-                            <li id="li_cadastro_url"><a class="dropdown-item" data-bs-toggle="modal"
-                                    data-bs-target="#modal_gerenciar_urls">Urls</a></li>
+                            <li id="li_cadastro_url"><a class="dropdown-item" onclick="url_cadastro_urls()" id="a_cadastro_url">Urls</a></li>
                             <li id="li_cadastro_profissoes"><a class="dropdown-item"
                                     onclick="url_cadastro_parametros()">Parâmetros</a></li>
                         </ul>
@@ -102,17 +101,6 @@
                     <li class="nav-item" id="li_checklist">
                         <a class="nav-link active" onclick="url_checklist()" aria-current="page"><i
                                 class="bi bi-card-checklist"></i>Check-List</a>
-                    </li>
-
-                    <!-- Questionários -->
-                    <li class="nav-item" id="li_questionario_responder">
-                        <a class="nav-link active" onclick="" aria-current="page"><i
-                                class="bi bi-journal-text"></i>Questionário</a>
-                    </li>
-
-                    <!-- CHECK LIST -->
-                    <li class="nav-item" id="li_checklist">
-                        <a class="nav-link" href="#"><i class="bi bi-ui-checks"></i>Check-List</a>
                     </li>
 
                     <!-- RELATÓRIOS -->

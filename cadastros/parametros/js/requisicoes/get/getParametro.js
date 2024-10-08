@@ -7,7 +7,9 @@ async function getParametros(parametro) {
     
     let url = urlsBack("users")+parametro
     const resultado = await request(url, "GET")
-    console.log(tabelas[parametro], parametro)
+
+    console.log(tabelas[parametro], resultado, url)
+
     if (resultado.error) {
         console.log(resultado.error)
     } else {

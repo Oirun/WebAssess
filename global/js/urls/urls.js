@@ -24,7 +24,7 @@ function urlsFront(pasta) {
 
 function urlsBack(pasta) {
     // http://localhost:8080/tcc/api/v1/users
-    let urls_base = "https://d95b-200-199-220-74.ngrok-free.app/tcc/api/v1/"
+    let urls_base = "http://localhost:8080/tcc/api/v1/"
 
     switch (pasta) {
         case "users":
@@ -33,6 +33,9 @@ function urlsBack(pasta) {
         case "questionario":
             let url_questionario = urls_base + "questionario/"
             return url_questionario
+        case "url":
+            let url_url = urls_base + "url/"
+            return url_url
 
         default:
             break;
@@ -60,6 +63,13 @@ function url_cadastro_parametros() {
     return url_cadastro_parametros
 }
 
+function url_cadastro_urls() {
+    const url_base = urlsFront("cadastros")
+    const url_cadastro_urls = url_base + "urls/pages/index.html"
+    window.location.href = url_cadastro_urls
+    return url_cadastro_urls
+}
+
 function url_questionario() {
     const url_base = urlsFront("questionario")
     const url_questionario = url_base + "pages/index.html"
@@ -72,3 +82,17 @@ function url_checklist() {
     window.location.href = url_checklist
     return url_checklist
 }
+
+// function url_questionario_coordenador() {
+//     const url_base = urlsFront("questionario")
+//     const url_questionario = url_base + "pages/index_coordenador.html"
+//     window.location.href = url_questionario
+//     return url_questionario
+// }
+
+// function url_checklist_coordenador() {
+//     const url_base = urlsFront("checklist")
+//     const url_checklist = url_base + "pages/index_coordenador.html"
+//     window.location.href = url_checklist
+//     return url_checklist
+// }

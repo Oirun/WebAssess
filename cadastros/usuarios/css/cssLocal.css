@@ -70,3 +70,25 @@
     justify-content: space-evenly;
     gap: 4rem;
 }
+
+/* .nivel-Administrador{
+    color: #7A958F;
+    background: #BAE0DA;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#7A958F;
+}
+.nivel-Coordenador{
+    color: #7A958F;
+    background: #BAE0DA;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#7A958F;
+}
+.nivel-Avaliador{
+    color: #7A958F;
+    background: #BAE0DA;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#7A958F;
+} */

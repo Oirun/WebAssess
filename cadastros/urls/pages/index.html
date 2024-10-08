@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Urls</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="../css/cssUrls.css">
+    <link rel="stylesheet" href="../../../global/css/global.css">
+
+    <script src="../../../global/js/urls/urls.js"></script>
+    <script defer src="../js/index.js"></script>
+
+</head>
+
+<body>
+
+    <div id="menu"></div>
+
+    <main class="principal">
+
+        <div id="header"></div>
+
+        <section class="container_principal">
+
+            <ul class="nav nav-pills mb-3 mt-5 px-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                        type="button" role="tab" aria-controls="pills-home" aria-selected="true">Consulta</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                        type="button" role="tab" aria-controls="pills-profile" aria-selected="false"
+                        >Edição</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                    tabindex="0">
+                    <div class="formularios_modal" id="div_consulta_urls">
+                        <!-- <script>
+                            $(document).ready(function () {
+                                ;
+                            });
+                        </script> -->
+                    </div>
+    
+                    <div class="div_tabela mx-4" id="div_table_consulta_urls">
+                        <script>
+                            $(document).ready(function () {
+                                $("#div_table_consulta_urls").load(urlsFront("cadastros") + "urls/components/table/tableUrls.html");
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                    tabindex="0">
+                    <div class="formularios_modal mb-3" id="div_cadastro_urls">
+                        <script>
+                            $(document).ready(function () {
+                                $("#div_cadastro_urls").load(urlsFront("cadastros") + "urls/components/form/cadastroUrls.html");
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script> -->
+
+    <div id="imports"></div>
+</body>
+
+</html>

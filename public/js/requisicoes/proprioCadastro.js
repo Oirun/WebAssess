@@ -22,7 +22,7 @@ function fazerCadastro() {
     document.getElementById("feminino").checked == true ? sexo = "F" : 0
     document.getElementById("masculino").checked == true ? sexo = "M" : 0
 
-    document.getElementById("coordenador").checked == true ? permissao = "F" : 0
+    document.getElementById("coordenador").checked == true ? permissao = "C" : 0
     document.getElementById("avaliador").checked == true ? permissao = "U" : 0
   
     let json = {

@@ -15,6 +15,7 @@ document.onreadystatechange = function () {
                                 document.getElementById("btnConsultaProfissao").onclick = function () {
                                     getParametros("profissao")
                                 }
+                                
                                 document.getElementById("btnConsultaEscolaridade").onclick = function () {
                                     getParametros("escolaridade")
                                 }

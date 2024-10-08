@@ -19,11 +19,16 @@ function construindoLi(solicitacao) {
     let divCheck = document.createElement("div")
     let inputCheck = document.createElement("input")
     let labelCheck = document.createElement("label")
+
     // dropdown
     let divGroup = document.createElement("div")
     let buttonDrop = document.createElement("button")
     let listaDrop = document.createElement("ul")
     let liDrop = document.createElement("li")
+    let buttonRedirecionandoUsuario = document.createElement("button")
+    let ico = document.createElement("i")
+
+    ico.classList = "bi bi-pencil-square"
 
     li.classList = "list-group-item"
     divCheck.classList = "form-check"
@@ -39,12 +44,23 @@ function construindoLi(solicitacao) {
     buttonDrop.setAttribute("data-bs-toggle", "dropdown")
     buttonDrop.setAttribute("aria-expanded", "false")
 
-    listaDrop.classList = "dropdown-menu"
-    liDrop.classList = "list-group-item"
+    listaDrop.classList = "dropdown-menu ul-permitir-vermais"
+    liDrop.classList = "list-group-item li-permitir-vermais"
+
+    buttonRedirecionandoUsuario.type = "button"
+    buttonRedirecionandoUsuario.appendChild(ico)
+    buttonRedirecionandoUsuario.classList = "btn btn-outline-dark ms-2" 
+
+    buttonRedirecionandoUsuario.onclick = function () {
+      // colocar um json com as informacoes basicas para fazer uma consulta completa do ser que ele clicou
+      // la na tela de cadastro de usuario
+    }
 
     let nivel = "" 
     solicitacao.tipo == "C" ? nivel = "Coordenador" : nivel = "Avaliador" 
-    liDrop.innerHTML = solicitacao.email +" : "+nivel
+
+    liDrop.innerHTML = `${solicitacao.email} : <small class="nivel-${nivel}">${nivel}<small>`
+    liDrop.appendChild(buttonRedirecionandoUsuario)
 
     labelCheck.innerHTML = solicitacao.nome_usuario
 

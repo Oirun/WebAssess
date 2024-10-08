@@ -2,10 +2,11 @@ async function getQuestionario() {
     console.log("OI")
     const resultado = await request(urlsBack("questionario") + "doUsuario?tipo=Q", "GET")
     console.log(resultado)
-    document.getElementById("listar-questionarios-cadastrados").innerHTML = ""
+    
     if (resultado.error) {
         alert(resultado.error)
     } else {
+        document.getElementById("listar-questionarios-cadastrados").innerHTML = ""
         resultado.forEach(questionario => {
             let li = criandoLi(questionario)
             // document.getElementById("listar-questionarios-cadastrados").appendChild(li)

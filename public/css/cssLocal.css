@@ -77,30 +77,30 @@
     /* margin-right: 5px; */
 }
 
-input{
+.input-pagina-login{
     border: 1px solid #656399 !important;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
     background-color: rgba(33, 37, 41, 5)!important;
     color: #fff!important;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:active{
+.input-pagina-login:-webkit-autofill,
+.input-pagina-login:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 300px rgba(33, 37, 41, 5) inset !important;
     -webkit-text-fill-color: #fff !important;
 }
 
-input:hover{
+.input-pagina-login:hover{
     background-color: rgba(33, 37, 41, .5);
     outline: 2px solid #6c63ff;
 }
 
-input:focus-visible{
+.input-pagina-login:focus-visible{
     background-color: rgba(33, 37, 41, 1);
     outline: 2px solid #6c63ff;
 }
 
-input::-webkit-input-placeholder {
+.input-pagina-login::-webkit-input-placeholder {
     color: #fff;
  }
 
@@ -282,4 +282,12 @@ form label{
 
 .dropdown-menu{
     width: 370px;
+}
+
+.li-permitir-vermais{
+    border-bottom: 0px !important;
+}
+
+.ul-permitir-vermais{
+    width: 28rem !important;
 }

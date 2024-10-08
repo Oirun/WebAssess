@@ -1,3 +1,12 @@
 .carousel_urls .carousel-indicators button{
     background: #7f83f5 !important;
 }
+
+.div-convidado{
+    color: #DD8D6E;
+    font-weight: 700;
+    background: #F2DAC6;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#DD8D6E;
+}

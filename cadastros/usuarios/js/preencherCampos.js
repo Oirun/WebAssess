@@ -1,7 +1,7 @@
 function preencherCamposParaEdicaoDeUsuario(usuario) {
     let id_usuario = document.getElementById("codigo_usuario")
     id_usuario.value = usuario.id_usuario
-
+    console.log(usuario)
     document.getElementById("nome_usuario").value = usuario.nome_usuario
     document.getElementById("email").value = usuario.email
     document.getElementById("data_nascimento").value = usuario.data_nascimento
@@ -30,9 +30,10 @@ function preencherCamposParaEdicaoDeUsuario(usuario) {
     }
 
     
-    usuario.status_usuario == true ? document.getElementById("radio_ativo").checked = true : document.getElementById("radio_inativo").checked = true
+    usuario.status_usuario == "A" ? document.getElementById("radio_ativo").checked = true : document.getElementById("radio_inativo").checked = true
     usuario.permissao == "C" ? document.getElementById("radio_coordenador").checked = true : 0
-    usuario.permissao == "A" ? document.getElementById("radio_avaliador").checked = true : 0
+    usuario.permissao == "U" ? document.getElementById("radio_avaliador").checked = true : 0
+    usuario.permissao == "A" ? document.getElementById("radio_administrador").checked = true : 0
     
     document.getElementById("modulo_titulo_cadastro_usuario").innerHTML = "Edição de cadastro de usuário"
     document.getElementById("confirmar_senha").disabled = true

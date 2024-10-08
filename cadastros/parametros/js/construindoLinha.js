@@ -2,10 +2,9 @@ function construindoLinha(elemento, parametro) {
     let row = document.createElement("tr")
     let tdId = document.createElement("td")
     let tdDescricao = document.createElement("td")
+    let tdStatus = document.createElement("td")
     let tdAcao = document.createElement("td")
     let div = document.createElement("div")
-    let buttonEditar = document.createElement("button")
-    let icoEditar = document.createElement("i")
     let buttonDeletar = document.createElement("button")
     let icoDeletar = document.createElement("i")
 
@@ -18,25 +17,36 @@ function construindoLinha(elemento, parametro) {
     } else  if (parametro == "escolaridade") {
         id = elemento.id_escolaridade
         descricao = elemento.nome_escolaridade
-    }else{
-        
+    }else if(parametro == "principio"){
+        id = elemento.id_principio
+        descricao = elemento.nome_principio
     }
 
     tdId.innerHTML = id
-    tdDescricao.innerHTML = descricao 
+    tdDescricao.innerHTML = descricao
+    tdStatus.innerHTML = elemento.ativa == true ? "Ativo" : "Inativo"
 
     div.classList = "d-flex gap-2"
-    buttonEditar.classList = "btn btn-outline-dark"
     buttonDeletar.classList = "btn btn-outline-dark"
 
-    icoEditar.classList = "bi bi-pencil"
+    buttonDeletar.onclick = async function () {
+        let url = urlsBack("users")+parametro+"/delete/"+id
+        const resultado = await request(url, "DELETE")
+
+        if (resultado.error) {
+            alert(resultado.error)
+        }else{
+            alert("Item deletado.")
+            getParametros(parametro)
+        }
+    }
+
     icoDeletar.classList = "bi bi-trash"
 
     row.appendChild(tdId)
     row.appendChild(tdDescricao)
-    buttonEditar.appendChild(icoEditar)
+    row.appendChild(tdStatus)
     buttonDeletar.appendChild(icoDeletar)
-    div.appendChild(buttonEditar)
     div.appendChild(buttonDeletar)
     tdAcao.appendChild(div)
     row.appendChild(tdAcao)

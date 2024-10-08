@@ -2,9 +2,8 @@
 
 <form class="row g-3" id="form_consulta_urls">
     <div class="col-md-4">
-        <label for="c_questionario" class="form-label">Quationário</label>
+        <label for="c_questionario" class="form-label">Questionário</label>
         <select id="c_questionario" class="form-select">
-            <option selected></option>
         </select>
     </div>
 
@@ -17,12 +16,15 @@
     <div class="col-md-4">
         <label for="c_categoria" class="form-label">Categoria</label>
         <select id="c_categoria" class="form-select">
+            <option value="">Todos</option>
+            <option value="">Noticias</option>
+            <option value="">Universitario</option>
         </select>
     </div>
 
     <div class="col-md-8">
         <label for="c_url" class="form-label">Url</label>
-        <input type="text" class="form-control" id="c_url" placeholder="Ex: Manuela">
+        <input type="text" class="form-control" id="c_url">
     </div>
 
     <div class="col-md-4">
@@ -33,6 +35,6 @@
   
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button class="btn btn-primary me-md-2" type="button">Limpar</button>
-        <button class="btn btn-primary" type="button">Consultar</button>
+        <button class="btn btn-primary" type="button" id="btnConsultaUrls">Consultar</button>
     </div>
 </form>

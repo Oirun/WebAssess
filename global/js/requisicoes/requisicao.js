@@ -103,24 +103,24 @@ function setaValorOninput(idInput, valor) {
 
 function sairSistema() {
     Swal.fire({
-      title: "Sair",
-      text: "Você realmente deseja sair do sistema!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Sim!",
-      cancelButtonText: "Não!",
+        title: "Sair",
+        text: "Você realmente deseja sair do sistema!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sim!",
+        cancelButtonText: "Não!",
     }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: "Tchau!",
-          text: "Até mais.",
-          icon: "success"
-        });
-        sessionStorage.clear()
-        window.location.replace(urlsFront("public"))
-      }
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: "Tchau!",
+                text: "Até mais.",
+                icon: "success"
+            });
+            sessionStorage.clear()
+            window.location.replace(urlsFront("public"))
+        }
     });
 
-  }
+}

@@ -1,6 +1,10 @@
 function cancelar() {
     document.getElementById("form_cadastro_questionario").reset()
     document.getElementById("form_cadastro_questionario").classList.remove("was-validated")
+    document.getElementById("nome_questionario").disabled = false
+    document.getElementById("descricao_questionario").disabled = false
+    document.getElementById("btnCadastrarQuestionario").disabled = false
+    
     document.getElementById("liberarCamposPerguntas").disabled = true
     document.getElementById("liberarCamposPerguntas").innerHTML = "Liberar campos de pergunta."
     document.getElementById("adicionarPergunta").classList.add("d-none")
@@ -13,6 +17,7 @@ function cancelar() {
 
     let listaQuestionario = document.getElementById("listar-questionarios-cadastrados")
     let item = listaQuestionario.querySelector('input[type="radio"]:checked')
+    console.log(item)
     item.checked = false
  
 }

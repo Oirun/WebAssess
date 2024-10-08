@@ -233,6 +233,34 @@ form{
     color: #FFF;
 }
 
+/* -------------- caixas de niveis ------------ */
+
+.nivel-Administrador{
+    color: #7A958F;
+    font-weight: 700;
+    background: #BAE0DA;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#7A958F;
+}
+
+.nivel-Coordenador{
+    color: #DD8D6E;
+    font-weight: 700;
+    background: #F2DAC6;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#DD8D6E;
+}
+.nivel-Avaliador{
+    color: #81CEEB;
+    font-weight: 700;
+    background: #C7EEF8;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#81CEEB;
+}
+
 /* --------------- resolucoes -------------- */
  @media (max-width: 1350px) {
     .conjunto__header__dois img{

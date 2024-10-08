@@ -53,6 +53,7 @@ async function postUsuarios(url, metodo) {
         //document.getElementById("radio_administrador").checked == true ? permissao = "A" : 0
         document.getElementById("radio_coordenador").checked == true ? permissao = "C" : 0
         document.getElementById("radio_avaliador").checked == true ? permissao = "U" : 0
+        document.getElementById("radio_administrador").checked == true ? permissao = "A" : 0
 
         document.getElementById("radio_ativo").checked == true ? status_usuario = "A" : 0
         document.getElementById("radio_inativo").checked == true ? status_usuario = "I" : 0

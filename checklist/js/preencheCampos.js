@@ -1,6 +1,6 @@
 function preencheCamposAPartirDaPesquisa(checklist) {
     let codigo_checklist = document.getElementById("codigo_checklist")
-    codigo_checklist.value = checklist.id_checklist
+    codigo_checklist.value = checklist.id_questionario
     document.getElementById("nome_checklist").value = checklist.titulo
     document.getElementById("descricao_checklist").value = checklist.descricao
 

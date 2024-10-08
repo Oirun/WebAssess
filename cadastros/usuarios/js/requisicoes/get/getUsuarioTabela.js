@@ -6,7 +6,7 @@ async function getUsuarioTabela(ul) {
     if (resultado.error) {
         alert(resultado.error)
     } else {
-        
+
         console.log(document.getElementById("body_consulta_usuario"))
         resultado.forEach(usuario => {
             let linha = rowTable(usuario)
@@ -21,6 +21,7 @@ function rowTable(usuario) {
     let tdNome = document.createElement("td")
     let tdEstadoCidade = document.createElement("td")
     let tdPermissao = document.createElement("td")
+    let tdStatus = document.createElement("td")
     let divAcao = document.createElement("div")
     let btnEditar = document.createElement("button")
     let ico = document.createElement("i")
@@ -30,15 +31,23 @@ function rowTable(usuario) {
 
     btnEditar.appendChild(ico)
     divAcao.appendChild(btnEditar)
-    
+
     tdCodigo.innerHTML = usuario.id_usuario
     tdNome.innerHTML = usuario.nome_usuario
     tdEstadoCidade.innerHTML = "MS/Dourados"
-    
+
     if (usuario.status_usuario == "A") {
-        tdPermissao.innerHTML = "Ativo"
+        tdStatus.innerHTML = "Ativo"
     } else {
-        tdPermissao.innerHTML = "Inativo"
+        tdStatus.innerHTML = "Inativo"
+    }
+
+    if (usuario.permissao == "A") {
+        tdPermissao.innerHTML = "Administrador"
+    } else if (usuario.permissao == "C") {
+        tdPermissao.innerHTML = "Coordenador"
+    } else {
+        tdPermissao.innerHTML = "Avaliador"
     }
 
     btnEditar.onclick = function () {
@@ -48,8 +57,9 @@ function rowTable(usuario) {
     row.appendChild(tdCodigo)
     row.appendChild(tdNome)
     row.appendChild(tdEstadoCidade)
+    row.appendChild(tdStatus)
     row.appendChild(tdPermissao)
     row.appendChild(divAcao)
-    
+
     return row
 }

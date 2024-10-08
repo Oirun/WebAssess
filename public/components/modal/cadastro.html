@@ -20,30 +20,30 @@
                         <form class="row g-3 p-5 needs-validation" id="form_proprio_usuario" novalidate>
                             <div class="col-md-12 col-lg-6">
                                 <label for="nome" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nome" required>
+                                <input type="text" class="form-control input-pagina-login" id="nome" required>
                             </div>
                             <div class="col-md-12 col-lg-6">
                                 <label for="email" class="form-label">E-mail</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" class="form-control input-pagina-login" id="email" required>
                             </div>
                             <div class="col-12 col-lg-6" >
                                 <label for="dataNascimento" class="form-label">Data de nascimento</label>
-                                <input type="date" class="form-control" id="dataNascimento" required>
+                                <input type="date" class="form-control input-pagina-login" id="dataNascimento" required>
                             </div>
              
                             <div class="col-md-12 col-lg-6">
                                 <label for="login" class="form-label">Login</label>
-                                <input type="text" class="form-control" id="login" required>
+                                <input type="text" class="form-control input-pagina-login" id="login" required>
                             </div>
 
                             <div class="col-md-12 col-lg-6">
                                 <label for="senha" class="form-label">Senha</label>
-                                <input type="password" class="form-control" id="senha" oninput="validandoSenha(this, 'confirmarSenha', 'form_proprio_usuario')" required>
+                                <input type="password" class="form-control input-pagina-login" id="senha" oninput="validandoSenha(this, 'confirmarSenha', 'form_proprio_usuario')" required>
                             </div>
 
                             <div class="col-md-12 col-lg-6">
                                 <label for="confirmarSenha" class="form-label">Confirmar Senha</label>
-                                <input type="password" class="form-control" id="confirmarSenha" onblur="validandoSenhaConfirmar(this, null, 'senha', 'form_proprio_usuario')" required>
+                                <input type="password" class="form-control input-pagina-login" id="confirmarSenha" onblur="validandoSenhaConfirmar(this, null, 'senha', 'form_proprio_usuario')" required>
                                 <div class="invalid-feedback senhaInvalida">
                                     As senhas não estão iguais.
                                 </div>
