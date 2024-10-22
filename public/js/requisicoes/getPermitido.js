@@ -15,6 +15,7 @@ async function getSolicitacoesPermitir() {
 }
 
 function construindoLi(solicitacao) {
+  console.log(solicitacao)
     let li = document.createElement("li")
     let divCheck = document.createElement("div")
     let inputCheck = document.createElement("input")
@@ -54,6 +55,13 @@ function construindoLi(solicitacao) {
     buttonRedirecionandoUsuario.onclick = function () {
       // colocar um json com as informacoes basicas para fazer uma consulta completa do ser que ele clicou
       // la na tela de cadastro de usuario
+
+      let informacoesDoUsuarioAPermitir = {
+        "id_usuario" : solicitacao.id_usuario
+      }
+
+      sessionStorage.setItem('jsonUsuarioPermitir', JSON.stringify(informacoesDoUsuarioAPermitir))
+      window.location.replace(urlsFront("cadastros")+"usuarios/pages/index.html")
     }
 
     let nivel = "" 

@@ -9,6 +9,12 @@ document.onreadystatechange = function () {
                         preencherEscolaridade("escolaridade")
 
                         getUsuario(true)
+                        let idUsuarioPermitir = JSON.parse(sessionStorage.getItem("jsonUsuarioPermitir"))
+                      
+                        if (idUsuarioPermitir != null && idUsuarioPermitir.id_usuario > 0) {
+                            getUsuario(true, idUsuarioPermitir.id_usuario)
+                            sessionStorage.removeItem("jsonUsuarioPermitir")
+                        }
 
                         document.getElementById("btnConsultarUsuario").onclick = function () {
                             getUsuarioTabela()
