@@ -19,6 +19,10 @@ document.onreadystatechange = function () {
                                 document.getElementById("btnConsultaEscolaridade").onclick = function () {
                                     getParametros("escolaridade")
                                 }
+                                
+                                document.getElementById("btnConsultaPrincipio").onclick = function () {
+                                    getParametros("principio")
+                                }
                             })
                         })
                     })

@@ -7,7 +7,6 @@ function cancelar() {
 
     document.getElementById("titulo_modulo_checklist").innerHTML = "Cadastro de Check-List"
 
-    document.getElementById("principio").disabled = false
     document.getElementById("pergunta").disabled = false
     document.getElementById("justificativa").disabled = false
 

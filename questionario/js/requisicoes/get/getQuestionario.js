@@ -42,7 +42,9 @@ function criandoLi(questionario) {
 
     let padrao = questionario.padrao == true ? "Questionário Padrão" : "Questionário não padrão"
     span.classList = "d-block small opacity-50"
-    span.innerHTML = `${questionario.descricao} <br> ${padrao}`
+    
+    let descricao = questionario.descricao == null ? "Sem descrição" : questionario.descricao
+    span.innerHTML = `${descricao} <br> ${padrao}`
 
     label.appendChild(span)
     label.appendChild(div)

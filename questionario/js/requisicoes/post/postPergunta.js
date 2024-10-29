@@ -6,14 +6,28 @@ function validandoPerguntas(e) {
         let metodo 
         let url
         console.log(document.getElementById("pergunta").dataset.idPergunta)
-        if (document.getElementById("pergunta").dataset.idPergunta != null && document.getElementById("pergunta").dataset.idPergunta != "") {
-           metodo = "PATCH"
-           url = urlsBack("questionario")+"pergunta/"
-        }else{
+
+        if (sessionStorage.getItem("user_t") == "C") {
             
-            metodo = "POST"
-            url = urlsBack("questionario")+"pergunta" 
+            if (document.getElementById("pergunta").dataset.idPergunta != null && document.getElementById("pergunta").dataset.idPergunta != "") {
+                metodo = "PATCH"
+                url = urlsBack("questionarioCoordenador")+"pergunta/update"
+             }else{
+                //  metodo = "POST"
+                //  url = urlsBack("questionario")+"pergunta" 
+             }
+        }else{
+            if (document.getElementById("pergunta").dataset.idPergunta != null && document.getElementById("pergunta").dataset.idPergunta != "") {
+               metodo = "PATCH"
+               url = urlsBack("questionario")+"pergunta/"
+            }else{
+                
+                metodo = "POST"
+                url = urlsBack("questionario")+"pergunta" 
+            }
         }
+    
+
         adicionarNovaPerguntaAoQuestionarioSelecionado(url, metodo)
     }
 
@@ -27,6 +41,9 @@ async function adicionarNovaPerguntaAoQuestionarioSelecionado(url, metodo) {
     let pergunta = document.getElementById("pergunta").value 
     let justificativa = document.getElementById("justificativa").value
     let resultado
+
+    console.log(url)
+
     if (metodo == "PATCH") {
         let json = {
             "pergunta": pergunta,

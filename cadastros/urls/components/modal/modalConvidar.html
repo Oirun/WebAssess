@@ -1,0 +1,60 @@
+<!-- Modal -->
+
+<div class="modal fade" id="modal-convidar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex gap-2 tituloModal">
+                    <i class="bi bi-pencil"></i>
+                    <h3 class="modal-title" id="exampleModalLabel">Adicionando avaliadores</h3>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="aviso-azul col-6">
+                        <h6>Clique nos avaliadores que deseja incluir para a avaliação.</h6>
+                    </div>
+                    <div class="col-6 div-botao-enviar">
+                        <button type="button" class="btn btn-customizado" id="btnAdicionarAvaliadores">Enviar</button>
+                    </div>
+                </div>
+
+
+                <div class="row g-3">
+                    <div class="col-6" id="div_table_convidados">
+
+                        <script>
+                            $(document).ready(function () {
+                                $("#div_table_convidados").load(urlsFront("cadastros") + "urls/components/table/tableConvidados.html");
+                            });
+                        </script>
+
+                    </div>
+
+                    <div class="col-6">
+                        <section id="lista_avaliadores" class="lista">
+                            <h4 id="titulo_lista_avaliadores">Avaliadores incluidos</h4>
+                            <div class="list-group list-group-checkable d-grid gap-2 border-0" id="listar-avaliadores-cadastrados">
+                              <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios1" value="" checked="">
+                              <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios1">
+                                Sem resultado
+                                <span class="d-block small opacity-50">Nenhum avaliador incluido.</span>
+                                <!-- <div class="d-flex justify-content-md-end">
+                                  <button class="btn btn-outline-purple me-md-2" type="button" data-bs-toggle="modal" data-bs-target="#modal_perguntas_avaliadores"><i class="bi bi-search"></i></button>
+                                </div> -->
+                              </label>
+                            </div>
+                          </section>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

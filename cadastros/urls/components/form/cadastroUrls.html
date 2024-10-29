@@ -2,48 +2,28 @@
 
 <form class="row g-3" id="form_cadastro_urls">
 
-    <div class="col-xl-6 col-md-12 col-sm-12">
-        <label for="url_questionario" class="form-label">Questionário</label>
-        <select id="url_questionario" class="form-select">
-        </select>
-    </div>
-
-    <div class="col-xl-6 col-md-12 col-sm-12">
-        <label for="url_check_list" class="form-label">Check-list</label>
-        <select id="url_check_list" class="form-select">
-        </select>
-    </div>
-
     <div class="col-xl-12 col-md-12 col-sm-12">
         <label for="url_website" class="form-label">Url</label>
         <input type="text" class="form-control" id="url_website">
     </div>
 
-
     <div class="col-xl-6 col-md-12 col-sm-12">
-        <label for="url_categoria" class="form-label">Categoria</label>
-        <select id="url_categoria" class="form-select">
-            <option value="">Noticias</option>
-            <option value="">Universitario</option>
-        </select>
+        <label for="url_data_inicio" class="form-label">Data Início</label>
+        <input type="date" class="form-control" id="url_data_inicio">
     </div>
 
     <div class="col-xl-6 col-md-12 col-sm-12">
-        <label for="url_publico_alvo" class="form-label">Publico alvo</label>
-        <select id="url_publico_alvo" class="form-select">
-        </select>
+        <label for="url_data_fim" class="form-label">Data fim</label>
+        <input type="date" class="form-control" id="url_data_fim">
     </div>
 
-    <div class="col-xl-12 col-md-12 col-sm-12">
-        <label for="url_tipo_website" class="form-label">Tipo do site</label>
-        <input type="text" class="form-control" id="url_tipo_website">
-    </div>
 
     <div class="col-xl-7 col-md-12 col-sm-12">
         <label for="url_descricao" class="form-label">Descrição</label>
         <textarea class="form-control" placeholder="Ex: Essa url pertence a um site de e-commerce, sobre calçados e bolsas, avaliar o fluxo de compras." id="url_descricao"
             style="height: 100px"></textarea>
     </div>
+
 
     <div class="col-xl-2 col-md-12 col-sm-12">
         <h5>Status da Url</h5>
@@ -66,7 +46,7 @@
 
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary me-md-2" type="button">Salvar</button>
+        <button class="btn btn-primary me-md-2" type="button" id="btnSalvarUrl">Salvar</button>
         <button class="btn btn-dark" type="button">Cancelar</button>
     </div>
 </form>

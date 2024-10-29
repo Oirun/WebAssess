@@ -233,6 +233,17 @@ form{
     color: #FFF;
 }
 
+.btn-customizado{
+    background-color: #712cf9;
+    color: #fff;
+}
+
+.btn-customizado:hover{
+    background-color: #6e27fc;
+    color: #fff;
+}
+
+
 /* -------------- caixas de niveis ------------ */
 
 .nivel-Administrador{
@@ -260,6 +271,7 @@ form{
     border-radius: .25rem; 
     border-left: 2px solid#81CEEB;
 }
+
 
 /* --------------- resolucoes -------------- */
  @media (max-width: 1350px) {

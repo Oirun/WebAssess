@@ -4,10 +4,18 @@ function validateForm(event) {
     let form = document.getElementById("form_cadastro_checklist")
 
     if (form.checkValidity()) {
+        
         if (document.getElementById("codigo_checklist").value !== null && document.getElementById("codigo_checklist").value.trim() !== "") {
-            let url = urlsBack("questionario") + "update/" + document.getElementById("codigo_checklist").value
-            let metodo = "PATCH"
-            enviaCheckList(url, metodo)
+            if (sessionStorage.getItem("user_t") == "C") {
+                let url = urlsBack("questionarioCoordenador") + "update/" + document.getElementById("codigo_checklist").value
+                let metodo = "PATCH"
+                enviaCheckList(url, metodo)      
+                      
+            }else{
+                let url = urlsBack("questionario") + "update/" + document.getElementById("codigo_checklist").value
+                let metodo = "PATCH"
+                enviaCheckList(url, metodo)
+            }
         } else {
             let url = urlsBack("questionario")
             let metodo = "POST"
@@ -44,8 +52,6 @@ async function enviaCheckList(url, metodo) {
     } else {
         let pergunta = document.getElementById("pergunta").value
         let justificativa = document.getElementById("justificativa").value
-        let combo_principio = document.getElementById("principio")
-        let principio = combo_principio.options[combo_principio.selectedIndex].dataset.idPrincipio;
         
         if (pergunta.trim() == null || pergunta.trim() == "") {
             Swal.fire({
@@ -73,7 +79,6 @@ async function enviaCheckList(url, metodo) {
                 {
                     "pergunta": pergunta,
                     "justificativa": justificativa,
-                    "principio": parseInt(principio)
                 }
             ]
         }
@@ -84,9 +89,16 @@ async function enviaCheckList(url, metodo) {
     if (resultado.error) {
         alert(resultado.error)
     }else{
+
+        if (sessionStorage.getItem("user_t") == "A") {
+            getCheckList()            
+        }else if(sessionStorage.getItem("user_t") == "C"){
+            getChecklistCoordenador(document.getElementById("codigo_checklist").value)
+        }
+
         document.getElementById("form_cadastro_checklist").classList.remove("was-validated")
-        document.getElementById("form_cadastro_checklist").reset()
-        getCheckList()
+        // document.getElementById("form_cadastro_checklist").reset()
+
         Swal.fire({
             title: "Sucesso!",
             text: "Usuário cadastrado com sucesso!",

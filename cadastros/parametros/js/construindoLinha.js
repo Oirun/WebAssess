@@ -19,7 +19,7 @@ function construindoLinha(elemento, parametro) {
         descricao = elemento.nome_escolaridade
     }else if(parametro == "principio"){
         id = elemento.id_principio
-        descricao = elemento.nome_principio
+        descricao = elemento.descricao
     }
 
     tdId.innerHTML = id

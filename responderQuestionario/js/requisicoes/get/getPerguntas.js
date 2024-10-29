@@ -1,0 +1,253 @@
+
+let cont = 0
+let perguntas = ""
+let tipo = ""
+
+async function getQuestionarioPerguntasConvidados() {
+    //const resultado = await request(urlsBack("questionario") + "perguntas/"+id_questionario+"?tipo=Q", "GET")
+    console.log("pesquisando perguntas")
+    perguntas = ""
+    
+    let id_questionario = ""
+    let id_checklist = ""
+    let url = ""
+    if (sessionStorage.getItem("id_questionario") && sessionStorage.getItem("id_questionario") != "" && sessionStorage.getItem("id_questionario") != undefined && sessionStorage.getItem("id_questionario") != null) {
+        id_questionario = parseInt(sessionStorage.getItem("id_questionario"))
+        url = urlsBack("questionarioAvaliador")+id_questionario
+        tipo = "Q"
+        sessionStorage.removeItem("id_questionario")
+    }else if (sessionStorage.getItem("id_checklist") && sessionStorage.getItem("id_checklist") != "" && sessionStorage.getItem("id_checklist") != undefined && sessionStorage.getItem("id_checklist") != null) {
+        id_checklist = parseInt(sessionStorage.getItem("id_checklist"))
+        url = urlsBack("questionarioAvaliador")+id_checklist
+        tipo = "C"
+        sessionStorage.removeItem("id_checklist")
+    }else{
+        window.location.replace(urlsFront("public")+"pages/principal.html") 
+    }
+
+    const resultado = await request(url, "GET")
+    
+    perguntas = resultado // guarda as perguntas recebidas, aqui a unica coisa que pode ser alterada são as chaves de respondido, para nao aparecerem de novo
+    
+    document.getElementById("form_responder_questionario").innerHTML = ""
+    console.log(perguntas)
+    console.log(resultado)
+    if (resultado.error) {
+        alert(resultado.error)
+    } else {
+
+        for (let i = 0; i < perguntas.length; i++) {
+            if (perguntas[cont].respondido == false || perguntas[cont].respondido == 0) {
+                let divPergunta = criandoPerguntas(perguntas[cont])
+                console.log(divPergunta)
+                document.getElementById("form_responder_questionario").appendChild(divPergunta)
+                perguntas[cont].respondido = true
+                cont++
+                break
+            } else {
+                cont++
+            }
+        }
+    }
+}
+
+function rotacionandoPergunta() {
+
+    document.getElementById("form_responder_questionario").innerHTML = ""
+    console.log(perguntas)
+    if (cont < perguntas.length && cont >= 0) {
+        for (let i = 0; i < perguntas.length; i++) {
+           //console.log(perguntas[cont].respondido)
+            if (perguntas[cont].respondido == false || perguntas[cont].respondido == 0) {
+                let divPergunta = criandoPerguntas(perguntas[cont])
+                console.log(divPergunta)
+                document.getElementById("form_responder_questionario").appendChild(divPergunta)
+                perguntas[cont].respondido = true
+                cont++
+                break
+            } else {
+                cont++
+            }
+        }
+    }else{
+        if (cont == perguntas.length) {
+            document.getElementById("resposta-de-termino").classList.remove("d-none")
+            document.getElementById("btnVoltar").classList.remove("d-none")
+            document.getElementById("btnSalvarResposta").classList.add("d-none")
+        }
+    }
+}
+
+function criandoPerguntas(pergunta) {
+    let divPergunta = document.createElement("div")
+    let labelPergunta = document.createElement("label")
+    let pJustificativa = document.createElement("p")
+    let textAreaResposta = document.createElement("textarea")
+
+    divPergunta.classList = "col-md-12"
+
+    labelPergunta.classList = "form-label"
+    labelPergunta.form = "pergunta_" + pergunta.id_pergunta
+    labelPergunta.id = "descricao_" + pergunta.id_pergunta
+    labelPergunta.innerHTML = pergunta.descricao
+
+    pJustificativa.innerHTML = pergunta.justificativa
+
+    textAreaResposta.classList = "form-control txtpadraoResposta"
+    textAreaResposta.id = "pergunta_" + pergunta.id_pergunta
+    textAreaResposta.required = true
+
+    divPergunta.appendChild(labelPergunta)
+    divPergunta.appendChild(pJustificativa)
+    divPergunta.appendChild(criandoRadios(pergunta))
+    divPergunta.appendChild(textAreaResposta)
+
+    return divPergunta
+}
+
+function criandoRadios(pergunta) {
+    //radios
+    let divRadios = document.createElement("div")
+    divRadios.classList = "div-radios"
+
+    let radioRuim = document.createElement("input")
+    let labelRuim = document.createElement("label")
+    let radioRegular = document.createElement("input")
+    let labelRegular = document.createElement("label")
+    let radioBom = document.createElement("input")
+    let labelBom = document.createElement("label")
+    let radioMuitoBom = document.createElement("input")
+    let labelMuitoBom = document.createElement("label")
+    let radioOtimo = document.createElement("input")
+    let labelOtimo = document.createElement("label")
+
+    let radioSim = document.createElement("input")
+    let labelSim = document.createElement("label")
+    let radioNao = document.createElement("input")
+    let labelNao = document.createElement("label")
+    let radioNaoAplica = document.createElement("input")
+    let labelNaoAplica = document.createElement("label")
+
+    let classeInput = "form-check-input"
+    let classeLabel = "form-check-label"
+
+    radioRuim.classList = classeInput
+    labelRuim.classList = classeLabel
+    radioRegular.classList = classeInput
+    labelRegular.classList = classeLabel
+    radioBom.classList = classeInput
+    labelBom.classList = classeLabel
+    radioMuitoBom.classList = classeInput
+    labelMuitoBom.classList = classeLabel
+    radioOtimo.classList = classeInput
+    labelOtimo.classList = classeLabel
+
+    radioSim.classList = classeInput
+    labelSim.classList = classeLabel
+    radioNao.classList = classeInput
+    labelNao.classList = classeLabel
+    radioNaoAplica.classList = classeInput
+    labelNaoAplica.classList = classeLabel
+
+    radioRuim.type = "radio"
+    radioRegular.type = "radio"
+    radioBom.type = "radio"
+    radioMuitoBom.type = "radio"
+    radioOtimo.type = "radio"
+
+    radioSim.type = "radio"
+    radioNao.type = "radio"
+    radioNaoAplica.type = "radio"
+
+    radioRuim.name = "radioRes"
+    radioRegular.name = "radioRes"
+    radioBom.name = "radioRes"
+    radioMuitoBom.name = "radioRes"
+    radioOtimo.name = "radioRes"
+
+    radioSim.name = "radioRes"
+    radioNao.name = "radioRes"
+    radioNaoAplica.name = "radioRes"
+
+    radioRuim.id = "radioRuim_"+pergunta.id_pergunta
+    radioRegular.id = "radioRegular_"+pergunta.id_pergunta
+    radioBom.id = "radioBom_"+pergunta.id_pergunta
+    radioMuitoBom.id = "radioMuitoBom_"+pergunta.id_pergunta
+    radioOtimo.id = "radioOtimo_"+pergunta.id_pergunta
+    
+    radioSim.id = "radioSim_"+pergunta.id_pergunta
+    radioNao.id = "radioNao_"+pergunta.id_pergunta
+    radioNaoAplica.id = "radioNaoAplica_"+pergunta.id_pergunta
+    
+    labelRuim.setAttribute("for", "radioRuim_"+pergunta.id_pergunta) 
+    labelRegular.setAttribute("for", "radioRegular_"+pergunta.id_pergunta)
+    labelBom.setAttribute("for", "radioBom_"+pergunta.id_pergunta)
+    labelMuitoBom.setAttribute("for", "radioMuitoBom_"+pergunta.id_pergunta)
+    labelOtimo.setAttribute("for", "radioOtimo_"+pergunta.id_pergunta)
+
+    labelSim.setAttribute("for", "radioSim_"+pergunta.id_pergunta)
+    labelNao.setAttribute("for", "radioNao_"+pergunta.id_pergunta)
+    labelNaoAplica.setAttribute("for", "radioNaoAplica_"+pergunta.id_pergunta)
+    
+    labelRuim.innerHTML = "Ruim"
+    labelRegular.innerHTML = "Regular"
+    labelBom.innerHTML = "Bom"
+    labelMuitoBom.innerHTML = "Muito Bom"
+    labelOtimo.innerHTML = "Ótimo"
+    
+    labelSim.innerHTML = "Sim"
+    labelNao.innerHTML = "Não"
+    labelNaoAplica.innerHTML = "Não se aplica"
+
+    let divCheck1 = document.createElement("div")
+    let divCheck2 = document.createElement("div")
+    let divCheck3 = document.createElement("div")
+    let divCheck4 = document.createElement("div")
+    let divCheck5 = document.createElement("div")
+    
+    let divCheck6 = document.createElement("div")
+    let divCheck7 = document.createElement("div")
+    let divCheck8 = document.createElement("div")
+
+    divCheck1.classList = "form-check"
+    divCheck2.classList = "form-check"
+    divCheck3.classList = "form-check"
+    divCheck4.classList = "form-check"
+    divCheck5.classList = "form-check"
+    
+    divCheck6.classList = "form-check"
+    divCheck7.classList = "form-check"
+    divCheck8.classList = "form-check"
+
+    divCheck1.appendChild(radioRuim)
+    divCheck1.appendChild(labelRuim)
+    divCheck2.appendChild(radioRegular)
+    divCheck2.appendChild(labelRegular)
+    divCheck3.appendChild(radioBom)
+    divCheck3.appendChild(labelBom)
+    divCheck4.appendChild(radioMuitoBom)
+    divCheck4.appendChild(labelMuitoBom)
+    divCheck5.appendChild(radioOtimo)
+    divCheck5.appendChild(labelOtimo)
+    
+    divCheck6.appendChild(radioSim)
+    divCheck6.appendChild(labelSim)
+    divCheck7.appendChild(radioNao)
+    divCheck7.appendChild(labelNao)
+    divCheck8.appendChild(radioNaoAplica)
+    divCheck8.appendChild(labelNaoAplica)
+
+    if (tipo == "Q") {
+        divRadios.appendChild(divCheck1)
+        divRadios.appendChild(divCheck2)
+        divRadios.appendChild(divCheck3)
+        divRadios.appendChild(divCheck4)
+        divRadios.appendChild(divCheck5) 
+    }else if (tipo == "C") {
+        divRadios.appendChild(divCheck6) 
+        divRadios.appendChild(divCheck7) 
+        divRadios.appendChild(divCheck8) 
+    }
+
+    return divRadios
+}

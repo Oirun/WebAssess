@@ -6,13 +6,26 @@ function validandoPerguntas(e) {
         let metodo
         let url
         console.log(document.getElementById("pergunta").dataset.idPergunta)
-        if (document.getElementById("pergunta").dataset.idPergunta != null && document.getElementById("pergunta").dataset.idPergunta != "") {
-            metodo = "PATCH"
-            url = urlsBack("questionario") + "pergunta/"
-        } else {
 
-            metodo = "POST"
-            url = urlsBack("questionario") + "pergunta"
+        if (sessionStorage.getItem("user_t") == "C") {
+            questionarioCoordenador/pergunta/update
+            if (document.getElementById("pergunta").dataset.idPergunta != null && document.getElementById("pergunta").dataset.idPergunta != "") {
+                metodo = "PATCH"
+                url = urlsBack("questionarioCoordenador") + "pergunta/update"
+            } else {
+    
+                // metodo = "POST"
+                // url = urlsBack("questionario") + "pergunta"
+            }
+        }else{
+            if (document.getElementById("pergunta").dataset.idPergunta != null && document.getElementById("pergunta").dataset.idPergunta != "") {
+                metodo = "PATCH"
+                url = urlsBack("questionario") + "pergunta/"
+            } else {
+    
+                metodo = "POST"
+                url = urlsBack("questionario") + "pergunta"
+            }
         }
         adicionarNovaPerguntaAoCheckListSelecionado(metodo, url)
     }
@@ -23,8 +36,6 @@ function validandoPerguntas(e) {
 async function adicionarNovaPerguntaAoCheckListSelecionado(metodo, url) {
 
     let codigo = document.getElementById("codigo_checklist").value.trim()
-    let combo_principio = document.getElementById("principio")
-    let principio = combo_principio.options[combo_principio.selectedIndex].dataset.idPrincipio;
     let pergunta = document.getElementById("pergunta").value
     let justificativa = document.getElementById("justificativa").value
     let resultado
@@ -34,7 +45,6 @@ async function adicionarNovaPerguntaAoCheckListSelecionado(metodo, url) {
             "pergunta": pergunta,
             "justificativa": justificativa,
             "id_pergunta": parseInt(document.getElementById("pergunta").dataset.idPergunta),
-            "principio": parseInt(principio)
         }
         resultado = await request(url, metodo, json)
     } else {
@@ -42,7 +52,6 @@ async function adicionarNovaPerguntaAoCheckListSelecionado(metodo, url) {
             "pergunta": pergunta,
             "justificativa": justificativa,
             "id_questionario": parseInt(codigo),
-            "principio": parseInt(principio)
         }
         resultado = await request(url, metodo, json)
     }

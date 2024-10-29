@@ -1,22 +1,27 @@
-document.getElementById("btnConsultaUrls").onclick = function () {
-    getUrls()
+document.getElementById("btnConsultaUrls").onclick = async function () {
+   await getUrls()
 }
 
 async function getUrls() {
     const resultado = await request(urlsBack("url"), "GET")
-
+    console.log(resultado)
     if (resultado.error) {
         console.log("erro ao consultar urls")
     } else {
         document.getElementById("body_consulta_urls").innerHTML = ""
-        resultado.forEach(url => {
-            let linha = criandoLinhaParaTabelaUrl(url)
+        resultado.forEach(async url =>  {
+            console.log(url.questionario == null || url.checklist == null)
+            if (url.questionario == null || url.checklist == null) {
+                await vinculandoUrlAUmQuestionarioEChecklist(url.id)
+            }
+
+            let linha = await criandoLinhaParaTabelaUrl(url)
             document.getElementById("body_consulta_urls").appendChild(linha)
         });
     }
 }
 
-function criandoLinhaParaTabelaUrl(url) {
+async function criandoLinhaParaTabelaUrl(url) {
     let row = document.createElement("tr")
     let tdUrl = document.createElement("td")
     let tdDatas = document.createElement("td")
@@ -59,9 +64,32 @@ function criandoLinhaParaTabelaUrl(url) {
     tdUrl.innerHTML = url.url
     tdDatas.innerHTML = ""
     tdStatus.innerHTML = ""
-    divConvidado.innerHTML = "0 Convidados"
+
+    let quantidadeDeConvidados = await verificandoQuantidadeDeUsuarios(url.id) 
+
+    divConvidado.innerHTML = quantidadeDeConvidados+" Convidados"
 
     divConvidado.classList = "div-convidado"
+    divConvidado.setAttribute("data-bs-toggle", "modal")
+    divConvidado.setAttribute("data-bs-target", "#modal-convidar")
+
+    divConvidado.onclick = async function () {
+        await getAvaliadoresIncluidos(url.id)
+        await pesquisandoAvaliadores(url.id_questionario, url.id_checklist)
+
+        document.getElementById("btnAdicionarAvaliadores").setAttribute("data-idUrl", url.id)
+    }
+
+    btnQuestionario.onclick = function () {
+        sessionStorage.setItem("id_questionario", url.questionario)
+        window.location.replace(urlsFront("questionario")+"pages/index.html") 
+    }    
+
+    btnChecklist.onclick = function () {
+        sessionStorage.setItem("id_checklist", url.checklist)
+        window.location.replace(urlsFront("checklist")+"pages/index.html") 
+    }    
+
     tdConvidados.appendChild(divConvidado)
 
     row.appendChild(tdUrl)
@@ -72,4 +100,18 @@ function criandoLinhaParaTabelaUrl(url) {
     row.appendChild(divAcao)
 
     return row
+}
+
+async function verificandoQuantidadeDeUsuarios(id_url) {
+    
+    let url = urlsBack("questionarioCoordenador")+ "usuariosVinculadosAoQuestinario/"+id_url
+    const resultado = await request(url, "GET")
+
+    console.log(resultado)
+
+    if (resultado.error) {
+        return 0
+    }else{
+        return resultado[0].usuarios.length
+    }
 }

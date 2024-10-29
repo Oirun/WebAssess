@@ -291,3 +291,54 @@ form label{
 .ul-permitir-vermais{
     width: 28rem !important;
 }
+
+/* ---------------- urls para avaliadores ------------------ */
+.div_urls_convidados{
+    margin: 0 5rem;
+    padding: .5rem 5rem;
+    background-color: #dcdce9;
+    border-radius: .7rem;
+}
+
+.div_aviso_convidados{
+    color: #6c6c8f;
+    background-color: var(--background-secundary);
+    border-color: var(--background-secundary);
+    padding: .9rem;
+    border-left: 3px solid #656399;
+    margin: .7rem 0;
+}
+
+.div_aviso_convidados h6{
+    font-weight: 700;
+    margin: 0;
+}
+
+.div_aviso_convidados p{
+    margin: 0;
+    font-size: 14px;
+}
+
+.td-situacao-disponivel{
+    color: #DD8D6E;
+    font-weight: 700;
+    background: #F2DAC6;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#DD8D6E;
+    cursor: pointer;
+}
+
+.td-situacao-indisponivel{
+    color: #FAA49A;
+    font-weight: 700;
+    background: #FAA49A;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#DD8D6E;
+    cursor: pointer;
+}
+
+.div_urls_convidados{
+    display: none;
+}

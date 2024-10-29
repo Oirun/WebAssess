@@ -1,4 +1,5 @@
 function preencheCamposAPartirDaPesquisaDasPerguntas(perguntas) {
+    console.log(perguntas)
     document.getElementById("liberarCamposPerguntas").click()
     document.getElementById("adicionarPergunta").classList.remove("d-none")
     

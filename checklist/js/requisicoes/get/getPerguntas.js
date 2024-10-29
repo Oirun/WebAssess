@@ -1,5 +1,5 @@
 async function getCheckListPerguntas(id_checklist, input) {
-    const resultado = await request(urlsBack("questionario") + "perguntas/"+id_checklist+"?tipo=C", "GET")
+    const resultado = await request(urlsBack("questionarioCoordenador") + "consultaPerguntas/"+id_checklist+"?tipo=C", "GET")
     
     document.getElementById("body_consulta_perguntas_checklist").innerHTML = ""
     if (resultado.error) {

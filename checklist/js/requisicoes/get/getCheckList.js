@@ -44,7 +44,8 @@ function criandoLi(checklist) {
 
     let padrao = checklist.padrao == true ? "Check-List Padrão" : "Check-List não padrão"
     span.classList = "d-block small opacity-50"
-    span.innerHTML = `${checklist.descricao} <br> ${padrao}`
+    let descricao = checklist.descricao == null ? "Sem descrição" : checklist.descricao
+    span.innerHTML = `${descricao} <br> ${padrao}`
 
     label.appendChild(span)
     label.appendChild(div)

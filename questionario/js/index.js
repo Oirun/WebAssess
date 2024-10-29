@@ -3,10 +3,26 @@ document.onreadystatechange = function () {
         $("#header").load(urlsFront("global") + "components/header/header.html", function () {
             $("#formulario_questionario_cadastro").load(urlsFront("questionario") + "components/form/criarQuestionario.html", function () {
                 $("#div-modal-perguntas-questionario").load(urlsFront("questionario") + "components/modal/modalPerguntas.html", function () {
-                    $("#imports").load(urlsFront("questionario") + "pages/imports.html", function () {
+                    $("#imports").load(urlsFront("questionario") + "pages/imports.html", async function () {
                         console.log("index")
-                        getQuestionario()
                         verificandoUsuario()
+                        await preencherPrincipio("principio")
+                        
+                        if (sessionStorage.getItem("id_questionario") && (sessionStorage.getItem("id_questionario") != undefined || sessionStorage.getItem("id_questionario") != "undefined" || sessionStorage.getItem("id_questionario") != "" || sessionStorage.getItem("id_questionario") != null)) {
+                            await getQuestionarioCoordenador(sessionStorage.getItem("id_questionario"))
+                            document.getElementById("container_radios").classList.add("d-none")
+                            sessionStorage.getItem("id_questionario") ? sessionStorage.removeItem("id_questionario") : 0
+                        }else{
+                            if (sessionStorage.getItem("user_t") == "C") {
+                                alert("Usuário Coordenador sem questionário próprio cadastrado, retorne a tela de urls para obter um novo questionário, refaça a consulta.")
+                                window.location.replace(urlsFront("public")+"pages/principal.html") 
+                            }else if (sessionStorage.getItem("user_t") == "A") {
+                                await getQuestionario()
+                            }else{
+                                alert("Usuário sem permissão para acessar está tela.")
+                                window.location.replace(urlsFront("public")+"pages/principal.html") 
+                            }
+                        }
 
                         document.getElementById("btnCadastrarQuestionario").onclick = function (e) {
                             validateForm(e)

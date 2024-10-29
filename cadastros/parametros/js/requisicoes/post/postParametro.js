@@ -14,7 +14,12 @@ btnSalvandoPrincipio.addEventListener("click", salvandoInformacoesParametros)
 
 async function salvandoInformacoesParametros(event) {
     console.log()
-    let url = urlsBack("users")+parametros[event.srcElement.id]
+    let url = ""
+    if (event.srcElement.id == "btnSalvarPrincipio") {
+        url = urlsBack("principio")+"cadastro"
+    }else{
+        url = urlsBack("users")+parametros[event.srcElement.id]
+    }
     let descricao = document.getElementById("nome_"+parametros[event.srcElement.id]).value
 
     let status = document.getElementById(parametros[event.srcElement.id]+"_ativo").checked == true ? "A" : "I" 
@@ -26,7 +31,7 @@ async function salvandoInformacoesParametros(event) {
     }else if (event.srcElement.id == "btnSalvarEscolaridade") {
         json.nome_escolaridade = descricao
     }else if (event.srcElement.id == "btnSalvarPrincipio"){
-        json.nome_principio = descricao
+        json.descricao = descricao
     }
   
     const resultado = await request(url, "POST", json)

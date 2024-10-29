@@ -2,7 +2,7 @@ async function getUsuario(ul) {
     let url = urlsBack("users")
 
     const resultado = await request(url, "GET")
-
+   
     if (resultado.error) {
         alert(resultado.error)
     } else {

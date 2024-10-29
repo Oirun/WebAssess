@@ -1,5 +1,12 @@
 async function getQuestionarioPerguntas(id_questionario, input) {
-    const resultado = await request(urlsBack("questionario") + "perguntas/"+id_questionario+"?tipo=Q", "GET")
+    let url = ""
+    if (sessionStorage.getItem("user_t") == "C") {
+        url = urlsBack("questionarioCoordenador") + "consultaPerguntas/"+id_questionario
+    } else {
+        url = urlsBack("questionario") + "perguntas/"+id_questionario+"?tipo=Q"
+    }
+
+    const resultado = await request(url, "GET")
     
     document.getElementById("body_consulta_perguntas_questionario").innerHTML = ""
     if (resultado.error) {

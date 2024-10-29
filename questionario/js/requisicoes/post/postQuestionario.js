@@ -2,11 +2,13 @@ function validateForm(event) {
     event.preventDefault()
 
     let form = document.getElementById("form_cadastro_questionario")
-
+ 
     if (form.checkValidity()) {
         if (document.getElementById("codigo_questionario").value !== null && document.getElementById("codigo_questionario").value.trim() !== "") {
             if (sessionStorage.getItem("user_t") == "C") {
-                questionarioCoordenador()
+                let url = urlsBack("questionarioCoordenador") + "update/" + document.getElementById("codigo_questionario").value
+                let metodo = "PATCH"
+                enviaQuestionario(url, metodo)
             }else{
                 let url = urlsBack("questionario") + "update/" + document.getElementById("codigo_questionario").value
                 let metodo = "PATCH"
@@ -23,18 +25,18 @@ function validateForm(event) {
 }
 
 async function enviaQuestionario(url, metodo) {
-    console.log("post")
+    
     let nome_questionario = document.getElementById("nome_questionario").value
     let descricao_questionario = document.getElementById("descricao_questionario").value
 
     let ativo = true
     let padrao = true
 
-    document.getElementById("questionario_ativo").checked == "A" ? ativo = "A" : ativo = "I"
-    document.getElementById("questionario_padrao").checked == "true" ? padrao = "true" : padrao = "false"
+    document.getElementById("questionario_ativo").checked == true ? ativo = "A" : ativo = "I"
+    document.getElementById("questionario_padrao").checked == true ? padrao = "true" : padrao = "false"
 
     let resultado = ""
-
+    console.log(url, metodo)
     if (document.getElementById("codigo_questionario").value !== null && document.getElementById("codigo_questionario").value.trim() !== "") {
         let json = {
             "titulo": nome_questionario,
@@ -96,8 +98,13 @@ async function enviaQuestionario(url, metodo) {
         }else{
             document.getElementById("form_cadastro_questionario").reset()
         }
+        if (sessionStorage.getItem("user_t") == "A") {
+            getQuestionario()
+        }else if(sessionStorage.getItem("user_t") == "C"){
+            getQuestionarioCoordenador(document.getElementById("codigo_questionario").value)
+        }
         document.getElementById("form_cadastro_questionario").classList.remove("was-validated")
-        getQuestionario()
+
         Swal.fire({
             title: "Sucesso!",
             text: "Questionário cadastrado com sucesso!",
@@ -106,6 +113,3 @@ async function enviaQuestionario(url, metodo) {
     }
 }
 
-async function questionarioCoordenador() {
-    
-}

@@ -17,6 +17,9 @@ function urlsFront(pasta) {
         case "checklist":
             let url_checklist = urls_base + "checklist/"
             return url_checklist
+        case "responderQuestionario":
+            let url_responder = urls_base + "responderQuestionario/"
+            return url_responder
         default:
             break;
     }
@@ -33,9 +36,18 @@ function urlsBack(pasta) {
         case "questionario":
             let url_questionario = urls_base + "questionario/"
             return url_questionario
+        case "principio":
+            let url_principio = urls_base + "principio/"
+            return url_principio
         case "url":
             let url_url = urls_base + "url/"
             return url_url
+        case "questionarioCoordenador":
+            let url_questionarioCoordenador = urls_base + "questionarioCoordenador/"
+            return url_questionarioCoordenador
+        case "questionarioAvaliador":
+            let url_questionarioAvaliador = urls_base + "questionarioAvaliador/"
+            return url_questionarioAvaliador
 
         default:
             break;
