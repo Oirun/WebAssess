@@ -19,7 +19,7 @@ async function enviandoResposta() {
     let resposta = document.querySelector(".txtpadraoResposta").value
     let id_pergunta = document.querySelector(".txtpadraoResposta").id.replace("pergunta_", "")
 
-    let radios = document.querySelector('input[name="radioRes"]:checked').id.replace("_"+id_pergunta, "")
+    let radios = document.querySelector(`input[name="radioRes_${id_pergunta}"]:checked`).id.replace("_"+id_pergunta, "")
     let radioRes = ""
 
     switch (radios) {
@@ -33,6 +33,9 @@ async function enviandoResposta() {
             radioRes = 3
             break;
         case "radioMuitoBom":
+            radioRes = 4
+            break;
+        case "radioOtimo":
             radioRes = 4
             break;
         case "radioSim":

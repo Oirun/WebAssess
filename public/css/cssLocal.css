@@ -84,6 +84,10 @@
     color: #fff!important;
 }
 
+#escolaridade{
+    color: #FFF!important;
+}
+
 .input-pagina-login:-webkit-autofill,
 .input-pagina-login:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 300px rgba(33, 37, 41, 5) inset !important;
@@ -159,6 +163,7 @@
     font-weight: 500;
     color: #fff;
 }
+
 /* ------------ section principal */
 .navContainerPrincipal{
     width: 100vw;
@@ -341,4 +346,18 @@ form label{
 
 .div_urls_convidados{
     display: none;
+}
+
+/* Sem solicitacoes */
+
+.sem_solicitacoes, .informacoes_adicionais, .urls_cadastradas{
+    margin-top: 2rem;
+    background: #bfc1fd;
+    padding: 1.5rem;
+    /* height: 75vh; */
+    border-radius: 10px;
+    border-left: 4px solid var(--background-secundary);
+    overflow-y: auto;
+    color: #656399;
+    font-weight: 800;
 }

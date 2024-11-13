@@ -62,6 +62,14 @@
         <script> $(function () { $("#modalLogin").load("components/modal/login.html") });</script>
     </div>
 
+    <script>
+        window.addEventListener("load", (event) => {
+            preencherProfissao("profissao")
+            preencherEscolaridade("escolaridade")
+        });
+    </script>
+
+
     <!-- <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script> -->
@@ -70,6 +78,9 @@
     <script src="../../public/js/requisicoes/proprioCadastro.js"></script>
     <script src="../global/js/validandoSenha/validarSenha.js"></script>
     <script src="../global/js/usuario/tipo_usuario.js"></script>
+    <script src="../global/js/combo/comboEscolaridade.js"></script>
+    <script src="../global/js/combo/comboProfissao.js"></script>
+    <script src="../global/js/requisicoes/requisicao.js"></script>
 </body>
 
 </html>

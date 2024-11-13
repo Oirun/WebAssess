@@ -1,4 +1,6 @@
 async function request(url, metodo, json) {
+    console.log(url, json)
+  
     // console.log(url, metodo)
     if (metodo == 'GET') {
         var response = await fetch(url, {

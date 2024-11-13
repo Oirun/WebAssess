@@ -74,21 +74,40 @@
       </div>
     </section>
 
-    <div class="complemento">
-      <div class="notificacoes__usuarios" id="notificacoes__usuarios">
+    <div class="complemento row g-3">
+      
+      <div class="col-md-5 notificacoes__usuarios" id="notificacoes__usuarios">
         <div class="px-5 pt-4 bg-body-tertiary border notificacoes__usuarios__lista">
           <h2 class="">Solicitações de cadastro</h2>
 
           <div class="div-lista-notificacoes my-2">
             <ul class="list-group" id="lista_permitir"></ul>
-
+            <div class="sem_solicitacoes d-none" id="sem_solicitacoes">
+              <p>Sem Solicitações de cadastro no momento.</p>
+            </div>
+            <div class="urls_cadastradas d-none" id="urls_cadastradas">
+              <p>Não esqueça de conferir as URLs cadastradas.</p>
+            </div>
             <div class="py-3 d-flex">
               <button type="button" class="btn btn-dark" id="aceitarCadastro">Aceitar</button>
+              <button type="button" class="btn btn-dark d-none" id="irUrl">Ver URLs</button>
             </div>
           </div>
         </div>
       </div>
 
+      <div class="col-md-5 notificacoes__usuarios notificacoes__usuarios_avaliador" id="notificacoes__usuarios_avaliador">
+        <div class="px-5 pt-4 bg-body-tertiary border notificacoes__usuarios__lista">
+          <h2 class="">Informações Adicionais</h2>
+
+          <div class="div-lista-notificacoes my-2">
+            <div class="informacoes_adicionais" id="informacoes_adicionais">
+              <p>Para navegar no sistema basta clicar no botão com as três listas no canto superior esquerdo, isso abrirá o menu, e pelo menu você vai conseguir navegar pelo sistema, caso queira sair do sistema e encerrar as suas atividades
+                clique no icone de sair no canto superior direito, depois confirme que deseja deslogar do sistema.</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- <div class="px-5 pt-4 bg-body-tertiary border notificacoes__usuarios__lista">
         <h2 class="">Solicitações de cadastro</h2>
 
@@ -101,7 +120,7 @@
         </div>
       </div> -->
     </div>
-    </div>
+    
 
     <div class="div_urls_convidados" id="div_urls_convidados">
       <script>

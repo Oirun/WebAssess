@@ -17,9 +17,6 @@ function construindoLinha(elemento, parametro) {
     } else  if (parametro == "escolaridade") {
         id = elemento.id_escolaridade
         descricao = elemento.nome_escolaridade
-    }else if(parametro == "principio"){
-        id = elemento.id_principio
-        descricao = elemento.descricao
     }
 
     tdId.innerHTML = id

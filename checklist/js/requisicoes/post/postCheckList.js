@@ -34,8 +34,8 @@ async function enviaCheckList(url, metodo) {
     let ativo = true
     let padrao = true
 
-    document.getElementById("checklist_ativo").checked == "A" ? ativo = "A" : ativo = "I"
-    document.getElementById("checklist_padrao").checked == "true" ? padrao = "true" : padrao = "false"
+    document.getElementById("checklist_ativo").checked == true ? ativo = "A" : ativo = "I"
+    document.getElementById("checklist_padrao").checked == true ? padrao = 1 : padrao = 0
 
     let resultado = ""
 
@@ -47,7 +47,7 @@ async function enviaCheckList(url, metodo) {
             "padrao": padrao,
             "data_fim" : "2024-11-24"
         }
-        console.log(json)
+        console.log(JSON.stringify(json), url)
        resultado = await request(url, metodo, json)
     } else {
         let pergunta = document.getElementById("pergunta").value
@@ -82,7 +82,7 @@ async function enviaCheckList(url, metodo) {
                 }
             ]
         }
-        console.log(json, url, metodo)
+        console.log(json)
         resultado = await request(url, metodo, json)
     }
 
@@ -98,6 +98,8 @@ async function enviaCheckList(url, metodo) {
 
         document.getElementById("form_cadastro_checklist").classList.remove("was-validated")
         // document.getElementById("form_cadastro_checklist").reset()
+        document.getElementById("pergunta").value = ""
+        document.getElementById("justificativa").value = ""
 
         Swal.fire({
             title: "Sucesso!",

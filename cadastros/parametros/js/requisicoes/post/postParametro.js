@@ -1,6 +1,6 @@
 const btnSalvandoProfissao = document.getElementById("btnSalvarProfissao")
 const btnSalvandoEscolaridade = document.getElementById("btnSalvarEscolaridade")
-const btnSalvandoPrincipio = document.getElementById("btnSalvarPrincipio")
+//const btnSalvandoPrincipio = document.getElementById("btnSalvarPrincipio")
 
 const parametros = {
     "btnSalvarProfissao" : "profissao",
@@ -10,16 +10,14 @@ const parametros = {
 
 btnSalvandoProfissao.addEventListener("click", salvandoInformacoesParametros)
 btnSalvandoEscolaridade.addEventListener("click", salvandoInformacoesParametros)
-btnSalvandoPrincipio.addEventListener("click", salvandoInformacoesParametros)
+//btnSalvandoPrincipio.addEventListener("click", salvandoInformacoesParametros)
 
 async function salvandoInformacoesParametros(event) {
     console.log()
     let url = ""
-    if (event.srcElement.id == "btnSalvarPrincipio") {
-        url = urlsBack("principio")+"cadastro"
-    }else{
-        url = urlsBack("users")+parametros[event.srcElement.id]
-    }
+   
+    url = urlsBack("users")+parametros[event.srcElement.id]
+    
     let descricao = document.getElementById("nome_"+parametros[event.srcElement.id]).value
 
     let status = document.getElementById(parametros[event.srcElement.id]+"_ativo").checked == true ? "A" : "I" 
@@ -30,8 +28,6 @@ async function salvandoInformacoesParametros(event) {
         json.nome_profissao = descricao
     }else if (event.srcElement.id == "btnSalvarEscolaridade") {
         json.nome_escolaridade = descricao
-    }else if (event.srcElement.id == "btnSalvarPrincipio"){
-        json.descricao = descricao
     }
   
     const resultado = await request(url, "POST", json)

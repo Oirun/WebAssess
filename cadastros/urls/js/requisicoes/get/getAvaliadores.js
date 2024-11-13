@@ -1,6 +1,7 @@
-async function pesquisandoAvaliadores() {
+async function pesquisandoAvaliadores(id_url) {
 
-    const resultado = await request(urlsBack("questionarioCoordenador")+"consultaAvaliadores", "GET")
+    let profissao = document.getElementById("profissao").dataset.idprofissao == undefined ? "" : document.getElementById("profissao").dataset.idprofissao
+    const resultado = await request(urlsBack("questionarioCoordenador")+"consultaAvaliadores/"+id_url+"?profissao="+profissao, "GET")
  
     if (resultado.error) {
         console.log("erro ao pesquisar avaliadores")
@@ -29,6 +30,7 @@ function criandoLinhaParaTabelaAvaliadores(avaliador) {
 
     row.onclick = function () {
         selecionandoAvaliadores(row)
+        
     }
 
     row.appendChild(tdCodigo)

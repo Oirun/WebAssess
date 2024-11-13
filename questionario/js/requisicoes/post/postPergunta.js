@@ -36,8 +36,8 @@ function validandoPerguntas(e) {
 
 async function adicionarNovaPerguntaAoQuestionarioSelecionado(url, metodo) {
     let codigo = document.getElementById("codigo_questionario").value.trim()
-    let combo_principio = document.getElementById("principio")
-    let principio = combo_principio.options[combo_principio.selectedIndex].dataset.idPrincipio;
+    // let combo_principio = document.getElementById("principio")
+    // let principio = combo_principio.options[combo_principio.selectedIndex].dataset.idPrincipio;
     let pergunta = document.getElementById("pergunta").value 
     let justificativa = document.getElementById("justificativa").value
     let resultado
@@ -49,23 +49,25 @@ async function adicionarNovaPerguntaAoQuestionarioSelecionado(url, metodo) {
             "pergunta": pergunta,
             "justificativa": justificativa,
             "id_pergunta": parseInt(document.getElementById("pergunta").dataset.idPergunta),
-            "principio": parseInt(principio)
+            // "principio": parseInt(principio)
         }	
-         resultado = await request(url, metodo, json)
+     
+        resultado = await request(url, metodo, json)
     } else {
         let json = {
             "pergunta": pergunta,
             "justificativa": justificativa,
             "id_questionario": parseInt(codigo),
-            "principio": parseInt(principio)
+            // "principio": parseInt(principio)
         }
-         resultado = await request(url, metodo, json)
+        
+        resultado = await request(url, metodo, json)
     }
 
     if (resultado.error) {
         alert(resultado.error)
     } else {
-        document.getElementById("pergunta").dataset.idPrincipio = ""
+        // document.getElementById("pergunta").dataset.idPrincipio = ""
         document.getElementById("pergunta").value = ""
         document.getElementById("justificativa").value = ""
         document.getElementById("form_cadastro_questionario").classList.remove("was-validated")

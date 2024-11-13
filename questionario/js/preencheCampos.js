@@ -6,10 +6,15 @@ function preencheCamposAPartirDaPesquisa(questionario) {
 
     console.log(questionario.padrao == true)
     questionario.padrao == true ? document.getElementById("questionario_padrao").click() : document.getElementById("questionario_nao_padrao").click()
-    //questionario.padrao == "A" ? document.getElementById("").checked = true : document.getElementById("").checked = false 
-    document.getElementById("questionario_ativo").checked = true
-
-    document.getElementById("principio").disabled = true
+    console.log(questionario.status)
+    if (questionario.status == "A") {
+        document.getElementById("questionario_ativo").click()
+    }else{
+        console.log("inativo")
+        document.getElementById("questionario_inativo").click()
+    }
+   
+    // document.getElementById("principio").disabled = true
     document.getElementById("pergunta").disabled = true
     document.getElementById("justificativa").disabled = true
 

@@ -17,8 +17,6 @@ async function getUsuario(ul) {
 
 function liUsuario(usuario) {
 
-    console.log(usuario)
-
     let li = document.createElement("li")
     li.classList = "list-group-item"
     let nivel = ""

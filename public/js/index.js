@@ -12,8 +12,12 @@ document.onreadystatechange = function () {
                     }
                     
                     document.getElementById("aceitarCadastro") ? document.getElementById("aceitarCadastro").onclick = function () {
-                        console.log("AAAAAAAAAAA")
+                        
                         permitindoNovosUsuarios()
+                    }: 0
+                    document.getElementById("irUrl") ? document.getElementById("irUrl").onclick = function () {
+                        
+                        window.location.replace(urlsFront("cadastros")+"urls/pages/index.html")
                     }: 0
                 })
             })

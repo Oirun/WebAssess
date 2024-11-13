@@ -5,7 +5,7 @@ async function getQuestionarioPerguntas(id_questionario, input) {
     } else {
         url = urlsBack("questionario") + "perguntas/"+id_questionario+"?tipo=Q"
     }
-
+    console.log(url)
     const resultado = await request(url, "GET")
     
     document.getElementById("body_consulta_perguntas_questionario").innerHTML = ""
@@ -46,7 +46,7 @@ function criandoLiPerguntas(pergunta, input) {
     buttonEditar.appendChild(icoEditar)
     buttonDeletar.appendChild(icoDeletar)
     div.appendChild(buttonEditar)
-    div.appendChild(buttonDeletar)
+    // div.appendChild(buttonDeletar)
     tdAcoes.appendChild(div)
 
     row.appendChild(tdId)

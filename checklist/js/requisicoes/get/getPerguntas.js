@@ -39,7 +39,7 @@ function criandoLiPerguntas(pergunta, input) {
     buttonEditar.appendChild(icoEditar)
     buttonDeletar.appendChild(icoDeletar)
     div.appendChild(buttonEditar)
-    div.appendChild(buttonDeletar)
+    // div.appendChild(buttonDeletar)
     tdAcoes.appendChild(div)
 
     row.appendChild(tdId)

@@ -7,9 +7,11 @@ document.onreadystatechange = function () {
                     // $("#div_cadastro_urls").load(urlsFront("cadastros") + "urls/components/form/cadastroUrls.html", function () {
                     $("#imports").load(urlsFront("cadastros") + "urls/pages/imports.html", async function () {
                         verificandoUsuario()
+                        preencherProfissao("profissao", "filtro")
 
-                        console.log(document.getElementById("c_questionario"))
-                        
+                        document.getElementById("btnConsultaUrls").click()
+                        const tooltipTriggerList = document.querySelectorAll('[data-bs-toll="tooltip"]')
+                        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
                     })
                 })
             })

@@ -34,7 +34,8 @@ async function adicionandoAvaliadores() {
     } else {
 
         await getAvaliadoresIncluidos(id_url)
-        await pesquisandoAvaliadores()
+        await pesquisandoAvaliadores(document.getElementById("btnAdicionarAvaliadores").dataset.idurl)
+        document.getElementById("btnConsultaUrls").click()
     }
 
 }

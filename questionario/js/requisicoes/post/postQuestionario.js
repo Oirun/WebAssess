@@ -45,13 +45,13 @@ async function enviaQuestionario(url, metodo) {
             "padrao": padrao,
             "data_fim" : "2024-11-24"
         }
-        console.log(json)
+        console.log(JSON.stringify(json))
        resultado = await request(url, metodo, json)
     } else {
         let pergunta = document.getElementById("pergunta").value
         let justificativa = document.getElementById("justificativa").value
-        let combo_principio = document.getElementById("principio")
-        let principio = combo_principio.options[combo_principio.selectedIndex].dataset.idPrincipio;
+        // let combo_principio = document.getElementById("principio")
+        // let principio = combo_principio.options[combo_principio.selectedIndex].dataset.idPrincipio;
         
         if (pergunta.trim() == null || pergunta.trim() == "") {
             Swal.fire({
@@ -79,11 +79,11 @@ async function enviaQuestionario(url, metodo) {
                 {
                     "pergunta": pergunta,
                     "justificativa": justificativa,
-                    "principio": principio
+                    // "principio": principio
                 }
             ]
         }
-        console.log(json, url, metodo)
+        console.log(JSON.stringify(json), url, metodo)
         resultado = await request(url, metodo, json)
     }
 
@@ -92,7 +92,7 @@ async function enviaQuestionario(url, metodo) {
     }else{
         if (metodo == "PATCH") {
               
-              document.getElementById("principio").selectedIndex = 0
+            //   document.getElementById("principio").selectedIndex = 0
               document.getElementById("pergunta").value = ""
               document.getElementById("justificativa").value = ""
         }else{

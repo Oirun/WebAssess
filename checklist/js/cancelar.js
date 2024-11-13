@@ -9,6 +9,9 @@ function cancelar() {
 
     document.getElementById("pergunta").disabled = false
     document.getElementById("justificativa").disabled = false
+    document.getElementById("nome_checklist").disabled = false
+    document.getElementById("descricao_checklist").disabled = false
+    document.getElementById("btnCadastrarCheckList").disabled = false
 
     let listaCheckList = document.getElementById("listar-checklist-cadastrados")
     let item = listaCheckList.querySelector('input[type="radio"]:checked')

@@ -31,14 +31,19 @@
     </div>
     <div class="col-md-6">
         <label for="profissao" class="form-label">Profissão</label>
-        <select id="profissao" class="form-select">
+        <select id="profissao" class="form-select" required>
         </select>
     </div>
 
     <div class="col-md-6">
         <label for="escolaridade" class="form-label">Escolaridade</label>
-        <select id="escolaridade" class="form-select">
+        <select id="escolaridade" class="form-select" required>
         </select>
+    </div>
+
+    <div class="col-md-6">
+        <label for="cep_usuario" class="form-label">CEP</label>
+        <input type="text" class="form-control" id="cep_usuario">
     </div>
 
     <div class="col-md-6">
@@ -79,6 +84,11 @@
         <select id="c_cidade_usuario" class="form-select">
             <option selected></option>
         </select>
+    </div>
+
+    <div class="col-md-6">
+        <label for="endereco_usuario" class="form-label">Endereço</label>
+        <input type="text" class="form-control" id="endereco_usuario">
     </div>
 
     <div class="col-md-6">
@@ -167,7 +177,7 @@
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2">
         <button class="btn btn-dark me-md-2" type="button" data-bs-toggle="modal"
             data-bs-target="#modal_cadastro_usuario">Consultar</button>
-        <button class="btn btn-primary me-md-2" type="button"><i class="bi bi-trash"></i></button>
+        <!-- <button class="btn btn-primary me-md-2" type="button"><i class="bi bi-trash"></i></button> -->
         <button class="btn btn-primary me-md-2" id="btnCadastrar" type="submit">Salvar</button>
         <button class="btn btn-outline-dark" onclick="cancelar()" type="button">Cancelar</button>
     </div>

@@ -1,21 +1,22 @@
-async function getUsuarioTabela(ul) {
+async function getUsuarioTabela(solicitacaoUsuario) {
     let url = urlsBack("users")
     document.getElementById("body_consulta_usuario").innerHTML = ""
     const resultado = await request(url, "GET")
-
+    console.log(url, resultado)
     if (resultado.error) {
         alert(resultado.error)
     } else {
 
         console.log(document.getElementById("body_consulta_usuario"))
         resultado.forEach(usuario => {
-            let linha = rowTable(usuario)
+            let linha = rowTable(usuario, solicitacaoUsuario)
             document.getElementById("body_consulta_usuario").appendChild(linha)
         });
     }
 }
 
-function rowTable(usuario) {
+function rowTable(usuario, solicitacaoUsuario) {
+    console.log(solicitacaoUsuario)
     let row = document.createElement("tr")
     let tdCodigo = document.createElement("td")
     let tdNome = document.createElement("td")
@@ -52,6 +53,10 @@ function rowTable(usuario) {
 
     btnEditar.onclick = function () {
         preencherCamposParaEdicaoDeUsuario(usuario)
+    }
+
+    if (solicitacaoUsuario == usuario.id_usuario) {
+        btnEditar.click()
     }
 
     row.appendChild(tdCodigo)

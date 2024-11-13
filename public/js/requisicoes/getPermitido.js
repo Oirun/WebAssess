@@ -3,10 +3,16 @@ async function getSolicitacoesPermitir() {
     lista.innerHTML = ""
 
     const resultado = await request(urlsBack("users") + "admin/daPermitido", "GET")
-
+    console.log(resultado)
     if (resultado.error) {
 
+      if (resultado.error == "Sem cadastro para essa consulta!") {
+        document.getElementById("sem_solicitacoes").classList.remove("d-none")
+        document.getElementById("aceitarCadastro").classList.add("d-none")
+      }
     } else {
+      document.getElementById("sem_solicitacoes").classList.add("d-none")
+      document.getElementById("aceitarCadastro").classList.remove("d-none")
         resultado.forEach(solicitacao => {
             let li = construindoLi(solicitacao)
             lista.appendChild(li)
@@ -54,6 +60,9 @@ function construindoLi(solicitacao) {
     buttonRedirecionandoUsuario.onclick = function () {
       // colocar um json com as informacoes basicas para fazer uma consulta completa do ser que ele clicou
       // la na tela de cadastro de usuario
+      
+      sessionStorage.setItem("id_usuario", solicitacao.id_usuario)
+      window.location.replace(urlsFront("cadastros")+"usuarios/pages/index.html")
     }
 
     let nivel = "" 

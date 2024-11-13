@@ -5,9 +5,15 @@ document.onreadystatechange = function () {
                 $("#table_consulta_usuario").load(urlsFront("cadastros") + "usuarios/components/table/tableUsuario.html", function () {
                     $("#imports").load(urlsFront("cadastros") + "usuarios/pages/importsJS.html", function () {
                         verificandoUsuario()
+                        
                         preencherProfissao("profissao")
                         preencherEscolaridade("escolaridade")
 
+                        if (sessionStorage.getItem("id_usuario")) {
+                            getUsuarioTabela(sessionStorage.getItem("id_usuario"))
+                            sessionStorage.removeItem("id_usuario")
+                        }
+                        
                         getUsuario(true)
 
                         document.getElementById("btnConsultarUsuario").onclick = function () {

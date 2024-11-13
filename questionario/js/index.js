@@ -6,7 +6,7 @@ document.onreadystatechange = function () {
                     $("#imports").load(urlsFront("questionario") + "pages/imports.html", async function () {
                         console.log("index")
                         verificandoUsuario()
-                        await preencherPrincipio("principio")
+                        // await preencherPrincipio("principio")
                         
                         if (sessionStorage.getItem("id_questionario") && (sessionStorage.getItem("id_questionario") != undefined || sessionStorage.getItem("id_questionario") != "undefined" || sessionStorage.getItem("id_questionario") != "" || sessionStorage.getItem("id_questionario") != null)) {
                             await getQuestionarioCoordenador(sessionStorage.getItem("id_questionario"))
@@ -48,7 +48,7 @@ document.onreadystatechange = function () {
                                 document.getElementById("btnCadastrarQuestionario").disabled = false
                             }
 
-                            document.getElementById("principio").disabled = desabilitar
+                            // document.getElementById("principio").disabled = desabilitar
                             document.getElementById("pergunta").disabled = desabilitar
                             document.getElementById("justificativa").disabled = desabilitar
 

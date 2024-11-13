@@ -5,11 +5,9 @@ const tabelas = {
 }
 async function getParametros(parametro) {
     let url = ""
-    if (parametro == "principio") {
-        url = urlsBack("principio")+"consulta"
-    }else{
+
         url = urlsBack("users")+parametro
-    }
+    
     console.log(url)
     const resultado = await request(url, "GET")
 

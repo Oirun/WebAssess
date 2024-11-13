@@ -11,7 +11,7 @@ function cancelar() {
 
     document.getElementById("titulo_modulo_questionario").innerHTML = "Cadastro de Questionário"
 
-    document.getElementById("principio").disabled = false
+    // document.getElementById("principio").disabled = false
     document.getElementById("pergunta").disabled = false
     document.getElementById("justificativa").disabled = false
 
