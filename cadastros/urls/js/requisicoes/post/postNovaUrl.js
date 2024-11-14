@@ -9,14 +9,14 @@ async function adicionandoNovaURl() {
     let dataInicio = document.getElementById("url_data_inicio").value
     let dataFim = document.getElementById("url_data_fim").value
     let descricao = document.getElementById("url_descricao").value
-    let ativo = document.getElementById("url_ativo").checked == true ? 1 : 0
+    // let ativo = document.getElementById("url_ativo").checked == true ? 1 : 0
 
     let jsonNovaUrl = {
         "url": url,
         "descricao": descricao,
         "data_inicio": dataInicio,
         "data_fim" : dataFim,
-        "ativo" : ativo,
+        // "ativo" : ativo,
         "tipo_site" : ""
     }
 

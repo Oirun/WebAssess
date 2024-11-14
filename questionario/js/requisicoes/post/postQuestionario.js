@@ -33,7 +33,7 @@ async function enviaQuestionario(url, metodo) {
     let padrao = true
 
     document.getElementById("questionario_ativo").checked == true ? ativo = "A" : ativo = "I"
-    document.getElementById("questionario_padrao").checked == true ? padrao = "true" : padrao = "false"
+    document.getElementById("questionario_padrao").checked == true ? padrao = 1 : padrao = 0
 
     let resultado = ""
     console.log(url, metodo)

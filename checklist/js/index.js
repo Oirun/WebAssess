@@ -12,7 +12,7 @@ document.onreadystatechange = function () {
                             // sessionStorage.getItem("id_checklist") ? sessionStorage.removeItem("id_checklist") : 0
                         }else{
                             if (sessionStorage.getItem("user_t") == "C") {
-                                alert("Usuário Coordenador sem questionário próprio cadastrado, retorne a tela de urls para obter um novo questionário, refaça a consulta.")
+                                alert("Usuário Coordenador sem check-list próprio cadastrado, retorne a tela de urls para obter um novo check-list, refaça a consulta.")
                                 window.location.replace(urlsFront("public")+"pages/principal.html") 
                             }else if (sessionStorage.getItem("user_t") == "A") {
                                 await getCheckList()
@@ -35,7 +35,7 @@ document.onreadystatechange = function () {
                             if (document.getElementById("liberarCamposPerguntas").checked == true) {
                                 desabilitar = false
                                 checklist = true
-                                document.getElementById("lbl_liberar_campo").innerHTML = "Liberar campos de questionário."
+                                document.getElementById("lbl_liberar_campo").innerHTML = "Liberar campos de check-list."
                                 document.getElementById("adicionarPergunta").classList.remove("d-none")
                                 document.getElementById("btnCadastrarCheckList").disabled = true
                             } else {

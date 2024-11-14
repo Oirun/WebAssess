@@ -16,7 +16,7 @@ function preencheCamposAPartirDaPesquisa(checklist) {
     document.getElementById("liberarCamposPerguntas").checked = false 
     document.getElementById("liberarCamposPerguntas").disabled = false
 
-    document.getElementById("titulo_modulo_checklist").innerHTML = "Edição de questionário"
+    document.getElementById("titulo_modulo_checklist").innerHTML = "Edição de check-list"
 
     codigo_checklist.onclick = function () {
         codigo_checklist.disabled = true

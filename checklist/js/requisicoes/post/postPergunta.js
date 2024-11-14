@@ -77,7 +77,7 @@ async function adicionarNovaPerguntaAoCheckListSelecionado(metodo, url) {
         } else {
             Swal.fire({
                 title: "Sucesso!",
-                text: "Pergunta adicionada ao questionário!",
+                text: "Pergunta adicionada ao check-list!",
                 icon: "success"
             });
         }
