@@ -77,30 +77,34 @@
     /* margin-right: 5px; */
 }
 
-input{
+.input-pagina-login{
     border: 1px solid #656399 !important;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
     background-color: rgba(33, 37, 41, 5)!important;
     color: #fff!important;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:active{
+#escolaridade{
+    color: #FFF!important;
+}
+
+.input-pagina-login:-webkit-autofill,
+.input-pagina-login:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 300px rgba(33, 37, 41, 5) inset !important;
     -webkit-text-fill-color: #fff !important;
 }
 
-input:hover{
+.input-pagina-login:hover{
     background-color: rgba(33, 37, 41, .5);
     outline: 2px solid #6c63ff;
 }
 
-input:focus-visible{
+.input-pagina-login:focus-visible{
     background-color: rgba(33, 37, 41, 1);
     outline: 2px solid #6c63ff;
 }
 
-input::-webkit-input-placeholder {
+.input-pagina-login::-webkit-input-placeholder {
     color: #fff;
  }
 
@@ -160,6 +164,50 @@ input::-webkit-input-placeholder {
     color: #fff;
 }
 
+/* ------------ section principal */
+.navContainerPrincipal{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navContainerPrincipal main{
+    height: 50%;
+}
+
+/* ------------ header pricipal ------------ */
+#headerIndex{
+ width: 100%;
+}
+
+.headerPrincipal{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.headerPrincipal .img-logo{
+    width: 10%;
+}
+
+.navContainerPrincipal nav a {
+    text-decoration: none;
+    color: #fff;
+} 
+
+.navContainerPrincipal nav a:hover {
+    color: #9c97fff1;
+} 
+
+.buttonsLogin a {
+    text-decoration: none;
+    color: #fff;
+}
+
 @media screen and (max-width: 1330px) {
     .form-image{
         display: none;
@@ -195,7 +243,13 @@ input::-webkit-input-placeholder {
     cursor: pointer;
 }
 
-/* senha */
+/* FORM */
+form label{
+    display: flex;
+    justify-content: start;
+}
+
+/* ---------- SENHA ----------- */
 .div-senha{
     display: flex;
     flex-direction: column;
@@ -209,14 +263,14 @@ input::-webkit-input-placeholder {
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    background-color: rgb(51, 55, 58);
+    background-color: var(--background-secundary);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
     border-radius: 16px;
     width: 100%;
     padding: 1rem;
     font-size: .9rem;
     font-weight: 600;
-    color: #c5c4d1;
+    color: var(--color-text);
 }
 
 .lista-senha i{
@@ -231,8 +285,79 @@ input::-webkit-input-placeholder {
     color: rgb(4, 177, 76);
 }
 
-/* FORM */
-form label{
-    display: flex;
-    justify-content: start;
+.dropdown-menu{
+    width: 370px;
+}
+
+.li-permitir-vermais{
+    border-bottom: 0px !important;
+}
+
+.ul-permitir-vermais{
+    width: 28rem !important;
+}
+
+/* ---------------- urls para avaliadores ------------------ */
+.div_urls_convidados{
+    margin: 0 5rem;
+    padding: .5rem 5rem;
+    background-color: #dcdce9;
+    border-radius: .7rem;
+}
+
+.div_aviso_convidados{
+    color: #6c6c8f;
+    background-color: var(--background-secundary);
+    border-color: var(--background-secundary);
+    padding: .9rem;
+    border-left: 3px solid #656399;
+    margin: .7rem 0;
+}
+
+.div_aviso_convidados h6{
+    font-weight: 700;
+    margin: 0;
+}
+
+.div_aviso_convidados p{
+    margin: 0;
+    font-size: 14px;
+}
+
+.td-situacao-disponivel{
+    color: #DD8D6E;
+    font-weight: 700;
+    background: #F2DAC6;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#DD8D6E;
+    cursor: pointer;
+}
+
+.td-situacao-indisponivel{
+    color: #FAA49A;
+    font-weight: 700;
+    background: #FAA49A;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#DD8D6E;
+    cursor: pointer;
+}
+
+.div_urls_convidados{
+    display: none;
+}
+
+/* Sem solicitacoes */
+
+.sem_solicitacoes, .informacoes_adicionais, .urls_cadastradas{
+    margin-top: 2rem;
+    background: #bfc1fd;
+    padding: 1.5rem;
+    /* height: 75vh; */
+    border-radius: 10px;
+    border-left: 4px solid var(--background-secundary);
+    overflow-y: auto;
+    color: #656399;
+    font-weight: 800;
 }

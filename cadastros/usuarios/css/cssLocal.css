@@ -7,19 +7,29 @@
     padding-left: 0px!important;
 }
 
-.principal{
-    display: grid;
-    grid-template-columns: 65% 30%;
-    padding-right: 80px;
-    gap: 2.8rem;
+.formulario-cadastro{
+    width: 70%;
+}
+
+.index_cadastro_usuarios{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2%;
+    padding: 2% 5%;
+}
+
+.index_cadastro_usuarios .lista{
+    width: 30%;
 }
 
 .lista{
     margin-top: 2rem;
-    background: var(--background-secundary);
+    background: #bfc1fd;
     padding: 1.5rem;
     height: 75vh;
-    border-radius: 15px;
+    border-radius: 10px;
+    border-left: 4px solid var(--background-secundary);
     overflow-y: auto;
 }
 
@@ -46,3 +56,39 @@
     padding: 1.5rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.container_radios{
+    display: flex;
+    gap: 10rem;
+    align-items: center;
+    padding: 2rem 0;
+    /* justify-content: center; */
+}
+
+.container__radios__inputs{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 4rem;
+}
+
+/* .nivel-Administrador{
+    color: #7A958F;
+    background: #BAE0DA;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#7A958F;
+}
+.nivel-Coordenador{
+    color: #7A958F;
+    background: #BAE0DA;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#7A958F;
+}
+.nivel-Avaliador{
+    color: #7A958F;
+    background: #BAE0DA;
+    padding: .3rem .5rem;
+    border-radius: .25rem; 
+    border-left: 2px solid#7A958F;
+} */
