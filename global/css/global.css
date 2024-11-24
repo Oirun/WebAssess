@@ -1,22 +1,20 @@
+
 @import url("reset.css");
 @import url("menu.css");
 /* Fonte */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); 
 
 :root{
-    --altura-header: 75px;
+    --altura-header: 60px;
     --largura-menu-lateral: 90px;
     --margin-lateral: 4rem;
     --font-family : "Inter", sans-serif;
-    --background-primary-light : #f0f2f5;
-    --background-secundary : #cdcdfc;
+    --background-primary-light : #f4efeb;
+    --background-secundary : #b8b8d2;
     --detalhes-roxo : #9d98ff;
     --secondary-color-text : #090c38;
     --color-text: #171D1F;
     --branco: #FFFFFF;
-    --bs-btn-bg: #171D1F;
-    --bg-dark-leve : #292929;
-    /* --btn-background-dark :  */
 }
 
 body{
@@ -41,7 +39,6 @@ form{
 
 .principal {
     width: calc(100% - var(--largura-menu-lateral)) !important;
-    height: 100vh;
     box-sizing: border-box;
     overflow-y: auto;
 }
@@ -115,10 +112,6 @@ form{
     font-size: 1.5rem;
 }
 
-.conjunto__header__dois img{
-    width: 14%;
-}
-
 .barra-separacao{
     width: 80%;
     border-bottom: 1px solid black;
@@ -171,128 +164,4 @@ form{
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #7f83f5; 
-  }
-
-  /* ---------- SENHA ----------- */
-.div-senha{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-}
-
-.lista-senha{
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    background-color: var(--background-secundary);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
-    border-radius: 16px;
-    width: 100%;
-    padding: 1rem;
-    font-size: .9rem;
-    font-weight: 600;
-    color: var(--color-text);
-}
-
-.lista-senha i{
-    font-size: 1.1rem;
-}
-
-.errado{
-    color: rgb(180, 47, 47);
-}
-
-.certo{
-    color: rgb(4, 177, 76);
-}
-
-/* ---------- form ---------- */
-
-.form-control:disabled {
-    background-color: #d2d2e6;
-    opacity: 1;
-}
-
-/* ------------- CHECKBOX ------------ */
-
-.form-check-input:checked {
-    background-color: var(--detalhes-roxo);
-    border-color: var(--detalhes-roxo);
-}
-/* --------------- BTNS --------------- */
-
-.btn-outline-purple{
-    background-color: transparent;
-    border: 1px solid var(--bg-dark-leve);
-}
-.btn-outline-purple:hover{
-    background-color: var(--bg-dark-leve);
-    color: #FFF;
-}
-
-.btn-customizado{
-    background-color: #712cf9;
-    color: #fff;
-}
-
-.btn-customizado:hover{
-    background-color: #6e27fc;
-    color: #fff;
-}
-
-
-/* -------------- caixas de niveis ------------ */
-
-.nivel-Administrador{
-    color: #7A958F;
-    font-weight: 700;
-    background: #BAE0DA;
-    padding: .3rem .5rem;
-    border-radius: .25rem; 
-    border-left: 2px solid#7A958F;
-}
-
-.nivel-Coordenador{
-    color: #DD8D6E;
-    font-weight: 700;
-    background: #F2DAC6;
-    padding: .3rem .5rem;
-    border-radius: .25rem; 
-    border-left: 2px solid#DD8D6E;
-}
-.nivel-Avaliador{
-    color: #81CEEB;
-    font-weight: 700;
-    background: #C7EEF8;
-    padding: .3rem .5rem;
-    border-radius: .25rem; 
-    border-left: 2px solid#81CEEB;
-}
-
-
-/* --------------- resolucoes -------------- */
- @media (max-width: 1350px) {
-    .conjunto__header__dois img{
-        width: 20%;
-    }
-  }
-
- @media (max-width: 1024px) {
-    .conjunto__header__dois img{
-        width: 25%;
-    }
-  }
-  @media (max-width: 750px) {
-    .conjunto__header__dois img{
-        width: 35%;
-    }
-  }
-
-  .liveAlertPlaceholder{
-    display: flex !important;
-    justify-content: end!important;
-    padding-right: 2rem;
   }

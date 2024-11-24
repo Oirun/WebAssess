@@ -1,3 +1,4 @@
+
 function urlsFront(pasta) {
     let urls_base = "http://127.0.0.1:5501/"
 
@@ -120,3 +121,4 @@ function url_relatorios() {
 //     window.location.href = url_checklist
 //     return url_checklist
 // }
+

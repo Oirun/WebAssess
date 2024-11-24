@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .formularios_consulta, .div_tabela{
     margin: 0 2rem 0 2rem;
@@ -7,29 +8,19 @@
     padding-left: 0px!important;
 }
 
-.formulario-cadastro{
-    width: 70%;
-}
-
-.index_cadastro_usuarios{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2%;
-    padding: 2% 5%;
-}
-
-.index_cadastro_usuarios .lista{
-    width: 30%;
+.principal{
+    display: grid;
+    grid-template-columns: 65% 30%;
+    padding-right: 80px;
+    gap: 2.8rem;
 }
 
 .lista{
     margin-top: 2rem;
-    background: #bfc1fd;
+    background: var(--background-secundary);
     padding: 1.5rem;
     height: 75vh;
-    border-radius: 10px;
-    border-left: 4px solid var(--background-secundary);
+    border-radius: 15px;
     overflow-y: auto;
 }
 
@@ -57,38 +48,3 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.container_radios{
-    display: flex;
-    gap: 10rem;
-    align-items: center;
-    padding: 2rem 0;
-    /* justify-content: center; */
-}
-
-.container__radios__inputs{
-    display: flex;
-    justify-content: space-evenly;
-    gap: 4rem;
-}
-
-/* .nivel-Administrador{
-    color: #7A958F;
-    background: #BAE0DA;
-    padding: .3rem .5rem;
-    border-radius: .25rem; 
-    border-left: 2px solid#7A958F;
-}
-.nivel-Coordenador{
-    color: #7A958F;
-    background: #BAE0DA;
-    padding: .3rem .5rem;
-    border-radius: .25rem; 
-    border-left: 2px solid#7A958F;
-}
-.nivel-Avaliador{
-    color: #7A958F;
-    background: #BAE0DA;
-    padding: .3rem .5rem;
-    border-radius: .25rem; 
-    border-left: 2px solid#7A958F;
-} */
