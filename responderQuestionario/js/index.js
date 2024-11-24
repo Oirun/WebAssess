@@ -18,6 +18,7 @@ document.onreadystatechange = function () {
                     }
 
                     document.getElementById("btnVoltar").onclick = function () {
+                        document.getElementById("btnVoltar").classList.add("d-none")
                         window.location.replace(urlsFront("public")+"pages/principal.html")
                     }
                 })

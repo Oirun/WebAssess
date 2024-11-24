@@ -290,3 +290,9 @@ form{
         width: 35%;
     }
   }
+
+  .liveAlertPlaceholder{
+    display: flex !important;
+    justify-content: end!important;
+    padding-right: 2rem;
+  }

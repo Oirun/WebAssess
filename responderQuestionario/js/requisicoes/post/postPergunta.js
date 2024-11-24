@@ -64,12 +64,13 @@ async function enviandoResposta() {
     if (resultado.error) {
         alert(resultado.error)
     } else {
+        alertasDinamico("Resposta Enviada", "success", "Respostas")
         setTimeout(() => {
             document.getElementById("form_responder_questionario").classList.remove("was-validated")
             document.getElementById("descricao_questionario").classList.add("d-none")
+            document.getElementById("btnCloseAlerta").click()
         }, 1000);
-        
-        alert("Resposta Enviada")
+        // alert("Resposta Enviada")
         return true
     }
 }

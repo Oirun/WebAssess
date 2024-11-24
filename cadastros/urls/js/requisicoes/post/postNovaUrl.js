@@ -35,17 +35,33 @@ async function adicionandoNovaURl() {
     const resultado = await request(url_requisicao, metodo, jsonNovaUrl)
     console.log(resultado)
     if (resultado.error) {
+        Swal.fire({
+            title: "Erro!",
+            text: resultado.error,
+            icon: "error"
+        });
         console.log("erro ao pesquisar avaliadores")
     } else {
-        alert("Url Cadastrada")
+        
         await getUrls()
         document.getElementById("form_cadastro_urls").reset()
         document.getElementById("form_cadastro_urls").classList.remove("was-validated")
 
         if (metodo == "PATCH") {
+            Swal.fire({
+                title: "Sucesso!",
+                text: "Cadastro de URL alterada!",
+                icon: "success"
+            });
             document.getElementById("pills-profile-tab").innerHTML = "Cadastrar"
             document.getElementById("titulo_cad_urls").innerHTML = "Cadastro de Urls"
             document.getElementById("pills-home-tab").click()
+        }else{
+            Swal.fire({
+                title: "Sucesso!",
+                text: "Url cadastrada!",
+                icon: "success"
+            });
         }
     }
 

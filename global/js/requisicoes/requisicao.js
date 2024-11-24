@@ -127,3 +127,117 @@ function sairSistema() {
     });
 
 }
+
+var mappingTypesMessages = {
+
+
+    'success': {
+      'icon': 'bi bi-check-circle',
+      'titulo': 'Sucesso'
+    },
+  
+  
+    'danger': {
+      'icon': 'bi bi-x-circle',
+      'titulo': 'Erro'
+    },
+  
+  
+    'warning': {
+      'icon': 'bi bi-exclamation-circle',
+      'titulo': 'Atenção'
+    }
+  }
+  
+  
+  function alertasDinamico(messagem, type, place, login) {
+  
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder'+place)
+    
+      const wrapper = document.createElement('div')
+      wrapper.innerHTML = [
+        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${messagem}</div>`,
+        '   <button type="button" class="btn-close" id="btnCloseAlerta" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>'
+      ].join('')
+    
+      alertPlaceholder.append(wrapper)
+    
+  
+    // if ($(alertPlaceholder).is(':empty')) {
+  
+  
+    //   alertPlaceholder.appendChild(messagem)
+  
+  
+    //   document.documentElement.style.setProperty('--animation-duration', `${(tempoMensagem - 100) / 1000}s`)
+  
+  
+    //   setTimeout(() => {
+    //     messagem.classList.add("active")
+    //     messagem.querySelector('.barra-carregamento').classList.add("active")
+    //   }, 100);
+  
+  
+    //   if (login != 'login') {
+  
+  
+    //     setTimeout(() => {
+    //         messagem.classList.remove("active")
+    //     }, tempoMensagem)
+  
+  
+    //     setTimeout(() => {
+    //         messagem.querySelector('.barra-carregamento').remove("active")
+    //         messagem.remove()
+    //     }, tempoMensagem + 300)
+    //   }
+    // } else {
+  
+  
+    //     messagem.classList.add('mt-2')
+  
+  
+    //   alertPlaceholder.appendChild(messagem)
+    //   document.documentElement.style.setProperty('--animation-duration', `${(tempoMensagem - 100) / 1000}s`)
+  
+  
+    //   setTimeout(() => {
+    //     messagem.classList.add("active")
+    //     messagem.querySelector('.barra-carregamento').classList.add("active")
+    //   }, 100)
+  
+  
+    //   if (login != 'login') {
+  
+  
+    //     setTimeout(() => {
+    //       messagem.classList.remove("active")
+    //     }, tempoMensagem)
+  
+  
+    //     setTimeout(() => {
+    //       messagem.querySelector('.barra-carregamento').remove("active")
+    //       messagem.remove()
+    //     }, tempoMensagem + 300)
+    //   }
+    // }
+  }
+  
+  
+  function fechaAlert(btn) {
+    btn.parentNode.classList.remove('active')
+  
+  
+    setTimeout(() => {
+      btn.parentNode.querySelector('.barra-carregamento').classList.remove("active");
+    }, 300)
+  
+  
+    setTimeout(() => {
+      btn.parentNode.remove()
+    }, 300)
+  }
+  
+  

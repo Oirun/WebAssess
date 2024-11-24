@@ -20,6 +20,9 @@ function urlsFront(pasta) {
         case "responderQuestionario":
             let url_responder = urls_base + "responderQuestionario/"
             return url_responder
+        case "relatorios":
+            let url_relatorios = urls_base + "relatorios/"
+            return url_relatorios
         default:
             break;
     }
@@ -27,7 +30,7 @@ function urlsFront(pasta) {
 
 function urlsBack(pasta) {
     // http://localhost:8080/tcc/api/v1/users
-    let urls_base = "http://localhost:8080/tcc/api/v1/"
+    let urls_base = "http://192.168.119.44/tcc/api/v1/"
 
     switch (pasta) {
         case "users":
@@ -48,6 +51,9 @@ function urlsBack(pasta) {
         case "questionarioAvaliador":
             let url_questionarioAvaliador = urls_base + "questionarioAvaliador/"
             return url_questionarioAvaliador
+        case "relatorios":
+            let url_relatorios = urls_base + "relatorios/"
+            return url_relatorios
 
         default:
             break;
@@ -93,6 +99,12 @@ function url_checklist() {
     const url_checklist = url_base + "pages/index.html"
     window.location.href = url_checklist
     return url_checklist
+}
+function url_relatorios() {
+    const url_base = urlsFront("relatorios")
+    const url_relatorios = url_base + "pages/index.html"
+    window.location.href = url_relatorios
+    return url_relatorios
 }
 
 // function url_questionario_coordenador() {

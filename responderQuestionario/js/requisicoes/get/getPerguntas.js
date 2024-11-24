@@ -74,7 +74,7 @@ async function rotacionandoPergunta() {
     } else {
         if (cont == perguntas.length) {
           
-
+            document.getElementById("btnVoltar").classList.remove("d-none")
             let url = ""
             if (document.getElementById("form_responder_questionario").dataset.idquestionario != undefined && document.getElementById("form_responder_questionario").dataset.idquestionario != null && document.getElementById("form_responder_questionario").dataset.idquestionario != "") {
                 url = urlsBack("questionarioAvaliador") + "veTodasPerguntasRespondidas/" + document.getElementById("form_responder_questionario").dataset.idquestionario
@@ -239,12 +239,13 @@ function criandoPerguntas(pergunta) {
             "resposta_descricao" : resposta_descricao
         }
 
-        const resultado = await request(url, "POST", json)
+        const resultado = await request(url, "PATCH", json)
     
         if (resultado.error) {
             alert(resultado.error)
         } else {
             alert("Resposta Enviada")
+            window.location.replace(urlsFront("public")+"pages/principal.html")
             return true
         }
     }
