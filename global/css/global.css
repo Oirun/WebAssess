@@ -8,8 +8,10 @@
     --largura-menu-lateral: 90px;
     --margin-lateral: 4rem;
     --font-family : "Inter", sans-serif;
-    --background-primary-light : rgb(248,249,250);
-    --background-secundary : #9d98ff;
+    --background-primary-light : #f4efeb;
+    --background-secundary : #b8b8d2;
+    --detalhes-roxo : #9d98ff;
+    --secondary-color-text : #090c38;
     --color-text: #171D1F;
     --branco: #FFFFFF;
 }

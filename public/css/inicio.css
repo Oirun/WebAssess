@@ -22,7 +22,7 @@
 
 .boas__vindas__img {
     width: 38%;
-    background: #A9ACF9;
+    background: var(--background-secundary);
     border-radius: 30px;
     padding: 3rem;
     display: flex;
@@ -34,7 +34,7 @@
 }
 
 .border-bottom-titulo{
-    border-bottom: 5px solid var(--background-secundary);
+    border-bottom: 5px solid var(--detalhes-roxo);
     width: 13%;
     border-radius: 2rem;
     margin-bottom: .5rem;
