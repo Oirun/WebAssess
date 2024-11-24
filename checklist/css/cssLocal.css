@@ -1,0 +1,57 @@
+.container_principal{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5%;
+    padding: 3%;
+}
+
+.formulario{
+    width: 60%;
+    padding: 1.5rem 2rem;
+    /* background-color: #dce7f8; */
+    /* color: #6c6c8f; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.lista{
+    width: 40%;
+    padding: 0 3rem 0 0; 
+}
+
+.list-group-item-check {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.list-group-item{
+    cursor: pointer;
+}
+
+.list-group-item-check:checked + .list-group-item {
+    color: #6c6c8f;
+    font-weight: 600;
+    background-color: var(--background-secundary);
+    border-color: var(--background-secundary);
+}
+
+.separador{
+    height: 1100px;
+    border-right: 1.5px solid #8f8fb1;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.container_radios{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+}
+
+.container__radios__inputs{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#listar-checklist-cadastrados label{
+    border: 1px solid var(--background-secundary);
+}

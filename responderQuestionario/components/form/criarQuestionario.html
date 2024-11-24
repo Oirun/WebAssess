@@ -1,0 +1,77 @@
+<h2 id="titulo_modulo_questionario">Responda as perguntas</h2>
+
+<form class="row g-3 needs-validation" id="form_responder_questionario" novalidate>
+
+    <div class="col-md-12">
+        <label for="descricao_questionario" class="form-label">Pergunta</label>
+        <p>Justificativa</p>
+
+        <div class="div-radios">
+            <!-- <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Ruim
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Regular
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">
+                    Bom
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                <label class="form-check-label" for="flexRadioDefault4">
+                    Muito Bom
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+                <label class="form-check-label" for="flexRadioDefault5">
+                    Ótimo
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">
+                    Sim
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                <label class="form-check-label" for="flexRadioDefault4">
+                    Não
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+                <label class="form-check-label" for="flexRadioDefault5">
+                    Não se aplica
+                </label>
+            </div> -->
+        </div>
+
+
+
+
+    </div>
+    
+    <hr />
+    
+</form>
+<textarea class="form-control d-none" id="descricao_questionario" style="height: 100px"></textarea>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+    <!-- <button class="btn btn-outline-danger" type="button"><i class="bi bi-trash"></i></button>
+    <button class="btn btn-dark" type="button" onclick="cancelar()">Cancelar</button> -->
+    <button class="btn btn-primary" id="btnSalvarResposta" form="form_responder_questionario"
+        type="submit">Salvar</button>
+    <button class="btn btn-primary d-none" id="btnVoltar"
+        type="submit">Terminar</button>
+</div>

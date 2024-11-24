@@ -1,0 +1,107 @@
+<h2 id="titulo_modulo_checklist">Cadastro de Check-List</h2>
+
+<form class="row g-3 needs-validation" id="form_cadastro_checklist" novalidate>
+
+    <div class="col-md-3">
+        <label for="codigo_checklist" class="form-label">Código</label>
+        <input type="text" class="form-control" id="codigo_checklist" disabled required>
+    </div>
+
+    <div class="col-md-9">
+        <label for="nome_checklist" class="form-label">Titulo</label>
+        <input type="text" class="form-control" id="nome_checklist" required>
+    </div>
+
+    <div class="col-md-12">
+        <label for="descricao_checklist" class="form-label">Descrição</label>
+        <textarea class="form-control" id="descricao_checklist" style="height: 100px"></textarea>
+    </div>
+
+    <div class="container_radios" id="container_radios">
+        <div>
+            <h5>Status de Atividade</h5>
+
+            <div class="container__radios__inputs">
+                <div class="form-check col-md-3">
+                    <input class="form-check-input" type="radio" name="status_user" id="checklist_ativo" checked>
+                    <label class="form-check-label" for="checklist_ativo">
+                        Ativo
+                    </label>
+                </div>
+                <div class="form-check col-md-3">
+                    <input class="form-check-input" type="radio" name="status_user" id="checklist_inativo">
+                    <label class="form-check-label" for="checklist_inativo">
+                        Inativo
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <h5>Este check-list é o padrão?</h5>
+            <div class="container__radios__inputs">
+                <div class="form-check col-md-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="checklist_padrao">
+                    <label class="form-check-label" for="checklist_padrao">
+                        Sim
+                    </label>
+                </div>
+                <div class="form-check col-md-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="checklist_nao_padrao"
+                        checked>
+                    <label class="form-check-label" for="checklist_nao_padrao">
+                        Não
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <h4>Criar perguntas</h4>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-between">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="liberarCamposPerguntas" disabled>
+            <label class="form-check-label" for="liberarCamposPerguntas" id="lbl_liberar_campo">Liberar campos de pergunta.</label>
+        </div>
+        <button class="btn btn-outline-dark me-md-2 d-none" type="button" id="adicionarPergunta"><i
+                class="bi bi-plus-square"></i></button>
+    </div>
+
+    <!-- <div class="col-md-6">
+        <label for="principio" class="form-label">Princípio *</label>
+        <select id="principio" class="form-select" required>
+            <option data-id-principio="1">Adequação à tarefa</option>
+        </select>
+    </div> -->
+
+    <div class="col-md-12">
+        <label for="pergunta" class="form-label">Pergunta *</label>
+        <textarea class="form-control" id="pergunta" style="height: 200px" required></textarea>
+    </div>
+
+    <div class="col-md-12">
+        <label for="justificativa" class="form-label">Justificativa *</label>
+        <textarea class="form-control" id="justificativa" style="height: 200px" required></textarea>
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+        <button class="btn btn-dark" type="button" onclick="cancelar()">Cancelar</button>
+        <button class="btn btn-primary me-md-2" id="btnCadastrarCheckList" type="submit">Salvar</button>
+    </div>
+</form>
+
+<!-- 
+"titulo": "Questionário Padrão",
+"descricao": "Descrição Padrão",
+"status": true,
+"padrao": true,
+"perguntas": [
+    {
+        "pergunta": "O site possui mais de 5 erros?",
+        "principio": 1
+    }
+] -->
