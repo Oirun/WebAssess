@@ -20,11 +20,7 @@ function fazerLogin() {
         .then(function (jsonData) {
             console.log(jsonData)
             if (jsonData.error) {
-                Swal.fire({
-                    title: "Erro!",
-                    text: "Verifique se o usuário e a senha estão corretos!",
-                    icon: "error"
-                  });
+
             } else {
                 sessionStorage.setItem("token", jsonData.token)
                 sessionStorage.setItem("user", jsonData.nome_usuario)

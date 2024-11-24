@@ -64,7 +64,7 @@
 
             <div class="offcanvas-body">
 
-                <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 ul-lista-menu">
+                <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
 
                     <form class="d-flex mb-3" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -83,11 +83,10 @@
                             aria-expanded="false"><i class="bi bi-person-plus"></i>Cadastros
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li id="li_cadastro_usuario"><a class="dropdown-item"
-                                    onclick="url_cadastro_usuarios()">Usuários</a></li>
-                            <li id="li_cadastro_url"><a class="dropdown-item" onclick="url_cadastro_urls()" id="a_cadastro_url">Urls</a></li>
-                            <li id="li_cadastro_profissoes"><a class="dropdown-item"
-                                    onclick="url_cadastro_parametros()">Parâmetros</a></li>
+                            <li id="li_cadastro_usuario"><a class="dropdown-item" onclick="url_cadastro_usuarios()" >Usuários</a></li>
+                            <li id="li_cadastro_url"><a class="dropdown-item" data-bs-toggle="modal"
+                                    data-bs-target="#modal_gerenciar_urls">Urls</a></li>
+                            <li id="li_cadastro_profissoes"><a class="dropdown-item" onclick="url_cadastro_parametros()">Profissões</a></li>
                         </ul>
                     </li>
 
@@ -97,10 +96,9 @@
                                 class="bi bi-journal-text"></i>Questionário</a>
                     </li>
 
-                    <!-- CheckList -->
+                    <!-- CHECK LIST -->
                     <li class="nav-item" id="li_checklist">
-                        <a class="nav-link active" onclick="url_checklist()" aria-current="page"><i
-                                class="bi bi-card-checklist"></i>Check-List</a>
+                        <a class="nav-link" href="#"><i class="bi bi-ui-checks"></i>Check-List</a>
                     </li>
 
                     <!-- RELATÓRIOS -->
@@ -109,10 +107,8 @@
                             aria-expanded="false"><i class="bi bi-clipboard"></i>Relatórios
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li id="li_relatorio_questionario_checlist"><a class="dropdown-item" onclick="url_relatorios()">Questionário e
-                                    Check List</a></li>
-                            <li id="li_relatorio_avaliadores"><a class="dropdown-item" href="#">Avaliadores e
-                                    Coordenadores</a></li>
+                            <li id="li_relatorio_questionario_checlist"><a class="dropdown-item" href="#">Questionário e Check List</a></li>
+                            <li id="li_relatorio_avaliadores"><a class="dropdown-item" href="#">Avaliadores e Coordenadores</a></li>
                             <li id="li_relatorio_urls"><a class="dropdown-item" href="#">Urls</a></li>
                         </ul>
                     </li>
@@ -149,5 +145,5 @@
 </nav>
 
 <script>
-    document.getElementById("img_user").src = urlsFront("global") + "util/usuarios/anya.jpg"
+    document.getElementById("img_user").src = urlsFront("global")+"util/usuarios/anya.jpg"
 </script>

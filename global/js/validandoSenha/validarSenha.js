@@ -1,4 +1,4 @@
-function validandoSenha(campo_senha, idConfirmarSenha, idForm) {
+function validandoSenha(campo_senha) {
     document.getElementById("div-senha").classList.remove("d-none")
     let senha = campo_senha.value 
     let regex = ""
@@ -74,25 +74,22 @@ function validandoSenha(campo_senha, idConfirmarSenha, idForm) {
         document.getElementById("um_especial").classList.add("bi-x")
     }
 
-    validandoSenhaConfirmar(document.getElementById(idConfirmarSenha), "senha", campo_senha.id, idForm)
+    validandoSenhaConfirmar(document.getElementById("confirmarSenha"), "senha")
 }
 
-function validandoSenhaConfirmar(confirmarSenha, senhaOninput, idCampoSenha, idForm) {
+function validandoSenhaConfirmar(senha, senhaOninput) {
     console.log("oi")
 
-    let campoSenha = document.getElementById(idCampoSenha)
-    let form = document.getElementById(idForm)
-    console.log(document.getElementById(idCampoSenha), idCampoSenha)
-    if (campoSenha.value != "" && campoSenha.value != " " && campoSenha.value != null && campoSenha.value != undefined) {        
-        if ( campoSenha.value != confirmarSenha.value) {
-            form.querySelector(".senhaInvalida").style.display = "block"
-            form.querySelector(".senhaValida").style.display = "none"
+    if (document.getElementById("senha").value != "" && document.getElementById("senha").value != " " && document.getElementById("senha").value != null && document.getElementById("senha").value != undefined) {        
+        if ( document.getElementById("senha").value != senha.value) {
+            document.querySelector(".senhaInvalida").style.display = "block"
+            document.querySelector(".senhaValida").style.display = "none"
             if (senhaOninput != "senha") {
-                // confirmarSenha.focus()
+                document.getElementById("confirmarSenha").focus()
             }
         }else{
-            form.querySelector(".senhaValida").style.display = "block"
-            form.querySelector(".senhaInvalida").style.display = "none"
+            document.querySelector(".senhaValida").style.display = "block"
+            document.querySelector(".senhaInvalida").style.display = "none"
         }
     }
 }
