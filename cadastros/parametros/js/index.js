@@ -23,6 +23,9 @@ document.onreadystatechange = function () {
                                 // document.getElementById("btnConsultaPrincipio").onclick = function () {
                                 //     getParametros("principio")
                                 // }
+
+                                const tooltipTriggerList = document.querySelectorAll('[data-bs-toll="tooltip"]')
+                                const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
                             })
                        // })
                     })
@@ -30,4 +33,8 @@ document.onreadystatechange = function () {
             })
         })
     })
+}
+
+function limparCampos(campo) {
+    document.getElementById(campo).value = ""
 }

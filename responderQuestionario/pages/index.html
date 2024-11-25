@@ -44,6 +44,12 @@
   <main class="principal">
     <div id="header"></div>
     <div class="liveAlertPlaceholder" id="liveAlertPlaceholderRespostas"></div>
+    
+    <div id="alertRespostas" class="alert-alert hidden">
+      <span id="alertMessage"></span>
+      <button id="closeAlert" onclick="fecharAlerta('Respostas')">×</button>
+    </div>
+    
     <section class="container_principal">
       <section id="formulario_questionario_convidados" class="formulario"></section>
       <!-- <div class="separador"></div> -->
@@ -64,6 +70,10 @@
   <div id="div-modal-perguntas-questionario"></div>
 
   <div id="imports"></div>
+
+  <!-- <script>
+    mostrarAlerta("success", "Resposta Enviada", "Respostas")
+  </script> -->
 </body>
 
 </html>

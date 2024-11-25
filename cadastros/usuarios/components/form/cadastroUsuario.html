@@ -29,6 +29,7 @@
             <option value="M">Masculino</option>
         </select>
     </div>
+    
     <div class="col-md-6">
         <label for="profissao" class="form-label">Profissão</label>
         <select id="profissao" class="form-select" required>
@@ -43,47 +44,17 @@
 
     <div class="col-md-6">
         <label for="cep_usuario" class="form-label">CEP</label>
-        <input type="text" class="form-control" id="cep_usuario">
+        <input type="text" class="form-control" id="cep_usuario" onblur="pesquisandoCidadeEstado('cep_usuario')" oninput="mascaraCEP(this)">
     </div>
 
     <div class="col-md-6">
         <label for="estado_usuario" class="form-label">Estado</label>
-        <select id="estado_usuario" class="form-select">
-            <option selected>AC</option>
-            <option>AL</option>
-            <option>AP</option>
-            <option>AM</option>
-            <option>BA</option>
-            <option>CE</option>
-            <option>DF</option>
-            <option>ES</option>
-            <option>GO</option>
-            <option>MA</option>
-            <option>MT</option>
-            <option>MS</option>
-            <option>MG</option>
-            <option>PA</option>
-            <option>PB</option>
-            <option>PR</option>
-            <option>PE</option>
-            <option>PI</option>
-            <option>RJ</option>
-            <option>RN</option>
-            <option>RS</option>
-            <option>RO</option>
-            <option>RR</option>
-            <option>SC</option>
-            <option>SP</option>
-            <option>SE</option>
-            <option>TO</option>
-        </select>
+        <input type="text" class="form-control" id="estado_usuario" disabled>
     </div>
 
     <div class="col-md-6">
-        <label for="c_cidade_usuario" class="form-label">Cidade</label>
-        <select id="c_cidade_usuario" class="form-select">
-            <option selected></option>
-        </select>
+        <label for="cidade_usuario" class="form-label">Cidade</label>
+        <input type="text" class="form-control" id="cidade_usuario" disabled>
     </div>
 
     <div class="col-md-6">

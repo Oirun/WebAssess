@@ -4,7 +4,7 @@ document.getElementById("btnConsultaUrls").onclick = async function () {
 
 async function getUrls() {
     const resultado = await request(urlsBack("url"), "GET")
-    console.log(resultado)
+
     if (resultado.error) {
         console.log("erro ao consultar urls")
     } else {
@@ -85,13 +85,12 @@ async function criandoLinhaParaTabelaUrl(url) {
     }
 
     btnQuestionario.onclick = function () {
-       preencheInfosInicio(url, quantidadeDeConvidados, url.questionario, true)
-        document.getElementById("pills-relatorio-tab").click()
+        preencheInfosInicio(url, quantidadeDeConvidados, url.questionario, true)
     }
 
     btnChecklist.onclick = function () {
+        
         preencheInfosInicio(url, quantidadeDeConvidados, url.checklist, false)
-        document.getElementById("pills-relatorio-tab").click()
     }
 
     btnEditar.onclick = function () {
@@ -140,15 +139,20 @@ async function preencheInfosInicio(url, quantidadeDeConvidados, id_ques_check, q
     document.getElementById("dados_relatorio_inicio_coordenador").innerHTML = `<strong>Período de Avaliação :</strong> ${url.data_inicio.split("-")[2]}/${url.data_inicio.split("-")[1]}/${url.data_inicio.split("-")[0]} à ${url.data_fim.split("-")[2]}/${url.data_fim.split("-")[1]}/${url.data_fim.split("-")[0]}`
     document.getElementById("dados_relatorio_inicio_total_avaliadores").innerHTML = `<strong> Total de Avaliadores:</strong> ${quantidadeDeConvidados}`
 
-    let urlReq = urlsBack("relatorios")+"porPerguntas/"+id_ques_check
+    let urlReq = urlsBack("relatorios") + "porPerguntas/" + id_ques_check
 
     const resultado = await request(urlReq, "GET")
     // http://localhost/tcc/api/v1/relatorios/porPerguntas/49
-    console.log(resultado)
+    console.log(JSON.stringify(resultado))
 
-    if (resultado.erros) {
-        alert(resultado.error)
-    }else{
+    if (resultado.error) {
+        if (questionario == true) {
+            mostrarAlerta("error", "Nenhum avaliador respondeu a este questionário", "PorPerguntas")
+        }else{
+            mostrarAlerta("error", "Nenhum avaliador respondeu a este check-list", "PorPerguntas")
+        }
+    } else {
+        document.getElementById("chartdiv").innerHTML = ""
         document.getElementById("body_relatorio_questionario_perguntas").innerHTML = ""
         resultado.perguntas.forEach(element => {
             let linha = criaLinhaRelatorio(element, questionario)
@@ -156,6 +160,7 @@ async function preencheInfosInicio(url, quantidadeDeConvidados, id_ques_check, q
 
         criaLinhaRelatorioTotal(resultado, questionario)
         criaLinhaRelatorioTotalPercentual(resultado, questionario)
+        document.getElementById("pills-relatorio-tab").click()
     }
 
 }
@@ -181,7 +186,7 @@ function criaLinhaRelatorio(pergunta, questionario) {
     tdBom.innerHTML = "0"
     tdMuitoBom.innerHTML = "0"
     tdOtimo.innerHTML = "0"
-   
+
     tdSim.innerHTML = "0"
     tdNao.innerHTML = "0"
     tdNaoAplica.innerHTML = "0"
@@ -190,25 +195,25 @@ function criaLinhaRelatorio(pergunta, questionario) {
         if (questionario == true) {
             if (resposta.resposta == "1") {
                 tdRuim.innerHTML = resposta.quantidade
-           }else if (resposta.resposta == "2") {
-               tdRegular.innerHTML = resposta.quantidade
-           }else if (resposta.resposta == "3") {
-               tdBom.innerHTML = resposta.quantidade
-           }else if (resposta.resposta == "4") {
-               tdMuitoBom.innerHTML = resposta.quantidade
-           }else if (resposta.resposta == "5") {
-               tdOtimo.innerHTML = resposta.quantidade
-           }
-        }else{
+            } else if (resposta.resposta == "2") {
+                tdRegular.innerHTML = resposta.quantidade
+            } else if (resposta.resposta == "3") {
+                tdBom.innerHTML = resposta.quantidade
+            } else if (resposta.resposta == "4") {
+                tdMuitoBom.innerHTML = resposta.quantidade
+            } else if (resposta.resposta == "5") {
+                tdOtimo.innerHTML = resposta.quantidade
+            }
+        } else {
             if (resposta.resposta == "1") {
                 tdSim.innerHTML = resposta.quantidade
-           }else if (resposta.resposta == "2") {
-               tdNao.innerHTML = resposta.quantidade
-           }else if (resposta.resposta == "3") {
-               tdNaoAplica.innerHTML = resposta.quantidade
-           }
+            } else if (resposta.resposta == "2") {
+                tdNao.innerHTML = resposta.quantidade
+            } else if (resposta.resposta == "3") {
+                tdNaoAplica.innerHTML = resposta.quantidade
+            }
         }
-        
+
     });
 
     row.appendChild(tdPergunta)
@@ -231,7 +236,7 @@ function criaLinhaRelatorio(pergunta, questionario) {
         row.appendChild(tdSim)
         row.appendChild(tdNao)
         row.appendChild(tdNaoAplica)
-       
+
         document.getElementById("thRuim").classList.add("d-none")
         document.getElementById("thRegular").classList.add("d-none")
         document.getElementById("thBom").classList.add("d-none")
@@ -241,7 +246,7 @@ function criaLinhaRelatorio(pergunta, questionario) {
         document.getElementById("thNao").classList.remove("d-none")
         document.getElementById("thNaoAplica").classList.remove("d-none")
     }
- 
+
 
     document.getElementById("body_relatorio_questionario_perguntas").appendChild(row)
 }
@@ -276,23 +281,23 @@ function criaLinhaRelatorioTotal(total, questionario) {
         if (questionario == true) {
             if (resposta.resposta == "1") {
                 tdRuim.innerHTML = resposta.quantidade
-           }else if (resposta.resposta == "2") {
-               tdRegular.innerHTML = resposta.quantidade
-           }else if (resposta.resposta == "3") {
-               tdBom.innerHTML = resposta.quantidade
-           }else if (resposta.resposta == "4") {
-               tdMuitoBom.innerHTML = resposta.quantidade
-           }else if (resposta.resposta == "5") {
-               tdOtimo.innerHTML = resposta.quantidade
-           }
-        }else{
+            } else if (resposta.resposta == "2") {
+                tdRegular.innerHTML = resposta.quantidade
+            } else if (resposta.resposta == "3") {
+                tdBom.innerHTML = resposta.quantidade
+            } else if (resposta.resposta == "4") {
+                tdMuitoBom.innerHTML = resposta.quantidade
+            } else if (resposta.resposta == "5") {
+                tdOtimo.innerHTML = resposta.quantidade
+            }
+        } else {
             if (resposta.resposta == "1") {
                 tdSim.innerHTML = resposta.quantidade
-           }else if (resposta.resposta == "2") {
-               tdNao.innerHTML = resposta.quantidade
-           }else if (resposta.resposta == "3") {
-               tdNaoAplica.innerHTML = resposta.quantidade
-           }
+            } else if (resposta.resposta == "2") {
+                tdNao.innerHTML = resposta.quantidade
+            } else if (resposta.resposta == "3") {
+                tdNaoAplica.innerHTML = resposta.quantidade
+            }
         }
     });
 
@@ -316,7 +321,7 @@ function criaLinhaRelatorioTotal(total, questionario) {
         row.appendChild(tdSim)
         row.appendChild(tdNao)
         row.appendChild(tdNaoAplica)
-       
+
         document.getElementById("thRuim").classList.add("d-none")
         document.getElementById("thRegular").classList.add("d-none")
         document.getElementById("thBom").classList.add("d-none")
@@ -326,14 +331,14 @@ function criaLinhaRelatorioTotal(total, questionario) {
         document.getElementById("thNao").classList.remove("d-none")
         document.getElementById("thNaoAplica").classList.remove("d-none")
     }
- 
-   
+
+
 
     document.getElementById("body_relatorio_questionario_perguntas").appendChild(row)
 }
 
 function criaLinhaRelatorioTotalPercentual(total, questionario) {
-    console.log(total)
+    console.log(total, "TOTAL")
     let row = document.createElement("tr")
     let tdPergunta = document.createElement("td")
     let tdRuim = document.createElement("td")
@@ -357,31 +362,72 @@ function criaLinhaRelatorioTotalPercentual(total, questionario) {
     tdSim.innerHTML = "0"
     tdNao.innerHTML = "0"
     tdNaoAplica.innerHTML = "0"
-    let dados = []; 
+    let dados = [];
+    let dataGrafico = []
+
     total.geral.forEach(resposta => {
         dados.push(resposta.percentual_geral)
+        let categoria = ""
         if (questionario == true) {
-            if (total.resposta == "1") {
-                tdRuim.innerHTML = resposta.percentual_geral+"%"
-           }else if (resposta.resposta == "2") {
-               tdRegular.innerHTML = resposta.percentual_geral+"%"
-           }else if (resposta.resposta == "3") {
-               tdBom.innerHTML = resposta.percentual_geral+"%"
-           }else if (resposta.resposta == "4") {
-               tdMuitoBom.innerHTML = resposta.percentual_geral+"%"
-           }else if (resposta.resposta == "5") {
-               tdOtimo.innerHTML = resposta.percentual_geral+"%"
-           }
+            switch (resposta.resposta) {
+                case 1:
+                    categoria = "Ruim"
+                    break;
+                case 2:
+                    categoria = "Regular"
+                    break;
+                case 3:
+                    categoria = "Bom"
+                    break;
+                case 4:
+                    categoria = "Muito bom"
+                    break;
+                case 5:
+                    categoria = "Ótimo"
+                    break;
+            
+                default:
+                    break;
+            }
         }else{
-            if (resposta.resposta == "1") {
-                tdSim.innerHTML = resposta.percentual_geral+"%"
-           }else if (resposta.resposta == "2") {
-               tdNao.innerHTML = resposta.percentual_geral+"%"
-           }else if (resposta.resposta == "3") {
-               tdNaoAplica.innerHTML = resposta.percentual_geral+"%"
-           }
+            switch (resposta.resposta) {
+                case 1:
+                    categoria = "Sim"
+                    break;
+                case 2:
+                    categoria = "Não"
+                    break;
+                case 3:
+                    categoria = "Não se aplica"
+                    break;
+                default:
+                    break;
+            }
         }
        
+        dataGrafico.push({"value": resposta.percentual_geral, "category" : categoria})
+        if (questionario == true) {
+            if (total.resposta == "1") {
+                tdRuim.innerHTML = resposta.percentual_geral + "%"
+            } else if (resposta.resposta == "2") {
+                tdRegular.innerHTML = resposta.percentual_geral + "%"
+            } else if (resposta.resposta == "3") {
+                tdBom.innerHTML = resposta.percentual_geral + "%"
+            } else if (resposta.resposta == "4") {
+                tdMuitoBom.innerHTML = resposta.percentual_geral + "%"
+            } else if (resposta.resposta == "5") {
+                tdOtimo.innerHTML = resposta.percentual_geral + "%"
+            }
+        } else {
+            if (resposta.resposta == "1") {
+                tdSim.innerHTML = resposta.percentual_geral + "%"
+            } else if (resposta.resposta == "2") {
+                tdNao.innerHTML = resposta.percentual_geral + "%"
+            } else if (resposta.resposta == "3") {
+                tdNaoAplica.innerHTML = resposta.percentual_geral + "%"
+            }
+        }
+
     });
 
     if (dados.length < 5) {
@@ -409,7 +455,7 @@ function criaLinhaRelatorioTotalPercentual(total, questionario) {
         row.appendChild(tdSim)
         row.appendChild(tdNao)
         row.appendChild(tdNaoAplica)
-       
+
         document.getElementById("thRuim").classList.add("d-none")
         document.getElementById("thRegular").classList.add("d-none")
         document.getElementById("thBom").classList.add("d-none")
@@ -421,7 +467,11 @@ function criaLinhaRelatorioTotalPercentual(total, questionario) {
     }
 
     document.getElementById("body_relatorio_questionario_perguntas").appendChild(row)
+    console.log(document.getElementById("chartdiv"))
+    if (document.getElementById("chartdiv")) {
+        criarGrafico(dataGrafico)
+    }
+    console.log(dataGrafico, "DADOS")
 
-    
-    fazendoGrafico(dados)
 }
+

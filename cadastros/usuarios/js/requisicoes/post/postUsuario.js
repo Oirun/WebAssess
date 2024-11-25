@@ -44,6 +44,8 @@ async function postUsuarios(url, metodo) {
         let sexo = combo_sexo.options[combo_sexo.selectedIndex].value;
 
         // let id_cidade = document.getElementById("").value
+        let endereco = document.getElementById("endereco_usuario").value
+        let cep = document.getElementById("cep_usuario").value
 
         let login = document.getElementById("user").value
         let senha = document.getElementById("senha").value
@@ -70,7 +72,9 @@ async function postUsuarios(url, metodo) {
             "login": login,
             "senha": senha,
             "status_usuario": status_usuario,
-            "permissao": permissao
+            "permissao": permissao,
+            "endereco" : endereco,
+            "cep" : cep
         }
 
         console.log(jsonUsuario)

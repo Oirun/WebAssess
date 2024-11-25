@@ -6,23 +6,11 @@
         <label for="c_nome_escolaridade" class="form-label">Escolaridade</label>
         <input type="text" class="form-control" id="c_nome_escolaridade">
     </div>
-    
-    <div class="form-check col-md-2">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="c_escolaridade_ativo" checked>
-        <label class="form-check-label" for="c_escolaridade_ativo">
-            Ativo
-        </label>
-    </div>
-
-    <div class="form-check col-md-2">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="c_escolaridade_inativo" >
-        <label class="form-check-label" for="c_escolaridade_inativo">
-            Inativo
-        </label>
-    </div>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary me-md-2" type="button">Limpar</button>
-        <button class="btn btn-primary me-md-2" id="btnConsultaEscolaridade" type="button">Consultar</button>
+        <button class="btn btn-primary me-md-2" data-bs-toll="tooltip" data-bs-placement="top"
+        data-bs-title="Limpar campos." type="button" onclick="limparCampos('c_nome_escolaridade')">Limpar</button>
+        <button class="btn btn-primary me-md-2" id="btnConsultaEscolaridade" data-bs-toll="tooltip" data-bs-placement="top"
+        data-bs-title="Clique para listar todas os itens." type="button">Consultar</button>
     </div>
 </form>

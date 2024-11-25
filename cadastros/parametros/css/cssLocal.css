@@ -1,3 +1,9 @@
+:root {
+    --tamanho-indicadores-w : 5.5rem;
+    --tamanho-indicadores-h : 2rem;
+
+}
+
 .principal{
     padding-right: 4rem;
 }
@@ -35,4 +41,37 @@
 .cards_cadastros .card-body{
     display: flex;
     justify-content: space-between;
+}
+
+.carousel-indicators{
+    height: var(--tamanho-indicadores-h) !important;
+}
+
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: var(--tamanho-indicadores-w) !important;
+    height: var(--tamanho-indicadores-h) !important;
+    padding: .3rem;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: 0 !important;
+    cursor: pointer;
+    /* background-color: #fff; */
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    /* opacity: .5; */
+    transition: opacity .6s ease;
+    color: #7a76c5;
+    font-weight: bold;
+}
+
+.indicadores_carousel{
+    border-radius: 10px !important;
+}
+
+.formularios_modal{
+    padding-top: 2rem;
 }

@@ -47,7 +47,7 @@
             <div>
                 <a><i class="bi bi-door-closed"></i></a>
                 <div class="div-menu-curto">
-                    <a href="">Sair</a>
+                    <a onclick="sairSistema()">Sair</a>
                 </div>
             </div>
         </div>
@@ -111,9 +111,8 @@
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li id="li_relatorio_questionario_checlist"><a class="dropdown-item" onclick="url_relatorios()">Questionário e
                                     Check List</a></li>
-                            <li id="li_relatorio_avaliadores"><a class="dropdown-item" href="#">Avaliadores e
-                                    Coordenadores</a></li>
-                            <li id="li_relatorio_urls"><a class="dropdown-item" href="#">Urls</a></li>
+                            <li id="li_relatorio_avaliadores"><a class="dropdown-item" onclick="url_relatorios_categoria()">Por categoria do avaliador</a></li>
+                           
                         </ul>
                     </li>
 
@@ -123,7 +122,7 @@
                     </li>
 
                     <!-- SAIR -->
-                    <li class="nav-item">
+                    <li class="nav-item" onclick="sairSistema()">
                         <a class="nav-link" href="#"><i class="bi bi-door-closed"></i>Sair</a>
                     </li>
                 </ul>

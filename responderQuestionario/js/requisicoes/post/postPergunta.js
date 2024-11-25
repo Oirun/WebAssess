@@ -57,20 +57,18 @@ async function enviandoResposta() {
         "resposta" : radioRes
     }
     let url = urlsBack("questionarioAvaliador")+"respondePergunta"
-    // console.log(JSON.stringify(jsonResposta), url)
-    // http://localhost/tcc/api/v1/questionarioAvaliador/respondePergunta
     const resultado = await request(url, "POST", jsonResposta)
-    console.log(resultado,JSON.stringify(jsonResposta), url)
+  
     if (resultado.error) {
-        alert(resultado.error)
+        mostrarAlerta("error", resultado.error, "Respostas")
     } else {
-        alertasDinamico("Resposta Enviada", "success", "Respostas")
+        
         setTimeout(() => {
             document.getElementById("form_responder_questionario").classList.remove("was-validated")
             document.getElementById("descricao_questionario").classList.add("d-none")
-            document.getElementById("btnCloseAlerta").click()
         }, 1000);
-        // alert("Resposta Enviada")
+       
+        mostrarAlerta("success", "Resposta Enviada", "Respostas")
         return true
     }
 }

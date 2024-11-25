@@ -50,9 +50,17 @@ function criandoLinhaParaTabelaUrlConvidados(url) {
     tdUrl.innerHTML = url.url
     tdDatas.innerHTML = url.data_inicio == null ? 0 : url.data_inicio.split("-")[2]+"/"+url.data_inicio.split("-")[1]+"/"+url.data_inicio.split("-")[0]
     tdStatus.innerHTML = url.data_fim == null ? 0 : url.data_fim.split("-")[2]+"/"+url.data_fim.split("-")[1]+"/"+url.data_fim.split("-")[0]
-    tdSituacao.innerHTML = "Disponivel"
 
-    if (url.respondeu_questionario == true || url.respondeu_questionario == 1) {
+    let dataHoje = new Date()
+    let dataFim = new Date(url.data_fim)
+    
+    if (dataHoje < dataFim) {
+        tdSituacao.innerHTML = "Disponível"
+    }else{
+        tdSituacao.innerHTML = "Indisponível"
+    }
+
+    if (url.respondeu_questionario == true || url.respondeu_questionario == 1 || dataHoje > dataFim) {
         btnQuestionario.disabled = true
         btnQuestionario.classList = "btn btn-success"
 
@@ -67,7 +75,7 @@ function criandoLinhaParaTabelaUrlConvidados(url) {
         }
     }
 
-    if (url.respondeu_checklist == true || url.respondeu_checklist == 1) {
+    if (url.respondeu_checklist == true || url.respondeu_checklist == 1 || dataHoje > dataFim) {
         btnChecklist.disabled = true
         btnChecklist.classList = "btn btn-primary"
         

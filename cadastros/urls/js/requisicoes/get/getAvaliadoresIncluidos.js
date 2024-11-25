@@ -5,6 +5,7 @@ async function getAvaliadoresIncluidos(id_url) {
     
     if (resultado.error) {
         console.log(resultado.error)
+        document.getElementById("listar-avaliadores-cadastrados").innerHTML = ""
     } else {
         document.getElementById("listar-avaliadores-cadastrados").innerHTML = ""
         resultado[0].usuarios.forEach(avaliador => {

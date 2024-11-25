@@ -1,7 +1,44 @@
 {
-    "id_perguntas": 89,
-    "pergunta": "Solicitar ajuda referente à tarefa que está sendo executada no Web site é ...?",
-    "justificativa": "Tente responder de forma clara.",
-    "descricao_resposta": "aaaaa",
-    "resposta": "4"
+    "perguntas": [
+        {
+            "id_pergunta": 96,
+            "pergunta": "Para buscar diretamente a informação (evitando passos desnecessários) neste Web site, o procedimento é ...?",
+            "respostas": [
+                {
+                    "resposta": "4",
+                    "quantidade": 1
+                }
+            ]
+        },
+        {
+            "id_pergunta": 97,
+            "pergunta": "Usar o Web site é ...?",
+            "respostas": [
+                {
+                    "resposta": "1",
+                    "quantidade": 1
+                }
+            ]
+        },
+        {
+            "id_pergunta": 98,
+            "pergunta": "Solicitar ajuda referente à tarefa que está sendo executada no Web site é ...?",
+            "respostas": [
+                {
+                    "resposta": "3",
+                    "quantidade": 1
+                }
+            ]
+        },
+        {
+            "id_pergunta": 99,
+            "pergunta": "Como você avalia as mensagens apresentadas para facilitar a realização da tarefa?",
+            "respostas": [
+                {
+                    "resposta": "4",
+                    "quantidade": 1
+                }
+            ]
+        }
+    ]
 }

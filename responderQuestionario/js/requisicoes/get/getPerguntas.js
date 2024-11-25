@@ -29,13 +29,13 @@ async function getQuestionarioPerguntasConvidados() {
     }
 
     const resultado = await request(url, "GET")
-
+    console.log(resultado)
     perguntas = resultado // guarda as perguntas recebidas, aqui a unica coisa que pode ser alterada são as chaves de respondido, para nao aparecerem de novo
 
     document.getElementById("form_responder_questionario").innerHTML = ""
 
     if (resultado.error) {
-        alert(resultado.error)
+        mostrarAlerta("error", resultado.error, "Respostas")
     } else {
 
         for (let i = 0; i < perguntas.length; i++) {
@@ -81,7 +81,6 @@ async function rotacionandoPergunta() {
             } else if (document.getElementById("form_responder_questionario").dataset.idchecklist != undefined && document.getElementById("form_responder_questionario").dataset.idchecklist != null && document.getElementById("form_responder_questionario").dataset.idchecklist != "") {
                 url = urlsBack("questionarioAvaliador") + "veTodasPerguntasRespondidas/" + document.getElementById("form_responder_questionario").dataset.idchecklist
             }
-
 
             const resultado = await request(url, "GET")
             
@@ -154,7 +153,7 @@ async function rotacionandoPergunta() {
 
 
 function criandoPerguntas(pergunta) {
- 
+    console.log(pergunta)
     let divPergunta = document.createElement("div")
     let labelPergunta = document.createElement("label")
     let pJustificativa = document.createElement("p")
@@ -242,10 +241,10 @@ function criandoPerguntas(pergunta) {
         const resultado = await request(url, "PATCH", json)
     
         if (resultado.error) {
-            alert(resultado.error)
+            mostrarAlerta("error", resultado.error, "Respostas")
         } else {
-            alert("Resposta Enviada")
-            window.location.replace(urlsFront("public")+"pages/principal.html")
+            mostrarAlerta("success", "Resposta Enviada", "Respostas")
+            //window.location.replace(urlsFront("public")+"pages/principal.html")
             return true
         }
     }

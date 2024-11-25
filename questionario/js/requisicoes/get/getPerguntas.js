@@ -19,6 +19,9 @@ async function getQuestionarioPerguntas(id_questionario, input) {
             document.getElementById("body_consulta_perguntas_questionario").appendChild(li)
         });
     }
+
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-tool="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 }
 
 function criandoLiPerguntas(pergunta, input) {
@@ -38,6 +41,9 @@ function criandoLiPerguntas(pergunta, input) {
 
     div.classList = "d-flex gap-2"
     buttonEditar.classList = "btn btn-outline-dark"
+    buttonEditar.setAttribute("data-bs-tool", "tooltip")
+    buttonEditar.setAttribute("data-bs-placement", "top")
+    buttonEditar.setAttribute("data-bs-title", "Editar pergunta.")
     buttonDeletar.classList = "btn btn-outline-dark"
 
     icoEditar.classList = "bi bi-pencil"
