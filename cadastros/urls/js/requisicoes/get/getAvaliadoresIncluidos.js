@@ -33,7 +33,7 @@ function criandoLi(avaliador) {
     label.innerHTML = `<i class="bi bi-caret-right-fill"></i> ${avaliador.id_usuario} - ${avaliador.nome_usuario}`
 
     span.classList = "d-block small opacity-50"
-    span.innerHTML = "0 / 0"
+    span.innerHTML = `${avaliador.cidade} - ${avaliador.estado}`
     //`${avaliador.cidade} / ${avaliador.estado}`
 
     label.appendChild(span)

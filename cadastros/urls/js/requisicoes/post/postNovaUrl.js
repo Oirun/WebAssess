@@ -68,13 +68,15 @@ async function adicionandoNovaURl() {
 }
 
 async function vinculandoUrlAUmQuestionarioEChecklist(id_url) {
-
+    
     let jsonId = {
         "id_url" : id_url
     }
-
+    
     const resultado = await request(urlsBack("questionarioCoordenador"), "POST", jsonId)
     
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAA", resultado)
+
     if (resultado.error) {
         console.log("Erro ao vincular questionario e checklist na url: "+resultado.error)
     }

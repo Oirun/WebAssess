@@ -79,3 +79,34 @@ function fazerCadastro() {
             console.log(e)
         })
 }
+
+async function pesquisandoCidadeEstado(id_campo) {
+    let cep = document.getElementById(id_campo).value.replace(/[^a-zA-Z0-9\s]/g, '')
+
+    if (cep.length == 8) {
+        let url = "https://viacep.com.br/ws/" + cep + "/json/"
+
+        console.log(url)
+
+        fetch(url)
+            .then(response => {
+                // Verifica se a resposta é um JSON válido
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Erro ao acessar a API');
+                }
+            })
+            .then(data => {
+                console.log(data); // Aqui você pode trabalhar com os dados do endereço
+                document.getElementById("endereco").value = data.localidade + " - "+data.uf 
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+
+        // const resultado = await request(url, "GET")
+    }else{
+        mostrarAlerta("error", "Cep inválido", "Usuarios")
+    }
+}

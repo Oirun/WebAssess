@@ -36,7 +36,7 @@ async function enviaQuestionario(url, metodo) {
     document.getElementById("questionario_padrao").checked == true ? padrao = 1 : padrao = 0
 
     let resultado = ""
-    console.log(url, metodo)
+
     if (document.getElementById("codigo_questionario").value !== null && document.getElementById("codigo_questionario").value.trim() !== "") {
         let json = {
             "titulo": nome_questionario,
@@ -45,7 +45,7 @@ async function enviaQuestionario(url, metodo) {
             "padrao": padrao,
             "data_fim" : "2024-11-24"
         }
-        console.log(JSON.stringify(json))
+   
        resultado = await request(url, metodo, json)
     } else {
         let pergunta = document.getElementById("pergunta").value
@@ -83,7 +83,7 @@ async function enviaQuestionario(url, metodo) {
                 }
             ]
         }
-        console.log(JSON.stringify(json), url, metodo)
+      
         resultado = await request(url, metodo, json)
     }
 

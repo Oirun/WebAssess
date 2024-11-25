@@ -38,8 +38,8 @@ function criandoLinhaParaTabelaAvaliadores(avaliador) {
     tdCodigo.innerHTML = avaliador.id_usuario 
     tdCodigo.setAttribute("data-idavaliador", avaliador.id_usuario)
     tdNome.innerHTML = avaliador.nome_usuario
-    tdCidade.innerHTML = `Dourados`
-    tdEstado.innerHTML = `MS`
+    tdCidade.innerHTML = avaliador.cidade
+    tdEstado.innerHTML = avaliador.estado
 
     row.onclick = function () {
         selecionandoAvaliadores(row)

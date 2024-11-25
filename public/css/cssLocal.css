@@ -84,6 +84,10 @@
     color: #fff!important;
 }
 
+.input-pagina-login[disabled]{
+    background-color: #3c3c44!important;
+}
+
 #escolaridade{
     color: #FFF!important;
 }
@@ -360,4 +364,9 @@ form label{
     overflow-y: auto;
     color: #656399;
     font-weight: 800;
+}
+
+#informacoes_adicionais p{
+    margin-top: 0px !important;
+    padding-bottom: 0px !important;
 }

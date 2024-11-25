@@ -25,6 +25,9 @@ document.onreadystatechange = function () {
                         document.getElementById("btnCadastrar").onclick = async function (e) {
                             await validateForm(e)
                         }
+
+                        const tooltipTriggerList = document.querySelectorAll('[data-bs-toll="tooltip"]')
+                        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
                     })
                 })
             })

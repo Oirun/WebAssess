@@ -20,9 +20,11 @@ async function request(url, metodo, json) {
         })
     }
 
+    
     // console.log(response.reject())
     const resultado = await response.json()
-
+    
+    console.log(resultado)
     if (resultado && resultado.error == 'Token invalido') {
         alert('token invalido')
     }
@@ -162,7 +164,7 @@ function mostrarAlerta(tipo, mensagem, complemento) {
 
     setTimeout(() => {
         fecharAlerta(complemento);
-    }, 2000);
+    }, 3000);
 }
 
 // Função para fechar o alerta

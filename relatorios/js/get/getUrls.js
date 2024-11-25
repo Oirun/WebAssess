@@ -154,6 +154,7 @@ async function preencheInfosInicio(url, quantidadeDeConvidados, id_ques_check, q
     } else {
         document.getElementById("chartdiv").innerHTML = ""
         document.getElementById("body_relatorio_questionario_perguntas").innerHTML = ""
+        document.querySelector(".dados_relatorio_inicio").classList.remove("d-none")
         resultado.perguntas.forEach(element => {
             let linha = criaLinhaRelatorio(element, questionario)
         });

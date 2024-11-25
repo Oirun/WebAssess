@@ -33,9 +33,9 @@ async function salvandoInformacoesParametros(event) {
     const resultado = await request(url, "POST", json)
 
     if (resultado.error) {
-        alert(resultado.error)
+        mostrarAlerta("error", resultado.error, "Parametros")
     }else{
         document.getElementById("nome_"+parametros[event.srcElement.id]).value = ""
-        alert("Item cadastrado com sucesso")
+        mostrarAlerta("success", "Item cadastrado com sucesso", "Parametros")
     }
 }

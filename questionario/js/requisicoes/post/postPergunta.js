@@ -5,7 +5,6 @@ function validandoPerguntas(e) {
     if (form.checkValidity()) {
         let metodo 
         let url
-        console.log(document.getElementById("pergunta").dataset.idPergunta)
 
         if (sessionStorage.getItem("user_t") == "C") {
             
@@ -41,8 +40,6 @@ async function adicionarNovaPerguntaAoQuestionarioSelecionado(url, metodo) {
     let pergunta = document.getElementById("pergunta").value 
     let justificativa = document.getElementById("justificativa").value
     let resultado
-
-    console.log(url)
 
     if (metodo == "PATCH") {
         let json = {

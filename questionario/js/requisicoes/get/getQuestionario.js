@@ -1,10 +1,8 @@
 async function getQuestionario() {
-    console.log("OI")
     const resultado = await request(urlsBack("questionario") + "doUsuario?tipo=Q", "GET")
-    console.log(resultado)
     
     if (resultado.error) {
-        alert(resultado.error)
+        mostrarAlerta("warning", "Sem resultados para a consulta de questionários.", "Questionario")
     } else {
         document.getElementById("listar-questionarios-cadastrados").innerHTML = ""
         resultado.forEach(questionario => {

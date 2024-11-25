@@ -4,6 +4,7 @@ async function getQuestionarioCoordenador(id_questionario) {
     const resultado = await request(url, "GET")
 
     if (resultado.error) {
+        // mostrarAlerta("warning", "Sem resultados para a consulta de questionários.", "Questionario")
         console.log("Erro na consulta do questionario do coordenador: "+resultado.error)
     }else{
         document.getElementById("listar-questionarios-cadastrados").innerHTML = ""

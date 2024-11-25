@@ -7,6 +7,8 @@ document.onreadystatechange = function () {
                         verificandoUsuario()
                         // preencherProfissao("profissao", "filtro")
 
+                        document.querySelector(".dados_relatorio_inicio").classList.add("d-none")
+
                         document.getElementById("btnConsultaUrls").click()
                         const tooltipTriggerList = document.querySelectorAll('[data-bs-toll="tooltip"]')
                         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

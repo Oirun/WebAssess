@@ -5,17 +5,17 @@ async function getQuestionarioPerguntas(id_questionario, input) {
     } else {
         url = urlsBack("questionario") + "perguntas/"+id_questionario+"?tipo=Q"
     }
-    console.log(url)
+
     const resultado = await request(url, "GET")
     
     document.getElementById("body_consulta_perguntas_questionario").innerHTML = ""
     if (resultado.error) {
-        alert(resultado.error)
+        // alert(resultado.error)
+        mostrarAlerta("warning", "Sem resultados para a consulta de perguntas.", "Questionario")
     } else {
         resultado.perguntas.forEach(pergunta => {
             
             let li = criandoLiPerguntas(pergunta, input)
-            console.log(li)
             document.getElementById("body_consulta_perguntas_questionario").appendChild(li)
         });
     }
@@ -25,7 +25,7 @@ async function getQuestionarioPerguntas(id_questionario, input) {
 }
 
 function criandoLiPerguntas(pergunta, input) {
-    console.log(pergunta.pergunta)
+
     let row = document.createElement("tr")
     let tdId = document.createElement("td")
     let tdPergunta = document.createElement("td")

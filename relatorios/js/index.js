@@ -8,7 +8,8 @@ document.onreadystatechange = function () {
                     // preencherProfissao("profissao", "filtro")
 
                     document.getElementById("btnConsultaUrls").click()
-
+                    document.querySelector(".dados_relatorio_inicio").classList.add("d-none")
+                    
                     const tooltipTriggerList = document.querySelectorAll('[data-bs-toll="tooltip"]')
                     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
                 })

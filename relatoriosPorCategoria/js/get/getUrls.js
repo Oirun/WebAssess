@@ -132,6 +132,7 @@ async function preencheInfosInicio(url, quantidadeDeConvidados, id_questionario_
     } else {
         chartdiv.innerHTML = ""
         document.getElementById("body_relatorio_questionario_profissao").innerHTML = ""
+        document.querySelector(".dados_relatorio_inicio").classList.remove("d-none")
         let dataGrafico = []
         resultado.forEach(element => {
             let linha = criaLinhaRelatorio(element)

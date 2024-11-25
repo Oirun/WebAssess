@@ -4,7 +4,16 @@
 
         <!-- icones de atalho no menu -->
         <div class="menu-curto">
-            <div>
+            <div  class="menu-curto-buttons-icon">
+                <a><i class="bi bi-house"></i></a>
+                <div class="div-menu-curto">
+                    <a href="" class="mb-2">Inicío</a>
+                    <ul>
+                        <li>Inicío</li>
+                    </ul>
+                </div>
+            </div>
+            <div  class="menu-curto-buttons-icon">
                 <a><i class="bi bi-person-plus"></i></a>
                 <div class="div-menu-curto">
                     <a href="" class="mb-2">Cadastros</a>
@@ -15,19 +24,19 @@
                     </ul>
                 </div>
             </div>
-            <div>
+            <div class="menu-curto-buttons-icon">
                 <a><i class="bi bi-journal-text"></i></a>
                 <div class="div-menu-curto">
                     <a href="">Questionário</a>
                 </div>
             </div>
-            <div>
+            <div class="menu-curto-buttons-icon">
                 <a><i class="bi bi-ui-checks"></i></a>
                 <div class="div-menu-curto">
                     <a href="">Check-List</a>
                 </div>
             </div>
-            <div>
+            <div class="menu-curto-buttons-icon">
                 <a><i class="bi bi-clipboard"></i></a>
                 <div class="div-menu-curto">
                     <a href="">Relatórios</a>
@@ -38,13 +47,13 @@
                     </ul>
                 </div>
             </div>
-            <div>
-                <a><i class="bi bi-patch-question"></i></a>
+            <div class="menu-curto-buttons-icon">
+                <a onclick="ajuda()" ><i class="bi bi-patch-question"></i></a>
                 <div class="div-menu-curto">
                     <a href="">Ajuda</a>
                 </div>
             </div>
-            <div>
+            <div class="menu-curto-buttons-icon">
                 <a><i class="bi bi-door-closed"></i></a>
                 <div class="div-menu-curto">
                     <a onclick="sairSistema()">Sair</a>
@@ -66,10 +75,10 @@
 
                 <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 ul-lista-menu">
 
-                    <form class="d-flex mb-3" role="search">
+                    <!-- <form class="d-flex mb-3" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-success" type="submit">Search</button>
-                    </form>
+                    </form> -->
 
                     <!-- Questionários -->
                     <li class="nav-item" id="li_inicio">
@@ -118,12 +127,12 @@
 
                     <!-- AJUDA -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-patch-question"></i>Ajuda</a>
+                        <a class="nav-link" onclick="ajuda()"><i class="bi bi-patch-question"></i>Ajuda</a>
                     </li>
 
                     <!-- SAIR -->
                     <li class="nav-item" onclick="sairSistema()">
-                        <a class="nav-link" href="#"><i class="bi bi-door-closed"></i>Sair</a>
+                        <a class="nav-link"><i class="bi bi-door-closed"></i>Sair</a>
                     </li>
                 </ul>
 
@@ -149,4 +158,6 @@
 
 <script>
     document.getElementById("img_user").src = urlsFront("global") + "util/usuarios/anya.jpg"
+
+
 </script>

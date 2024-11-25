@@ -46,7 +46,7 @@ function construindoLinha(elemento, parametro) {
     buttonDeletar.appendChild(icoDeletar)
     div.appendChild(buttonDeletar)
     tdAcao.appendChild(div)
-    row.appendChild(tdAcao)
+    // row.appendChild(tdAcao)
 
     return row
 }

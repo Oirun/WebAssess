@@ -43,8 +43,8 @@
     </div>
 
     <div class="col-md-6">
-        <label for="cep_usuario" class="form-label">CEP</label>
-        <input type="text" class="form-control" id="cep_usuario" onblur="pesquisandoCidadeEstado('cep_usuario')" oninput="mascaraCEP(this)">
+        <label for="cep_usuario" class="form-label">CEP *</label>
+        <input type="text" class="form-control" id="cep_usuario" onblur="pesquisandoCidadeEstado('cep_usuario')" oninput="mascaraCEP(this)" required>
     </div>
 
     <div class="col-md-6">
@@ -147,9 +147,12 @@
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2">
         <button class="btn btn-dark me-md-2" type="button" data-bs-toggle="modal"
-            data-bs-target="#modal_cadastro_usuario">Consultar</button>
+            data-bs-target="#modal_cadastro_usuario" data-bs-toll="tooltip" data-bs-placement="top"
+            data-bs-title="Clique para consultar usuários para a edição.">Consultar</button>
         <!-- <button class="btn btn-primary me-md-2" type="button"><i class="bi bi-trash"></i></button> -->
-        <button class="btn btn-primary me-md-2" id="btnCadastrar" type="submit">Salvar</button>
-        <button class="btn btn-outline-dark" onclick="cancelar()" type="button">Cancelar</button>
+        <button class="btn btn-primary me-md-2" id="btnCadastrar" type="submit" data-bs-toll="tooltip" data-bs-placement="top"
+        data-bs-title="Salvar questionário.">Salvar</button>
+        <button class="btn btn-outline-dark" onclick="cancelar()" type="button" data-bs-toll="tooltip" data-bs-placement="top"
+        data-bs-title="Cancelar a ação.">Cancelar</button>
     </div>
 </form>

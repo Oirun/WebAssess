@@ -17,7 +17,7 @@ async function getUrls() {
 
     let url_request = gerarUrlComParametros(urlsBack("url"), jsonParams)
     const resultado = await request(url_request, "GET")
-  
+    console.log(resultado)
     if (resultado.error) {
         console.log("erro ao consultar urls")
     } else {

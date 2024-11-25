@@ -33,7 +33,7 @@ function urlsFront(pasta) {
 
 function urlsBack(pasta) {
     // http://localhost:8080/tcc/api/v1/users
-    let urls_base = "http://localhost:8080/tcc/api/v1/"
+    let urls_base = "http://172.20.50.47/tcc/api/v1/"
 
     switch (pasta) {
         case "users":
@@ -135,4 +135,12 @@ function gerarUrlComParametros(url, objParams) {
     }
     
     return url;
+}
+
+function ajuda() {
+    Swal.fire({
+        title: "Ajuda!",
+        text: "Caso esteja com dúvidas, entre em contato com o suporte técnico: manuela.donatto.s@gmail.com",
+        icon: "question"
+    });
 }

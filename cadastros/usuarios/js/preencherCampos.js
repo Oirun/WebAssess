@@ -1,4 +1,8 @@
 function preencherCamposParaEdicaoDeUsuario(usuario) {
+    document.getElementById("form_cadastro_usuarios").classList.remove("was-validated")
+    document.getElementById("form_cadastro_usuarios").reset()
+    document.getElementById("div-senha").classList.add("d-none")
+    
     let id_usuario = document.getElementById("codigo_usuario")
     id_usuario.value = usuario.id_usuario
     console.log(usuario)
@@ -8,7 +12,7 @@ function preencherCamposParaEdicaoDeUsuario(usuario) {
     document.getElementById("user").value = usuario.login
     document.getElementById("senha").value = usuario.senha
     document.getElementById("cidade_usuario").value = usuario.cidade
-    document.getElementById("estado_usuario").value = usuario.cidade
+    document.getElementById("estado_usuario").value = usuario.estado
 
     let sexo = document.querySelector('#sexo')
     for (let i = 0; i < sexo.options.length; i++) {
