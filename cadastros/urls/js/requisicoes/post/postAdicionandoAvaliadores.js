@@ -31,10 +31,11 @@ async function adicionandoAvaliadores() {
 
     if (resultado.error) {
         console.log("erro ao pesquisar avaliadores")
+        
     } else {
 
-        await getAvaliadoresIncluidos(id_url)
         await pesquisandoAvaliadores(document.getElementById("btnAdicionarAvaliadores").dataset.idurl)
+        await getAvaliadoresIncluidos(id_url)
         document.getElementById("btnConsultaUrls").click()
     }
 

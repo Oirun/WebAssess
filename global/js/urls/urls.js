@@ -23,6 +23,9 @@ function urlsFront(pasta) {
         case "relatorios":
             let url_relatorios = urls_base + "relatorios/"
             return url_relatorios
+        case "relatoriosPorCategoria":
+            let url_relatorios_categoria = urls_base + "relatoriosPorCategoria/"
+            return url_relatorios_categoria
         default:
             break;
     }
@@ -30,7 +33,7 @@ function urlsFront(pasta) {
 
 function urlsBack(pasta) {
     // http://localhost:8080/tcc/api/v1/users
-    let urls_base = "http://192.168.119.44/tcc/api/v1/"
+    let urls_base = "http://localhost:8080/tcc/api/v1/"
 
     switch (pasta) {
         case "users":
@@ -106,17 +109,30 @@ function url_relatorios() {
     window.location.href = url_relatorios
     return url_relatorios
 }
+function url_relatorios_categoria() {
+    const url_base = urlsFront("relatoriosPorCategoria")
+    const url_relatorios = url_base + "pages/index.html"
+    console.log(url_relatorios)
+    window.location.href = url_relatorios
+    return url_relatorios
+}
 
-// function url_questionario_coordenador() {
-//     const url_base = urlsFront("questionario")
-//     const url_questionario = url_base + "pages/index_coordenador.html"
-//     window.location.href = url_questionario
-//     return url_questionario
-// }
 
-// function url_checklist_coordenador() {
-//     const url_base = urlsFront("checklist")
-//     const url_checklist = url_base + "pages/index_coordenador.html"
-//     window.location.href = url_checklist
-//     return url_checklist
-// }
+function gerarUrlComParametros(url, objParams) {
+   
+    let queryParams = [];
+
+    for (let chave in objParams) {
+        if (objParams[chave]) {
+            queryParams.push(`${chave}=${objParams[chave]}`);
+        }
+    }
+    
+    if (queryParams.length > 0) {
+    
+        let separador = url.includes('?') ? '&' : '?';
+        url += separador + queryParams.join('&');
+    }
+    
+    return url;
+}

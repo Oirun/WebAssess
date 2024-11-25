@@ -13,8 +13,8 @@ function validandoPerguntas(e) {
                 metodo = "PATCH"
                 url = urlsBack("questionarioCoordenador")+"pergunta/update"
              }else{
-                //  metodo = "POST"
-                //  url = urlsBack("questionario")+"pergunta" 
+                 metodo = "POST"
+                 url = urlsBack("questionarioCoordenador")+"cadastroPerguntas" 
              }
         }else{
             if (document.getElementById("pergunta").dataset.idPergunta != null && document.getElementById("pergunta").dataset.idPergunta != "") {

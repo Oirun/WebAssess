@@ -19,7 +19,7 @@ function fazerCadastro() {
     let profissao = combo_profissao.options[combo_profissao.selectedIndex].dataset.idProfissao;
     let combo_escolaridade = document.getElementById("escolaridade")
     let escolaridade = combo_escolaridade.options[combo_escolaridade.selectedIndex].dataset.idEscolaridade;
-    let cep = document.getElementById("cep").value
+    let cep = document.getElementById("cep").value.replace(/[^a-zA-Z0-9\s.,;:]/g, '')
     let sexo = ""
     let permissao = ""
     let user = document.getElementById("login").value

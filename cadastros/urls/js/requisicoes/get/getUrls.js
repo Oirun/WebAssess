@@ -1,10 +1,23 @@
 document.getElementById("btnConsultaUrls").onclick = async function () {
     await getUrls()
+
 }
 
 async function getUrls() {
-    const resultado = await request(urlsBack("url"), "GET")
-    console.log(resultado)
+
+    let url_extenso = document.getElementById("c_url").value
+    let data_inicio = document.getElementById("c_data_inicio").value
+    let data_fim = document.getElementById("c_data_fim").value
+
+    let jsonParams = {
+        "url": url_extenso,
+        "data_inicio": data_inicio,
+        "data_fim": data_fim
+    }
+
+    let url_request = gerarUrlComParametros(urlsBack("url"), jsonParams)
+    const resultado = await request(url_request, "GET")
+  
     if (resultado.error) {
         console.log("erro ao consultar urls")
     } else {
@@ -20,114 +33,121 @@ async function getUrls() {
             document.getElementById("body_consulta_urls").appendChild(linha)
         });
     }
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toll="tooltip"]')
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 }
 
 async function criandoLinhaParaTabelaUrl(url) {
-    let row = document.createElement("tr")
-    let tdUrl = document.createElement("td")
-    let tdDatas = document.createElement("td")
-    let tdStatus = document.createElement("td")
-    let tdConvidados = document.createElement("td")
-    let tdQuestoes = document.createElement("td")
-    let divAcao = document.createElement("td")
-    let btnEditar = document.createElement("button")
-    let ico = document.createElement("i")
-    let divConvidado = document.createElement("div")
+    let row = document.createElement("tr");
+    let tdUrl = document.createElement("td");
+    let tdDatas = document.createElement("td");
+    let tdStatus = document.createElement("td");
+    let tdConvidados = document.createElement("td");
+    let tdQuestoes = document.createElement("td");
+    let divAcao = document.createElement("td");
+    let btnEditar = document.createElement("button");
+    let ico = document.createElement("i");
+    let divConvidado = document.createElement("div");
 
-    let divQuestionario = document.createElement("div")
-    let btnQuestionario = document.createElement("button")
-    let icoQuestionario = document.createElement("i")
+    let divQuestionario = document.createElement("div");
+    let btnQuestionario = document.createElement("button");
+    btnQuestionario.setAttribute("data-bs-placement", "top");
+    btnQuestionario.setAttribute("data-bs-title", "Editar questionário.");
+    let icoQuestionario = document.createElement("i");
 
-    let divCheckList = document.createElement("div")
-    let btnChecklist = document.createElement("button")
-    let icoCheckList = document.createElement("i")
+    let divCheckList = document.createElement("div");
+    let btnChecklist = document.createElement("button");
+    btnChecklist.setAttribute("data-bs-placement", "top");
+    btnChecklist.setAttribute("data-bs-title", "Editar check-list.");
+    let icoCheckList = document.createElement("i");
 
-    btnEditar.classList = "btn btn-outline-dark"
-    ico.classList = "bi bi-pencil"
+    btnEditar.classList = "btn btn-outline-dark";
+    btnEditar.setAttribute("data-bs-placement", "top");
+    btnEditar.setAttribute("data-bs-title", "Editar check-list.");
+    ico.classList = "bi bi-pencil";
 
-    btnQuestionario.classList = "btn btn-outline-success"
-    btnChecklist.classList = "btn btn-outline-primary"
-    icoQuestionario.classList = "bi bi-journal-text"
-    icoCheckList.classList = "bi bi-ui-checks"
+    btnQuestionario.classList = "btn btn-outline-success";
+    btnChecklist.classList = "btn btn-outline-primary";
+    icoQuestionario.classList = "bi bi-journal-text";
+    icoCheckList.classList = "bi bi-ui-checks";
 
-    tdQuestoes.classList = "d-flex gap-1"
+    tdQuestoes.classList = "d-flex gap-1";
 
-    btnQuestionario.appendChild(icoQuestionario)
-    btnChecklist.appendChild(icoCheckList)
-    divQuestionario.appendChild(btnQuestionario)
-    divCheckList.appendChild(btnChecklist)
-    tdQuestoes.appendChild(divQuestionario)
-    tdQuestoes.appendChild(divCheckList)
+    btnQuestionario.appendChild(icoQuestionario);
+    btnChecklist.appendChild(icoCheckList);
+    divQuestionario.appendChild(btnQuestionario);
+    divCheckList.appendChild(btnChecklist);
+    tdQuestoes.appendChild(divQuestionario);
+    tdQuestoes.appendChild(divCheckList);
 
-    btnEditar.appendChild(ico)
-    divAcao.appendChild(btnEditar)
+    btnEditar.appendChild(ico);
+    divAcao.appendChild(btnEditar);
 
-    tdUrl.innerHTML = url.url
-    tdDatas.innerHTML = `${url.data_inicio.split("-")[2]}/${url.data_inicio.split("-")[1]}/${url.data_inicio.split("-")[0]} <br>${url.data_fim.split("-")[2]}/${url.data_fim.split("-")[1]}/${url.data_fim.split("-")[0]}`
+    tdUrl.innerHTML = url.url;
+    tdDatas.innerHTML = `${url.data_inicio.split("-")[2]}/${url.data_inicio.split("-")[1]}/${url.data_inicio.split("-")[0]} <br>${url.data_fim.split("-")[2]}/${url.data_fim.split("-")[1]}/${url.data_fim.split("-")[0]}`;
     // tdStatus.innerHTML = ""
 
-    let quantidadeDeConvidados = await verificandoQuantidadeDeUsuarios(url.id)
+    let quantidadeDeConvidados = await verificandoQuantidadeDeUsuarios(url.id);
 
-    divConvidado.innerHTML = quantidadeDeConvidados + " Convidados"
+    divConvidado.innerHTML = quantidadeDeConvidados + " Convidados";
 
-    divConvidado.classList = "div-convidado"
-    divConvidado.setAttribute("data-bs-toggle", "modal")
-    divConvidado.setAttribute("data-bs-target", "#modal-convidar")
+    divConvidado.classList = "div-convidado";
+    divConvidado.setAttribute("data-bs-toggle", "modal");
+    divConvidado.setAttribute("data-bs-target", "#modal-convidar");
+    divConvidado.setAttribute("data-bs-placement", "top");
+    divConvidado.setAttribute("data-bs-title", "Ver convidados.");
 
     divConvidado.onclick = async function () {
-        await getAvaliadoresIncluidos(url.id)
-        await pesquisandoAvaliadores(url.id)
+        await getAvaliadoresIncluidos(url.id);
+        await pesquisandoAvaliadores(url.id);
 
-        document.getElementById("btnAdicionarAvaliadores").setAttribute("data-idUrl", url.id)
+        document.getElementById("btnAdicionarAvaliadores").setAttribute("data-idUrl", url.id);
     }
 
     btnQuestionario.onclick = function () {
-        sessionStorage.setItem("id_questionario", url.questionario)
-        window.location.replace(urlsFront("questionario") + "pages/index.html")
+        sessionStorage.setItem("id_questionario", url.questionario);
+        window.location.replace(urlsFront("questionario") + "pages/index.html");
     }
 
     btnChecklist.onclick = function () {
-        sessionStorage.setItem("id_checklist", url.checklist)
-        window.location.replace(urlsFront("checklist") + "pages/index.html")
+        sessionStorage.setItem("id_checklist", url.checklist);
+        window.location.replace(urlsFront("checklist") + "pages/index.html");
     }
 
     btnEditar.onclick = function () {
-        preencheCamposUrls(url)
-        document.getElementById("pills-profile-tab").innerHTML = "Editar"
-        document.getElementById("titulo_cad_urls").innerHTML = "Editando Urls"
-        document.getElementById("pills-profile-tab").click()
+        preencheCamposUrls(url);
+        document.getElementById("pills-profile-tab").innerHTML = "Editar";
+        document.getElementById("titulo_cad_urls").innerHTML = "Editando Urls";
+        document.getElementById("pills-profile-tab").click();
     }
 
     if (sessionStorage.getItem("user_t") == "A") {
-        btnChecklist.disabled = true
-        btnQuestionario.disabled = true
+        btnChecklist.disabled = true;
+        btnQuestionario.disabled = true;
     }
 
     if (quantidadeDeConvidados > 0) {
-        btnQuestionario.disabled = true
-        btnChecklist.disabled = true
-        btnEditar.disabled = true
+        btnQuestionario.disabled = true;
+        btnChecklist.disabled = true;
+        btnEditar.disabled = true;
 
-        btnQuestionario.setAttribute("data-bs-toll", "tooltip")
-        btnQuestionario.setAttribute("data-bs-placement", "top")
-        btnQuestionario.setAttribute("data-bs-custom-class", "custom-tooltip")
-        btnQuestionario.setAttribute("data-bs-title", "Após incluir convidados a essa url, o questionário não pode ser alterado.")
-
+        btnQuestionario.setAttribute("data-bs-placement", "top");
+        btnQuestionario.setAttribute("data-bs-title", "Após incluir convidados a essa url, o questionário não pode ser alterado.");
     }
 
-    tdConvidados.appendChild(divConvidado)
+    tdConvidados.appendChild(divConvidado);
 
-    row.appendChild(tdUrl)
-    row.appendChild(tdDatas)
+    row.appendChild(tdUrl);
+    row.appendChild(tdDatas);
     // row.appendChild(tdStatus)
-    row.appendChild(tdConvidados)
-    row.appendChild(tdQuestoes)
-    row.appendChild(divAcao)
+    row.appendChild(tdConvidados);
+    row.appendChild(tdQuestoes);
+    row.appendChild(divAcao);
 
-    return row
+    // Aqui, inicializamos os tooltips manualmente
+    const tooltipTriggerList = row.querySelectorAll('[data-bs-title]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+    return row;
 }
 
 async function verificandoQuantidadeDeUsuarios(id_url) {
@@ -148,8 +168,8 @@ function preencheCamposUrls(url) {
 
     document.getElementById("url_codigo").value = url.id
     document.getElementById("url_website").value = url.url
-    // document.getElementById("url_data_inicio").value = url.data_inicio
-    // document.getElementById("url_data_fim").value = url.data_fim
+    document.getElementById("url_data_inicio").value = url.data_inicio
+    document.getElementById("url_data_fim").value = url.data_fim
     document.getElementById("url_descricao").value = url.descricao
     // if (url.ativo == "A") {
     //     document.getElementById("url_ativo").click() 
@@ -157,4 +177,16 @@ function preencheCamposUrls(url) {
     //     document.getElementById("url_inativo").click() 
     // }
 
+}
+
+function limparCampos() {
+    document.getElementById("url_codigo").value = ""
+    document.getElementById("url_codigo").value = ""
+    document.getElementById("url_website").value = ""
+    document.getElementById("url_data_inicio").value = ""
+    document.getElementById("url_data_fim").value = ""
+    document.getElementById("url_descricao").value = ""
+
+    document.getElementById("pills-profile-tab").innerHTML = "Cadastrar"
+    document.getElementById("titulo_cad_urls").innerHTML = "Cadastro de Urls"
 }

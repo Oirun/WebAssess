@@ -1,10 +1,23 @@
+document.getElementById("profissao").onchange = function () {
+    pesquisandoAvaliadores(document.getElementById("btnAdicionarAvaliadores").dataset.idurl)
+}
+
 async function pesquisandoAvaliadores(id_url) {
 
-    let profissao = document.getElementById("profissao").dataset.idprofissao == undefined ? "" : document.getElementById("profissao").dataset.idprofissao
-    const resultado = await request(urlsBack("questionarioCoordenador")+"consultaAvaliadores/"+id_url+"?profissao="+profissao, "GET")
+    let combo_profissao = document.getElementById("profissao")
+    let id_profissao = combo_profissao.options[combo_profissao.selectedIndex].dataset.idProfissao;
+
+    let params = {
+        "id_profissao" : id_profissao
+    }
+
+    let url = gerarUrlComParametros(urlsBack("questionarioCoordenador")+"consultaAvaliadores/"+id_url, params)
+    const resultado = await request(url, "GET")
+    console.log(resultado)
  
     if (resultado.error) {
         console.log("erro ao pesquisar avaliadores")
+        document.getElementById("body_consulta_convidados").innerHTML = ""
     } else {
         document.getElementById("body_consulta_convidados").innerHTML = ""
        
@@ -30,7 +43,6 @@ function criandoLinhaParaTabelaAvaliadores(avaliador) {
 
     row.onclick = function () {
         selecionandoAvaliadores(row)
-        
     }
 
     row.appendChild(tdCodigo)

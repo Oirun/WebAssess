@@ -28,6 +28,9 @@ function criandoLi(checklist) {
     button.classList = "btn btn-outline-purple me-md-2"
     button.setAttribute("data-bs-toggle", "modal")
     button.setAttribute("data-bs-target", "#modal_perguntas_checklist")
+    button.setAttribute("data-bs-toll", "tooltip")
+    button.setAttribute("data-bs-placement", "top")
+    button.setAttribute("data-bs-title", "Ver perguntas adicionadas ao check-list.")
     ico.classList = "bi bi-search"
 
     button.appendChild(ico)
@@ -58,6 +61,10 @@ function criandoLi(checklist) {
         document.getElementById("span_id_checklist").innerHTML = checklist.id_questionario
         document.getElementById("span_nome_checklist").innerHTML = checklist.titulo
         getCheckListPerguntas(checklist.id_questionario, input)
+    }
+
+    if (sessionStorage.getItem("user_t") == "C") {
+        input.click()
     }
 
     document.getElementById("listar-checklist-cadastrados").appendChild(input)

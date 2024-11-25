@@ -8,7 +8,7 @@ async function preencherProfissao(id_combo_profissao, filtro) {
 
     if (filtro == "filtro") {
         let option = document.createElement("option")
-            option.innerHTML = "Todos"
+            option.innerHTML = "TODOS"
             option.setAttribute("data-id-profissao", "")
 
             combo_profissao.appendChild(option)

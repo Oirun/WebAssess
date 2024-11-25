@@ -61,6 +61,9 @@ document.onreadystatechange = function () {
                             validandoPerguntas(e)
                         }
 
+                        const tooltipTriggerList = document.querySelectorAll('[data-bs-toll="tooltip"]')
+                        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+                        
                     })
                 })
             })

@@ -50,7 +50,7 @@ async function adicionandoNovaURl() {
         if (metodo == "PATCH") {
             Swal.fire({
                 title: "Sucesso!",
-                text: "Cadastro de URL alterada!",
+                text: "URL alterada!",
                 icon: "success"
             });
             document.getElementById("pills-profile-tab").innerHTML = "Cadastrar"

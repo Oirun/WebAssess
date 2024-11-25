@@ -100,6 +100,8 @@ async function enviaCheckList(url, metodo) {
         // document.getElementById("form_cadastro_checklist").reset()
         document.getElementById("pergunta").value = ""
         document.getElementById("justificativa").value = ""
+        document.getElementById("nome_checklist").value = ""
+        document.getElementById("descricao_checklist").value = ""
 
         Swal.fire({
             title: "Sucesso!",

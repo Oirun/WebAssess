@@ -8,14 +8,14 @@ function validandoPerguntas(e) {
         console.log(document.getElementById("pergunta").dataset.idPergunta)
 
         if (sessionStorage.getItem("user_t") == "C") {
-            questionarioCoordenador/pergunta/update
+            
             if (document.getElementById("pergunta").dataset.idPergunta != null && document.getElementById("pergunta").dataset.idPergunta != "") {
                 metodo = "PATCH"
                 url = urlsBack("questionarioCoordenador") + "pergunta/update"
             } else {
     
-                // metodo = "POST"
-                // url = urlsBack("questionario") + "pergunta"
+                metodo = "POST"
+                url = urlsBack("questionarioCoordenador") + "cadastroPerguntas"
             }
         }else{
             if (document.getElementById("pergunta").dataset.idPergunta != null && document.getElementById("pergunta").dataset.idPergunta != "") {

@@ -37,3 +37,15 @@ function fazerLogin() {
             console.log(e)
         })
 }
+
+
+function mascaraCEP(input) {
+
+    let cep = input.value.replace(/\D/g, '');
+    
+    if (cep.length > 5) {
+        cep = cep.substring(0, 5) + '-' + cep.substring(5, 8);
+    }
+
+    input.value = cep;
+}

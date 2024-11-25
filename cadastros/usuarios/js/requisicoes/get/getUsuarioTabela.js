@@ -1,9 +1,27 @@
 async function getUsuarioTabela(solicitacaoUsuario) {
-    let url = urlsBack("users")
+    
+    let nome_usuario = document.getElementById("c_nome_usuario").value
+    let login = document.getElementById("c_nome_user").value
+    let combo_profissao = document.getElementById("c_profissao")
+    let id_profissao = combo_profissao.options[combo_profissao.selectedIndex].dataset.idProfissao;
+    let combo_escolaridade = document.getElementById("c_escolaridade")
+    let id_escolaridade = combo_escolaridade.options[combo_escolaridade.selectedIndex].dataset.idEscolaridade;
+    
+    let jsonParams = {
+        "nome_usuario" : nome_usuario,
+        "id_profissao" : id_profissao,
+        "id_escolaridade" : id_escolaridade,
+        "login" : login
+    }
+
+    let url = gerarUrlComParametros(urlsBack("users"), jsonParams)
+    console.log(url)
+    
     document.getElementById("body_consulta_usuario").innerHTML = ""
     const resultado = await request(url, "GET")
     console.log(url, resultado)
     if (resultado.error) {
+        mostrarAlerta("error", resultado.error, "Usuarios")
         alert(resultado.error)
     } else {
 

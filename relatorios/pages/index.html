@@ -30,6 +30,17 @@
     <script src="../../../global/js/urls/urls.js"></script>
     <script defer src="../js/index.js"></script>
 
+    <style>
+        #chartdiv {
+            width: 60%;
+            height: 500px;
+        }
+    </style>
+
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 </head>
 
 <body>
@@ -39,7 +50,10 @@
     <main class="principal">
 
         <div id="header"></div>
-
+        <div id="alertPorPerguntas" class="alert-alert hidden">
+            <span id="alertMessage"></span>
+            <button id="closeAlert" onclick="fecharAlerta('PorPergunta')">×</button>
+        </div>
         <section class="container_principal">
 
 
@@ -84,10 +98,13 @@
                         </div>
 
                         <div class="dados_relatorio_inicio px-5">
-                            <p id="dados_relatorio_inicio_url"><strong>URL:</strong> https://agrosoftware.com.br/useweb/acp/url.php</p>
-                            <p id="dados_relatorio_inicio_coordenador"><strong>Coordenador:</strong> m.macena<br><strong>Período de Avaliação: 14/11/2024 à
+                            <p id="dados_relatorio_inicio_url"><strong>URL:</strong>
+                                https://agrosoftware.com.br/useweb/acp/url.php</p>
+                            <p id="dados_relatorio_inicio_coordenador"><strong>Coordenador:</strong>
+                                m.macena<br><strong>Período de Avaliação: 14/11/2024 à
                                     07/12/2024</strong></p>
-                            <p id="dados_relatorio_inicio_total_avaliadores"> <strong> Total de Avaliadores:</strong> 1</p>
+                            <p id="dados_relatorio_inicio_total_avaliadores"> <strong> Total de Avaliadores:</strong> 1
+                            </p>
                         </div>
 
                         <div class="div_tabela mx-4" id="div_table_relatorios">
@@ -97,10 +114,10 @@
                                 });
                             </script>
                         </div>
+
                         <div class="d-flex justify-content-md-center">
-                            <canvas id="pieChart" width="400" height="400"></canvas>
+                            <div id="chartdiv"></div>
                         </div>
-                        
 
                     </div>
                 </div>
@@ -113,11 +130,7 @@
 
     </main>
 
-    <script src="../js/graficoPizza.js"></script>
-
-    <!-- <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script> -->
+    <script src="../js/graficoPizza2.js"></script>
 
     <div id="imports"></div>
 </body>
